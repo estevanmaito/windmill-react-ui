@@ -21,7 +21,7 @@ Be the most accessible it can be out of the box and the fastest way to productio
 
 - [ ] Docs
   - [ ] Next.js + MDX (see [Tailwind Starter Kit](https://github.com/estevanmaito/tailwind-starter-kit))
-- [ ] Themes
+- [ ] Themes (separate themes into dark/light)
 - [ ] Development live server (currently using Styleguidist; polutes the `src` directory)
 - [ ] Scope Tailwind? Prefix? Use user config?
   - I'm inclined to create a root theme file, with all classes used, for every element. This way users can import it and extend/modify, but it would be used to let purge know which classes are being used. But what about custom theme configs, like the `shadow-outline` custom plugin, or extended styles? Maybe create a plugin that could be imported from this package also?
