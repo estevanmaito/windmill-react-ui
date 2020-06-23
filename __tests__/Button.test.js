@@ -111,7 +111,7 @@ describe('Sizes', () => {
 
   it('should render an icon sized button', () => {
     const expected = 'px-2 py-2 rounded-lg'
-    const wrapper = mount(<Button size="icon" />)
+    const wrapper = mount(<Button size="icon" aria-label="icon" />)
 
     expect(wrapper.find('button').getDOMNode().getAttribute('class')).toContain(expected)
   })
