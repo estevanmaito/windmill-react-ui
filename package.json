@@ -8,6 +8,10 @@
     "README.md"
   ],
   "scripts": {
+    "build:tailwind": "tailwindcss build style/tailwind.css -o style/output.css -c style/tailwind.config.js",
+    "predev": "npm run build:tailwind",
+    "dev": "styleguidist server",
+    "build:styleguide": "styleguidist build",
     "cz": "git-cz",
     "test": "jest",
     "codecov": "codecov",
@@ -18,6 +22,11 @@
     "prebuild": "rimraf dist",
     "build": "webpack",
     "semantic-release": "semantic-release"
+  },
+  "peerDependencies": {
+    "react": ">=16.8.0",
+    "react-dom": ">=16.8.0",
+    "tailwindcss": ">=1.4.6"
   },
   "dependencies": {
     "classnames": "2.2.6",
@@ -30,8 +39,10 @@
     "@babel/core": "7.9.6",
     "@babel/preset-env": "7.9.6",
     "@babel/preset-react": "7.10.1",
+    "@tailwindcss/custom-forms": "0.2.1",
     "babel-loader": "8.1.0",
     "codecov": "3.6.5",
+    "color": "3.1.2",
     "commitizen": "4.1.2",
     "css-loader": "3.6.0",
     "cz-conventional-changelog": "3.2.0",
@@ -51,9 +62,12 @@
     "prettier": "2.0.5",
     "react": "16.13.1",
     "react-dom": "16.13.1",
+    "react-styleguidist": "11.0.8",
     "rimraf": "3.0.2",
     "semantic-release": "^17.0.7",
     "style-loader": "1.2.1",
+    "tailwindcss-multi-theme": "1.0.3",
+    "tailwindcss": "1.4.6",
     "webpack": "5.0.0-beta.18",
     "webpack-cli": "4.0.0-beta.8"
   },
