@@ -11,6 +11,8 @@ The Tailwind CSS React component library
 
 Projects using it: [Windmill Dashboard React](https://github.com/estevanmaito/windmill-dashboard-react)
 
+- [Roadmap](#roadmap)
+
 ## Mission
 
 Be the most accessible it can be out of the box and the fastest way to production.
@@ -20,6 +22,7 @@ Be the most accessible it can be out of the box and the fastest way to productio
 - [ ] Docs
   - [ ] Next.js + MDX (see [Tailwind Starter Kit](https://github.com/estevanmaito/tailwind-starter-kit))
 - [ ] Themes
+- [ ] Development live server (currently using Styleguidist; polutes the `src` directory)
 - [ ] Scope Tailwind? Prefix? Use user config?
   - I'm inclined to create a root theme file, with all classes used, for every element. This way users can import it and extend/modify, but it would be used to let purge know which classes are being used. But what about custom theme configs, like the `shadow-outline` custom plugin, or extended styles? Maybe create a plugin that could be imported from this package also?
 
@@ -35,7 +38,7 @@ plugins: [windmillPlugin()]
 
 ### Components
 
-- [ ] Button
+- [x] Button
 - [ ] Card
 - [ ] Dropdown
 - [ ] Form
@@ -63,3 +66,22 @@ This library is so fresh, that if we just add new components now, we'll be just 
 So, until we get to a point that the current components are in good shape and we have a clear vision of what a good component must have, we will just work on the existing component base.
 
 How long will it take? A week, a month, it depends on the time I can put into it.
+
+## Contributing
+
+- Fork
+- Clone
+- `npm install`
+- `npm run dev`
+
+It will start a local server at `localhost:6060` with all components rendered.
+
+To see a new component rendered, add an `.md` file with the same name as the component (see current components), and add components inside like:
+
+```js
+<Button size="larger">Larger</Button>
+```
+
+⚠ Use `npm run cz` instead of `git commit`! It will guide through some short questions and guarantee that you commit message is standardized.
+
+Commit will also trigger linting and test coverage.
