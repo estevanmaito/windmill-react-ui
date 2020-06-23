@@ -1,11 +1,13 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import PropTypes from 'prop-types'
 import classNames from 'classnames'
 import warn from '../utils/warning'
-import theme from '../defaultTheme'
+import { ThemeContext } from './context/ThemeContext'
+import defaultTheme from './themes/default'
 
 const Button = React.forwardRef(function Button(props, ref) {
   const { tag, disabled, size, layout, block, className, ...other } = props
+  const theme = useContext(ThemeContext) || defaultTheme
 
   warn(
     size === 'icon' && !other['aria-label'],
