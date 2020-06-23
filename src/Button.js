@@ -76,6 +76,8 @@ Button.defaultProps = {
   tag: 'button',
   size: 'regular',
   layout: 'primary',
+  block: false,
+  disabled: false,
 }
 
 export default Button
