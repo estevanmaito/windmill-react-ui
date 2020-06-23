@@ -18,7 +18,7 @@
     <Button size="small">Small</Button>
   </div>
   <div>
-    <Button size="icon">
+    <Button size="icon" aria-label="Icon">
       <span className="h-4 w-4"></span>
     </Button>
   </div>
@@ -53,7 +53,7 @@
     </Button>
   </div>
   <div>
-    <Button layout="outline" size="icon">
+    <Button layout="outline" size="icon" aria-label="Icon">
       <span className="h-4 w-4"></span>
     </Button>
   </div>
@@ -88,7 +88,7 @@
     </Button>
   </div>
   <div>
-    <Button layout="link" size="icon">
+    <Button layout="link" size="icon" aria-label="Icon">
       <span className="h-4 w-4"></span>
     </Button>
   </div>
