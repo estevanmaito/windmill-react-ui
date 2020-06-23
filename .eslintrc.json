@@ -1,0 +1,40 @@
+{
+  "env": {
+    "jest": true
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "parserOptions": {
+    "ecmaVersion": 2018,
+    "sourceType": "module"
+  },
+  "extends": ["standard", "plugin:react/recommended", "prettier"],
+  "plugins": ["prettier"],
+  "rules": {
+    "no-unused-vars": [
+      2,
+      {
+        "args": "all",
+        "argsIgnorePattern": "^_"
+      }
+    ],
+    "no-warning-comments": 0,
+    "prettier/prettier": [
+      "error",
+      {
+        "semi": false,
+        "singleQuote": true,
+        "printWidth": 100,
+        "tabWidth": 2,
+        "useTabs": false,
+        "trailingComma": "es5",
+        "bracketSpacing": true,
+        "parser": "flow",
+        "endOfLine": "auto"
+      }
+    ]
+  }
+}

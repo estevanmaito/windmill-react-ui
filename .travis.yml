@@ -1,0 +1,20 @@
+language: node_js
+cache: npm
+notifications:
+  email: false
+node_js:
+  - 12
+  - 14
+  - node
+install:
+  - npm install
+script:
+  - npm run lint
+  - npm run test:coverage
+  - npm run build
+after_success:
+  - npm run codecov
+  # - npm run semantic-release
+branches:
+  only:
+    - master
