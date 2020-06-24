@@ -7,7 +7,7 @@ import defaultTheme from './themes/default'
 
 const Button = React.forwardRef(function Button(props, ref) {
   const { tag, disabled, size, layout, block, className, ...other } = props
-  const theme = useContext(ThemeContext) || defaultTheme
+  const { button } = useContext(ThemeContext) || defaultTheme
 
   warn(
     size === 'icon' && !other['aria-label'],
@@ -17,36 +17,36 @@ const Button = React.forwardRef(function Button(props, ref) {
 
   const Component = tag
 
-  const baseStyle = theme['button-base']
-  const blockStyle = theme['button-block']
+  const baseStyle = button.base
+  const blockStyle = button.block
   const sizeStyles = {
-    larger: theme['button-size-larger'],
-    large: theme['button-size-large'],
-    regular: theme['button-size-regular'],
-    small: theme['button-size-small'],
-    icon: theme['button-size-icon'],
+    larger: button.size.larger,
+    large: button.size.large,
+    regular: button.size.regular,
+    small: button.size.small,
+    icon: button.size.icon,
   }
   const layoutStyles = {
-    primary: theme['button-primary-base'],
-    outline: theme['button-outline-base'],
-    link: theme['button-link-base'],
+    primary: button.primary.base,
+    outline: button.outline.base,
+    link: button.link.base,
   }
   const activeStyles = {
-    primary: theme['button-primary-active'],
-    outline: theme['button-outline-active'],
-    link: theme['button-link-active'],
+    primary: button.primary.active,
+    outline: button.outline.active,
+    link: button.link.active,
   }
   const disabledStyles = {
-    primary: theme['button-primary-disabled'],
-    outline: theme['button-outline-disabled'],
-    link: theme['button-link-disabled'],
+    primary: button.primary.disabled,
+    outline: button.outline.disabled,
+    link: button.link.disabled,
   }
 
   /**
    * Only used in DropdownItem.
    * Not meant for general use.
    */
-  const dropdownItemStyle = theme['button-dropdown-item']
+  const dropdownItemStyle = button.dropdownItem.base
 
   const cls =
     layout === '__dropdownItem'

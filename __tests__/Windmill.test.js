@@ -23,7 +23,9 @@ describe('Windmill Context', () => {
   it('should extend theme', () => {
     const expected = 'bg-red-600'
     const theme = {
-      'button-base': 'bg-red-600',
+      button: {
+        base: 'bg-red-600',
+      },
     }
     const wrapper = mount(
       <Windmill theme={theme}>
