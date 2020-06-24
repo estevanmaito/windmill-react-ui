@@ -17,14 +17,109 @@ Projects using it: [Windmill Dashboard React](https://github.com/estevanmaito/wi
 
 Be the most accessible it can be out of the box and the fastest way to production.
 
-## Roadmap
+## 🚀 Usage
+
+Install
+
+```sh
+npm i windmill-react-ui
+```
+
+Place `Windmill` at the root of your project (the order doesn't matter, as long as your application is inside).
+
+```js
+// index.js
+import React from 'react'
+import ReactDOM from 'react-dom'
+import App from './App'
+import { Windmill } from 'windmill-react-ui'
+
+ReactDOM.render(
+  <Windmill>
+    <App />
+  </Windmill>,
+  document.getElementById('root')
+)
+```
+
+Use components inside your project
+
+```js
+import { Button } from 'windmill-react-ui'
+
+function App() {
+  return <Button>Hi there!</Button>
+}
+
+export default App
+```
+
+### Changing styles and theme
+
+Windmill React UI comes with 2 themes: light (default) and dark. To choose a theme, pass it to `Windmill`. Only light theme:
+
+```diff
+import { Windmill } from 'windmill-react-ui'
++ import { light } from 'windmill-react-ui/themes'
+
+ReactDOM.render(
+- <Windmill>
++ <Windmill theme={light}>
+    <App />
+  </Windmill>,
+  document.getElementById('root')
+)
+```
+
+To use only the dark theme, pass it to the `theme` prop and pass `'dark'` to the `mode` prop:
+
+```diff
+import { Windmill } from 'windmill-react-ui'
++ import { dark } from 'windmill-react-ui/themes'
+
+ReactDOM.render(
+- <Windmill>
++ <Windmill theme={dark} mode={'dark'}>
+    <App />
+  </Windmill>,
+  document.getElementById('root')
+)
+```
+
+### How mode works and dynamic theme changing
+
+As you've seen above, `Windmill` also expects a `mode` props, that expects one of two values: `light` or `dark`.
+
+You can use it to control the theme using, for example, a button in your UI or manually, or you can just import a helper that just toggles the theme, between light and dark. Inside your component:
+
+```diff
+import { Button } from 'windmill-react-ui'
++ import { toggleTheme } from 'windmill-react-ui/themes'
+
+function App() {
+-  return <Button>Hi there!</Button>
++  return <Button onClick={toggleTheme}>Change theme</Button>
+}
+
+export default App
+```
+
+### Purge
+
+TODO
+
+- How to import default themes and pass it into purge
+- How to add own theme to purge
+
+## 🗺 Roadmap
 
 - [ ] Docs
   - [ ] Next.js + MDX (see [Tailwind Starter Kit](https://github.com/estevanmaito/tailwind-starter-kit))
 - [ ] Themes (separate themes into dark/light)
 - [ ] Development live server (currently using Styleguidist; polutes the `src` directory)
 - [ ] Scope Tailwind? Prefix? Use user config?
-  - I'm inclined to create a root theme file, with all classes used, for every element. This way users can import it and extend/modify, but it would be used to let purge know which classes are being used. But what about custom theme configs, like the `shadow-outline` custom plugin, or extended styles? Maybe create a plugin that could be imported from this package also?
+  - [x] Create a context to pass themes down
+  - I'm inclined to create a root theme file, with all classes used, for every element. This way users can import it and extend/modify, but it would be used to let purge know which classes are being used. But what about custom theme configs, like the `shadow-outline` custom plugin, extended styles and `multi-theme`? Maybe **create a plugin that could be imported from this package also**?
 
 ```js
 //tailwind.config.js
@@ -67,7 +162,7 @@ So, until we get to a point that the current components are in good shape and we
 
 How long will it take? A week, a month, it depends on the time I can put into it.
 
-## Contributing
+## 🔌 Contributing
 
 - Fork
 - Clone
