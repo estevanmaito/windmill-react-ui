@@ -56,41 +56,28 @@ export default App
 
 ### Changing styles and theme
 
-Windmill React UI comes with 2 themes: light (default) and dark. To choose a theme, pass it to `Windmill`. Only light theme:
+`Windmill` accepts two properties: `dark` and `theme`. With `theme` you can provide your own theme:
 
 ```diff
 import { Windmill } from 'windmill-react-ui'
-+ import { light } from 'windmill-react-ui/themes'
++ import myTheme from './myTheme.js'
 
 ReactDOM.render(
 - <Windmill>
-+ <Windmill theme={light}>
++ <Windmill theme={myTheme}>
     <App />
   </Windmill>,
   document.getElementById('root')
 )
 ```
 
-To use only the dark theme, pass it to the `theme` prop and pass `'dark'` to the `mode` prop:
+Note that your theme will be merge to the default theme, so you just need to change the properties you want (or everything if that fits you).
 
-```diff
-import { Windmill } from 'windmill-react-ui'
-+ import { dark } from 'windmill-react-ui/themes'
+While `dark` is a boolean property that just applies the `dark` theme. You should use this if you want just the dark theme applied to your project.
 
-ReactDOM.render(
-- <Windmill>
-+ <Windmill theme={dark} mode={'dark'}>
-    <App />
-  </Windmill>,
-  document.getElementById('root')
-)
-```
+### Dynamic theme changing
 
-### How mode works and dynamic theme changing
-
-As you've seen above, `Windmill` also expects a `mode` props, that expects one of two values: `light` or `dark`.
-
-You can use it to control the theme using, for example, a button in your UI or manually, or you can just import a helper that just toggles the theme, between light and dark. Inside your component:
+Import a helper that just toggles the theme, between light and dark. Inside your component:
 
 ```diff
 import { Button } from 'windmill-react-ui'
@@ -115,7 +102,8 @@ TODO
 
 - [ ] Docs
   - [ ] Next.js + MDX (see [Tailwind Starter Kit](https://github.com/estevanmaito/tailwind-starter-kit))
-- [ ] Themes (separate themes into dark/light)
+- [ ] Themes (separate themes into dark/light?)
+- [ ] Save user preferences to `localStorage` and get `prefers-color-scheme`
 - [ ] Development live server (currently using Styleguidist; polutes the `src` directory)
 - [ ] Scope Tailwind? Prefix? Use user config?
   - [x] Create a context to pass themes down
