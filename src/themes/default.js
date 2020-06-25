@@ -1,4 +1,10 @@
 export default {
+  // HelperText
+  helperText: {
+    base: 'text-xs',
+    valid: 'text-green-600 dark:text-green-400',
+    invalid: 'text-red-600 dark:text-red-400',
+  },
   // Card
   card: {
     base: 'min-w-0 rounded-lg shadow-xs',
