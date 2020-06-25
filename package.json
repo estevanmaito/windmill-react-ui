@@ -5,6 +5,7 @@
   "main": "dist/index.js",
   "files": [
     "dist",
+    "plugin.js",
     "README.md"
   ],
   "scripts": {
@@ -29,20 +30,21 @@
     "tailwindcss": ">=1.4.6"
   },
   "dependencies": {
+    "@tailwindcss/custom-forms": "0.2.1",
     "classnames": "2.2.6",
+    "color": "3.1.2",
     "prop-types": "15.7.2",
     "react-focus-lock": "2.4.0",
-    "react-transition-group": "4.4.1"
+    "react-transition-group": "4.4.1",
+    "tailwindcss-multi-theme": "1.0.3"
   },
   "devDependencies": {
     "@babel/cli": "7.8.4",
     "@babel/core": "7.9.6",
     "@babel/preset-env": "7.9.6",
     "@babel/preset-react": "7.10.1",
-    "@tailwindcss/custom-forms": "0.2.1",
     "babel-loader": "8.1.0",
     "codecov": "3.6.5",
-    "color": "3.1.2",
     "commitizen": "4.1.2",
     "css-loader": "3.6.0",
     "cz-conventional-changelog": "3.2.0",
@@ -66,7 +68,6 @@
     "rimraf": "3.0.2",
     "semantic-release": "^17.0.7",
     "style-loader": "1.2.1",
-    "tailwindcss-multi-theme": "1.0.3",
     "tailwindcss": "1.4.6",
     "webpack": "5.0.0-beta.18",
     "webpack-cli": "4.0.0-beta.8"
