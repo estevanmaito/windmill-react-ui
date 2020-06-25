@@ -1,3 +1,4 @@
+export { default as Windmill } from './Windmill'
 export { default as Button } from './Button'
 export { default as Card } from './Card'
 export { default as CardBody } from './CardBody'
