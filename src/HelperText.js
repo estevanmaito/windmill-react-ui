@@ -27,7 +27,7 @@ function HelperText({ children, valid, className }) {
 }
 
 HelperText.propTypes = {
-  children: PropTypes.element,
+  children: PropTypes.node,
   valid: PropTypes.bool,
   className: PropTypes.string,
 }

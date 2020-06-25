@@ -30,7 +30,7 @@ const Select = React.forwardRef(function Select(props, ref) {
 })
 
 Select.propTypes = {
-  children: PropTypes.element,
+  children: PropTypes.node,
   multiple: PropTypes.bool,
   disabled: PropTypes.bool,
   className: PropTypes.string,
