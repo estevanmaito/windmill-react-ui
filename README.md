@@ -125,7 +125,7 @@ plugins: [windmillPlugin()]
 - [x] Card
 - [ ] Dropdown
 - [x] Form
-- [ ] Modal
+- [x] Modal
 - [ ] Table
 - [ ] Avatar
 - [x] Transition

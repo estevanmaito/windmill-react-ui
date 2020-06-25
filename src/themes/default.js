@@ -1,4 +1,22 @@
 export default {
+  // Modal
+  modal: {
+    base:
+      'w-full px-6 py-4 overflow-hidden bg-white rounded-t-lg dark:bg-gray-800 sm:rounded-lg sm:m-4 sm:max-w-xl',
+  },
+  // ModalBody
+  modalBody: {
+    base: 'mb-6 text-sm text-gray-700 dark:text-gray-400',
+  },
+  // ModalFooter
+  modalFooter: {
+    base:
+      'flex flex-col items-center justify-end px-6 py-3 -mx-6 -mb-4 space-y-4 sm:space-y-0 sm:space-x-6 sm:flex-row bg-gray-50 dark:bg-gray-800',
+  },
+  // ModalHeader
+  modalHeader: {
+    base: 'mt-4 mb-2 text-lg font-semibold text-gray-700 dark:text-gray-300',
+  },
   // Badge
   badge: {
     base: 'px-2 py-1 text-xs font-medium leading-none rounded-full',
