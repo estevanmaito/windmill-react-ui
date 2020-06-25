@@ -5,6 +5,7 @@
   "main": "dist/index.js",
   "files": [
     "dist",
+    "themes.js",
     "plugin.js",
     "README.md"
   ],

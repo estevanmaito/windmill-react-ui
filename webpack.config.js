@@ -10,6 +10,7 @@ module.exports = {
   },
   externals: {
     react: 'react',
+    'react-dom': 'reactDOM',
   },
   module: {
     rules: [
