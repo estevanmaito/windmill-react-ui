@@ -1,4 +1,19 @@
 export default {
+  // Input
+  input: {
+    base:
+      'block w-full text-sm dark:border-gray-600 focus:outline-none dark:text-gray-300 form-input',
+    active:
+      'focus:border-purple-400 focus:shadow-outline-purple dark:focus:border-gray-600 dark:focus:shadow-outline-gray dark:bg-gray-700',
+    disabled: 'cursor-not-allowed opacity-50 bg-gray-300 dark:bg-gray-800',
+    valid: 'border-green-600 dark:bg-gray-700 focus:border-green-400 focus:shadow-outline-green',
+    invalid:
+      'border-red-600 dark:text-gray-300 dark:bg-gray-700 focus:border-red-400 focus:shadow-outline-red',
+    radio:
+      'text-purple-600 form-radio focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray',
+    checkbox:
+      'text-purple-600 form-checkbox focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray',
+  },
   // HelperText
   helperText: {
     base: 'text-xs',
