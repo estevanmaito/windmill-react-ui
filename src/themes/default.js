@@ -1,4 +1,12 @@
 export default {
+  select: {
+    base:
+      'block w-full text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray',
+    select: 'form-select',
+    multiple: 'form-multiselect',
+    disabled: 'cursor-not-allowed opacity-50 bg-gray-300 dark:bg-gray-800',
+  },
+  // Label
   label: {
     base: 'block text-sm text-gray-700 dark:text-gray-400',
     // check and radio get this same style
