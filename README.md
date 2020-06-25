@@ -129,7 +129,7 @@ plugins: [windmillPlugin()]
 - [ ] Table
 - [ ] Avatar
 - [x] Transition
-- [ ] Backdrop
+- [x] Backdrop
 - [ ] Badge
 
 Things that are not in the plans for the near future and why:

@@ -1,4 +1,9 @@
 export default {
+  // Backdrop
+  backdrop: {
+    base:
+      'fixed inset-0 z-20 flex items-end bg-black bg-opacity-50 sm:items-center sm:justify-center',
+  },
   // Textarea
   textarea: {
     base:
