@@ -130,7 +130,7 @@ plugins: [windmillPlugin()]
 - [ ] Avatar
 - [x] Transition
 - [x] Backdrop
-- [ ] Badge
+- [x] Badge
 
 Things that are not in the plans for the near future and why:
 
