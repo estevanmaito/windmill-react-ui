@@ -2,7 +2,7 @@ import React from 'react'
 import { mount } from 'enzyme'
 import Select from '../src/Select'
 
-describe('Label', () => {
+describe('Select', () => {
   it('should render without crashing', () => {
     mount(<Select />)
   })
