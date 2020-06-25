@@ -1,5 +1,5 @@
 module.exports = {
-  collectCoverageFrom: ['src/**/*.js'],
+  collectCoverageFrom: ['src/**/*.js', '!src/Transition.js'],
   setupFilesAfterEnv: ['./setupTests.js'],
   coverageThreshold: {
     global: {

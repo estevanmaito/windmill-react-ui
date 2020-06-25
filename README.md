@@ -122,13 +122,13 @@ plugins: [windmillPlugin()]
 ### Components
 
 - [x] Button
-- [ ] Card
+- [x] Card
 - [ ] Dropdown
-- [ ] Form
+- [x] Form
 - [ ] Modal
 - [ ] Table
 - [ ] Avatar
-- [ ] Transition
+- [x] Transition
 - [ ] Backdrop
 - [ ] Badge
 
