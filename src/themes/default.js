@@ -1,4 +1,10 @@
 export default {
+  label: {
+    base: 'block text-sm text-gray-700 dark:text-gray-400',
+    // check and radio get this same style
+    check: 'inline-flex items-center',
+    disabled: 'opacity-50 cursor-not-allowed',
+  },
   // Input
   input: {
     base:
