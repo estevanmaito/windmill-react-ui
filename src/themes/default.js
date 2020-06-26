@@ -1,4 +1,15 @@
 export default {
+  // DropdownItem
+  // this is the <li> that lives inside the Dropdown <ul>
+  // you're probably looking for the dropdownItem style inside button
+  dropdownItem: {
+    base: 'mb-2 last:mb-0',
+  },
+  // Dropdown
+  dropdown: {
+    base:
+      'absolute right-0 w-56 p-2 mt-2 text-gray-600 bg-white border border-gray-100 rounded-lg shadow-md min-w-max-content dark:text-gray-300 dark:border-gray-700 dark:bg-gray-700',
+  },
   // Avatar
   avatar: {
     base: 'relative rounded-full',
@@ -117,6 +128,7 @@ export default {
       active: 'hover:bg-gray-100 focus:shadow-outline-gray',
       disabled: 'opacity-50 cursor-not-allowed',
     },
+    // this is the button that lives inside the DropdownItem
     dropdownItem: {
       base:
         'inline-flex items-center cursor-pointer w-full px-2 py-1 text-sm font-medium transition-colors duration-150 rounded-md hover:bg-gray-100 hover:text-gray-800 dark:hover:bg-gray-800 dark:hover:text-gray-200',

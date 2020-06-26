@@ -120,7 +120,7 @@ plugins: [windmillPlugin()]
 
 - [x] Button
 - [x] Card
-- [ ] Dropdown
+- [x] Dropdown
 - [x] Form
 - [x] Modal
 - [ ] Table
