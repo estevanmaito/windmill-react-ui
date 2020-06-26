@@ -123,7 +123,7 @@ plugins: [windmillPlugin()]
 - [x] Dropdown
 - [x] Form
 - [x] Modal
-- [ ] Table
+- [x] Table
 - [x] Avatar
 - [x] Transition
 - [x] Backdrop

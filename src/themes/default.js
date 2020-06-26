@@ -1,4 +1,30 @@
 export default {
+  // TableFooter
+  tableFooter: {
+    base:
+      'flex flex-col justify-between px-4 py-3 text-xs font-semibold tracking-wide text-gray-500 uppercase border-t dark:border-gray-700 sm:flex-row bg-gray-50 dark:text-gray-400 dark:bg-gray-800',
+  },
+  // TableRow
+  tableRow: {
+    base: 'text-gray-700 dark:text-gray-400',
+  },
+  // TableHeader
+  tableHeader: {
+    base:
+      'text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800',
+  },
+  // TableContainer
+  tableContainer: {
+    base: 'w-full overflow-hidden rounded-lg shadow-xs',
+  },
+  // TableCell
+  tableCell: {
+    base: 'px-4 py-3',
+  },
+  // TableBody
+  tableBody: {
+    base: 'bg-white divide-y dark:divide-gray-700 dark:bg-gray-800',
+  },
   // DropdownItem
   // this is the <li> that lives inside the Dropdown <ul>
   // you're probably looking for the dropdownItem style inside button
