@@ -105,9 +105,6 @@ TODO
 - [ ] Themes (separate themes into dark/light?)
 - [ ] Save user preferences to `localStorage` and get `prefers-color-scheme`
 - [ ] Development live server (currently using Styleguidist; polutes the `src` directory)
-- [ ] Scope Tailwind? Prefix? Use user config?
-  - [x] Create a context to pass themes down
-  - I'm inclined to create a root theme file, with all classes used, for every element. This way users can import it and extend/modify, but it would be used to let purge know which classes are being used. But what about custom theme configs, like the `shadow-outline` custom plugin, extended styles and `multi-theme`? Maybe **create a plugin that could be imported from this package also**?
 
 ```js
 //tailwind.config.js
@@ -127,7 +124,7 @@ plugins: [windmillPlugin()]
 - [x] Form
 - [x] Modal
 - [ ] Table
-- [ ] Avatar
+- [x] Avatar
 - [x] Transition
 - [x] Backdrop
 - [x] Badge
