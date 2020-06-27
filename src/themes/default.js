@@ -1,4 +1,16 @@
 export default {
+  // Pagination
+  pagination: {
+    base: 'flex flex-col justify-between sm:flex-row',
+    navigationButton: {
+      base: 'px-3 py-1 rounded-md rounded-l-lg focus:outline-none focus:shadow-outline-purple',
+      disabled: 'cursor-not-allowed opacity-50',
+    },
+    pageButton: {
+      base: 'px-3 py-1 rounded-md focus:outline-none focus:shadow-outline-purple',
+      active: 'text-white transition-colors duration-150 bg-purple-600',
+    },
+  },
   // TableFooter
   tableFooter: {
     base:

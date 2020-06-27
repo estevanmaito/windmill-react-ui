@@ -128,6 +128,7 @@ plugins: [windmillPlugin()]
 - [x] Transition
 - [x] Backdrop
 - [x] Badge
+- [x] Pagination
 
 Things that are not in the plans for the near future and why:
 
