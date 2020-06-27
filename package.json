@@ -1,6 +1,6 @@
 {
   "name": "windmill-react-ui",
-  "version": "0.1.0-alpha.2",
+  "version": "0.1.0-alpha.3",
   "description": "React UI component library built with Tailwind CSS",
   "main": "dist/index.js",
   "files": [

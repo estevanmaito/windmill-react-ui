@@ -1,3 +1,10 @@
+# [0.1.0-alpha.3](https://github.com/estevanmaito/windmill-react-ui/compare/0.1.0-alpha.2...0.1.0-alpha.3) (2020-06-27)
+
+
+### Bug Fixes
+
+* **library:** export TableFooter ([04ac997](https://github.com/estevanmaito/windmill-react-ui/commit/04ac9971c083dcd20ac2c9e0922b5d61878abc87))
+
 # [0.1.0-alpha.2](https://github.com/estevanmaito/windmill-react-ui/compare/0.1.0-alpha.1...0.1.0-alpha.2) (2020-06-27)
 
 
