@@ -23,6 +23,7 @@
     "lint:fix": "eslint . --fix",
     "prebuild": "rimraf dist",
     "build": "webpack",
+    "prerelease": "npm run build",
     "release": "release-it",
     "semantic-release": "semantic-release"
   },
