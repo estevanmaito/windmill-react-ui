@@ -1,3 +1,10 @@
+# [0.1.0-alpha.4](https://github.com/estevanmaito/windmill-react-ui/compare/0.1.0-alpha.3...0.1.0-alpha.4) (2020-06-28)
+
+
+### Bug Fixes
+
+* **dropdown:** export dropdown item ([c177442](https://github.com/estevanmaito/windmill-react-ui/commit/c177442666aa4cb94b4b57c1d668691ed0416c5a))
+
 # [0.1.0-alpha.3](https://github.com/estevanmaito/windmill-react-ui/compare/0.1.0-alpha.2...0.1.0-alpha.3) (2020-06-27)
 
 
