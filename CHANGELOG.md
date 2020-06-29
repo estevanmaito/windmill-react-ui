@@ -1,3 +1,10 @@
+# [0.1.0-alpha.6](https://github.com/estevanmaito/windmill-react-ui/compare/0.1.0-alpha.5...0.1.0-alpha.6) (2020-06-29)
+
+
+### Features
+
+* **windmill:** add theme storage and user system preferences getter as default ([04c06ef](https://github.com/estevanmaito/windmill-react-ui/commit/04c06ef1888a5675a5f05b784996b6ea9e8c4133))
+
 # [0.1.0-alpha.5](https://github.com/estevanmaito/windmill-react-ui/compare/0.1.0-alpha.4...0.1.0-alpha.5) (2020-06-29)
 
 
