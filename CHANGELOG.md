@@ -1,3 +1,15 @@
+# [0.1.0-alpha.5](https://github.com/estevanmaito/windmill-react-ui/compare/0.1.0-alpha.4...0.1.0-alpha.5) (2020-06-29)
+
+
+### Bug Fixes
+
+* **backdrop:** reduce backdrop z-index ([732c546](https://github.com/estevanmaito/windmill-react-ui/commit/732c5462fb1b2a8ae890a0d62347c033ae0b39d0))
+
+
+### Features
+
+* **windmill:** expose current selected theme and a theme toggler ([73505bf](https://github.com/estevanmaito/windmill-react-ui/commit/73505bf8c9f8c55e68c2b4a7300bae91e4f3217c))
+
 # [0.1.0-alpha.4](https://github.com/estevanmaito/windmill-react-ui/compare/0.1.0-alpha.3...0.1.0-alpha.4) (2020-06-28)
 
 
