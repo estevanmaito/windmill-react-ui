@@ -1,7 +1,14 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { mount } from 'enzyme'
 import Button from '../src/Button'
 import Windmill from '../src/Windmill'
+import { ThemeContext } from '../src/context/ThemeContext'
+
+function TestButton() {
+  const { toggleTheme } = useContext(ThemeContext)
+
+  return <button onClick={toggleTheme}>Click</button>
+}
 
 beforeEach(() => {
   document.documentElement.className = ''
@@ -54,6 +61,21 @@ describe('Windmill Context', () => {
         <Button />
       </Windmill>
     )
+
+    expect(document.documentElement.getAttribute('class')).toBe(expected)
+  })
+
+  it('should execute the toggleTheme method', () => {
+    const expected = 'theme-dark'
+    const wrapper = mount(
+      <Windmill>
+        <TestButton />
+      </Windmill>
+    )
+
+    const button = wrapper.find('button')
+
+    button.simulate('click')
 
     expect(document.documentElement.getAttribute('class')).toBe(expected)
   })

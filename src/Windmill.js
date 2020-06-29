@@ -1,4 +1,4 @@
-import React, { useLayoutEffect } from 'react'
+import React, { useLayoutEffect, useMemo, useState } from 'react'
 import PropTypes from 'prop-types'
 import { ThemeContext } from './context/ThemeContext'
 import defaultTheme from './themes/default'
@@ -6,14 +6,30 @@ import { mergeDeep } from '../utils/mergeDeep'
 
 function Windmill({ children, theme, dark }) {
   const mergedTheme = mergeDeep(defaultTheme, theme)
+  const [isDark, setIsDark] = useState(false)
 
   useLayoutEffect(() => {
     if (dark) {
+      setIsDark(true)
       document.documentElement.classList.add(`theme-dark`)
     }
   }, [dark])
 
-  return <ThemeContext.Provider value={mergedTheme}>{children}</ThemeContext.Provider>
+  function toggleTheme() {
+    setIsDark(!isDark)
+    document.documentElement.classList.toggle('theme-dark')
+  }
+
+  const value = useMemo(
+    () => ({
+      theme: mergedTheme,
+      isDark,
+      toggleTheme,
+    }),
+    [theme, isDark]
+  )
+
+  return <ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>
 }
 
 Windmill.propTypes = {
