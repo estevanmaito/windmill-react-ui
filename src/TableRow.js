@@ -2,12 +2,13 @@ import React, { useContext } from 'react'
 import classNames from 'classnames'
 import PropTypes from 'prop-types'
 import { ThemeContext } from './context/ThemeContext'
-import defaultTheme from './themes/default'
 
 function TableRow(props) {
   const { className, children, ...other } = props
 
-  const { tableRow } = useContext(ThemeContext) || defaultTheme
+  const {
+    theme: { tableRow },
+  } = useContext(ThemeContext)
 
   const baseStyle = tableRow.base
 

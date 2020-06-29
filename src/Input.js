@@ -2,12 +2,13 @@ import React, { useContext } from 'react'
 import classNames from 'classnames'
 import PropTypes from 'prop-types'
 import { ThemeContext } from './context/ThemeContext'
-import defaultTheme from './themes/default'
 
 const Input = React.forwardRef(function Input(props, ref) {
   const { valid, disabled, className, type, ...other } = props
 
-  const { input } = useContext(ThemeContext) || defaultTheme
+  const {
+    theme: { input },
+  } = useContext(ThemeContext)
 
   const baseStyle = input.base
   const activeStyle = input.active

@@ -2,10 +2,11 @@ import React, { useContext } from 'react'
 import classNames from 'classnames'
 import PropTypes from 'prop-types'
 import { ThemeContext } from './context/ThemeContext'
-import defaultTheme from './themes/default'
 
 function Card({ className, children, colored }) {
-  const { card } = useContext(ThemeContext) || defaultTheme
+  const {
+    theme: { card },
+  } = useContext(ThemeContext)
 
   const baseStyle = card.base
   const uncoloredStyle = card.default

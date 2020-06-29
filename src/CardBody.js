@@ -2,10 +2,11 @@ import React, { useContext } from 'react'
 import classNames from 'classnames'
 import PropTypes from 'prop-types'
 import { ThemeContext } from './context/ThemeContext'
-import defaultTheme from './themes/default'
 
 function CardBody({ className, children }) {
-  const { cardBody } = useContext(ThemeContext) || defaultTheme
+  const {
+    theme: { cardBody },
+  } = useContext(ThemeContext)
 
   const baseStyle = cardBody.base
 

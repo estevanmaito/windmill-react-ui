@@ -2,10 +2,11 @@ import React, { useContext } from 'react'
 import classNames from 'classnames'
 import PropTypes from 'prop-types'
 import { ThemeContext } from './context/ThemeContext'
-import defaultTheme from './themes/default'
 
 function ModalFooter({ children, className }) {
-  const { modalFooter } = useContext(ThemeContext) || defaultTheme
+  const {
+    theme: { modalFooter },
+  } = useContext(ThemeContext)
 
   const baseStyle = modalFooter.base
 

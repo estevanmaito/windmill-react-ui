@@ -2,10 +2,11 @@ import React, { useContext } from 'react'
 import classNames from 'classnames'
 import PropTypes from 'prop-types'
 import { ThemeContext } from './context/ThemeContext'
-import defaultTheme from './themes/default'
 
 function HelperText({ children, valid, className }) {
-  const { helperText } = useContext(ThemeContext) || defaultTheme
+  const {
+    theme: { helperText },
+  } = useContext(ThemeContext)
 
   const baseStyle = helperText.base
   const validStyle = helperText.valid

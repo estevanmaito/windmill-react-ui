@@ -2,11 +2,12 @@ import React, { useContext } from 'react'
 import classNames from 'classnames'
 import PropTypes from 'prop-types'
 import { ThemeContext } from './context/ThemeContext'
-import defaultTheme from './themes/default'
 
 function Backdrop(props) {
   const { className, ...other } = props
-  const { backdrop } = useContext(ThemeContext) || defaultTheme
+  const {
+    theme: { backdrop },
+  } = useContext(ThemeContext)
 
   const baseStyle = backdrop.base
 

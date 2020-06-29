@@ -2,10 +2,11 @@ import React, { useContext } from 'react'
 import classNames from 'classnames'
 import PropTypes from 'prop-types'
 import { ThemeContext } from './context/ThemeContext'
-import defaultTheme from './themes/default'
 
 function Label({ children, check, radio, disabled, className }) {
-  const { label } = useContext(ThemeContext) || defaultTheme
+  const {
+    theme: { label },
+  } = useContext(ThemeContext)
 
   const baseStyle = label.base
   const checkStyle = label.check

@@ -2,10 +2,11 @@ import React, { useContext } from 'react'
 import classNames from 'classnames'
 import PropTypes from 'prop-types'
 import { ThemeContext } from './context/ThemeContext'
-import defaultTheme from './themes/default'
 
 function ModalHeader({ children, className }) {
-  const { modalHeader } = useContext(ThemeContext) || defaultTheme
+  const {
+    theme: { modalHeader },
+  } = useContext(ThemeContext)
 
   const baseStyle = modalHeader.base
 

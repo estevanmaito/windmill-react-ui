@@ -2,12 +2,13 @@ import React, { useContext } from 'react'
 import classNames from 'classnames'
 import PropTypes from 'prop-types'
 import { ThemeContext } from './context/ThemeContext'
-import defaultTheme from './themes/default'
 
 function TableHeader(props) {
   const { className, children, ...other } = props
 
-  const { tableHeader } = useContext(ThemeContext) || defaultTheme
+  const {
+    theme: { tableHeader },
+  } = useContext(ThemeContext)
 
   const baseStyle = tableHeader.base
 

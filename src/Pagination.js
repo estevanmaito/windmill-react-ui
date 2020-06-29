@@ -2,10 +2,11 @@ import React, { useState, useEffect, useContext } from 'react'
 import classNames from 'classnames'
 import PropTypes from 'prop-types'
 import { ThemeContext } from './context/ThemeContext'
-import defaultTheme from './themes/default'
 
 export function NavigationButton({ onClick, disabled, directionIcon }) {
-  const { pagination } = useContext(ThemeContext) || defaultTheme
+  const {
+    theme: { pagination },
+  } = useContext(ThemeContext)
 
   const baseStyle = pagination.navigationButton.base
   const disabledStyle = pagination.navigationButton.disabled
@@ -44,7 +45,9 @@ NavigationButton.propTypes = {
 }
 
 export function PageButton({ page, isActive, onClick }) {
-  const { pagination } = useContext(ThemeContext) || defaultTheme
+  const {
+    theme: { pagination },
+  } = useContext(ThemeContext)
 
   const baseStyle = pagination.pageButton.base
   const activeStyle = pagination.pageButton.active
@@ -129,7 +132,9 @@ function Pagination({ totalResults, resultsPerPage, label, onChange }) {
     onChange(activePage)
   }, [activePage])
 
-  const { pagination } = useContext(ThemeContext) || defaultTheme
+  const {
+    theme: { pagination },
+  } = useContext(ThemeContext)
 
   const baseStyle = pagination.base
 

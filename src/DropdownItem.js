@@ -1,14 +1,15 @@
 import React, { useContext } from 'react'
 import PropTypes from 'prop-types'
 import { ThemeContext } from './context/ThemeContext'
-import defaultTheme from './themes/default'
 import Button from './Button'
 
 const DropdownItem = React.forwardRef(function DropdownItem(props, ref) {
   // Note: className is passed to the inner Button
   const { className, children, ...other } = props
 
-  const { dropdownItem } = useContext(ThemeContext) || defaultTheme
+  const {
+    theme: { dropdownItem },
+  } = useContext(ThemeContext)
 
   const baseStyle = dropdownItem.base
 

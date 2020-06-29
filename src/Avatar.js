@@ -2,10 +2,11 @@ import React, { useContext } from 'react'
 import classNames from 'classnames'
 import PropTypes from 'prop-types'
 import { ThemeContext } from './context/ThemeContext'
-import defaultTheme from './themes/default'
 
 function Avatar({ size, img, alt, className, ...other }) {
-  const { avatar } = useContext(ThemeContext) || defaultTheme
+  const {
+    theme: { avatar },
+  } = useContext(ThemeContext)
 
   const baseStyle = avatar.base
   const sizeStyles = {

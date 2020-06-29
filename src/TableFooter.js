@@ -2,12 +2,13 @@ import React, { useContext } from 'react'
 import classNames from 'classnames'
 import PropTypes from 'prop-types'
 import { ThemeContext } from './context/ThemeContext'
-import defaultTheme from './themes/default'
 
 function TableFooter(props) {
   const { className, children, ...other } = props
 
-  const { tableFooter } = useContext(ThemeContext) || defaultTheme
+  const {
+    theme: { tableFooter },
+  } = useContext(ThemeContext)
 
   const baseStyle = tableFooter.base
 

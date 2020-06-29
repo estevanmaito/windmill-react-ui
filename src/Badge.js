@@ -2,12 +2,13 @@ import React, { useContext } from 'react'
 import classNames from 'classnames'
 import PropTypes from 'prop-types'
 import { ThemeContext } from './context/ThemeContext'
-import defaultTheme from './themes/default'
 
 function Badge(props) {
   const { className, children, type, ...other } = props
 
-  const { badge } = useContext(ThemeContext) || defaultTheme
+  const {
+    theme: { badge },
+  } = useContext(ThemeContext)
 
   const baseStyle = badge.base
   const typeStyle = {

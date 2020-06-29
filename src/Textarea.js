@@ -2,12 +2,13 @@ import React, { useContext } from 'react'
 import classNames from 'classnames'
 import PropTypes from 'prop-types'
 import { ThemeContext } from './context/ThemeContext'
-import defaultTheme from './themes/default'
 
 const Textarea = React.forwardRef(function Textarea(props, ref) {
   const { className, children, ...other } = props
 
-  const { textarea } = useContext(ThemeContext) || defaultTheme
+  const {
+    theme: { textarea },
+  } = useContext(ThemeContext)
 
   const baseStyle = textarea.base
 

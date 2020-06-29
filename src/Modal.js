@@ -6,12 +6,13 @@ import FocusLock from 'react-focus-lock'
 
 import PropTypes from 'prop-types'
 import { ThemeContext } from './context/ThemeContext'
-import defaultTheme from './themes/default'
 
 const Modal = React.forwardRef(function Modal(props, ref) {
   const { children, onClose, isOpen, ...other } = props
 
-  const { modal } = useContext(ThemeContext) || defaultTheme
+  const {
+    theme: { modal },
+  } = useContext(ThemeContext)
 
   const baseStyle = modal.base
 

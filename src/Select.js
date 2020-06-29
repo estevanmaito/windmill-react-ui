@@ -2,12 +2,13 @@ import React, { useContext } from 'react'
 import classNames from 'classnames'
 import PropTypes from 'prop-types'
 import { ThemeContext } from './context/ThemeContext'
-import defaultTheme from './themes/default'
 
 const Select = React.forwardRef(function Select(props, ref) {
   const { children, className, multiple, disabled, ...other } = props
 
-  const { select } = useContext(ThemeContext) || defaultTheme
+  const {
+    theme: { select },
+  } = useContext(ThemeContext)
 
   const baseStyle = select.base
   const selectStyle = select.select

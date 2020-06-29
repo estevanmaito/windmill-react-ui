@@ -2,12 +2,13 @@ import React, { useEffect, useContext } from 'react'
 import classNames from 'classnames'
 import PropTypes from 'prop-types'
 import { ThemeContext } from './context/ThemeContext'
-import defaultTheme from './themes/default'
 import Transition from './Transition'
 import FocusLock from 'react-focus-lock'
 
 function Dropdown({ children, onClose, isOpen, className, ...other }) {
-  const { dropdown } = useContext(ThemeContext) || defaultTheme
+  const {
+    theme: { dropdown },
+  } = useContext(ThemeContext)
 
   const baseStyle = dropdown.base
 
