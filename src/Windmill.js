@@ -7,6 +7,19 @@ import { mergeDeep } from '../utils/mergeDeep'
 function Windmill({ children, theme, dark }) {
   const mergedTheme = mergeDeep(defaultTheme, theme)
   const [isDark, setIsDark] = useState(false)
+  const userPrefersDark =
+    !!window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+
+  useLayoutEffect(() => {
+    const userPreference = JSON.parse(window.localStorage.getItem('dark')) || userPrefersDark
+    if (userPreference) {
+      document.documentElement.classList.add(`theme-dark`)
+    }
+  }, [])
+
+  useLayoutEffect(() => {
+    window.localStorage.setItem('dark', isDark)
+  }, [isDark])
 
   useLayoutEffect(() => {
     if (dark) {

@@ -1,3 +1,5 @@
+import { ThemeContext } from './context/ThemeContext'
+
 export { default as Windmill } from './Windmill'
 export { default as Button } from './Button'
 export { default as Card } from './Card'
@@ -25,3 +27,4 @@ export { default as TableHeader } from './TableHeader'
 export { default as TableFooter } from './TableFooter'
 export { default as TableRow } from './TableRow'
 export { default as Pagination } from './Pagination'
+export const WindmillContext = ThemeContext

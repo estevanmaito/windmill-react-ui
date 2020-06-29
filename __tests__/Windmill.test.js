@@ -2,19 +2,19 @@ import React, { useContext } from 'react'
 import { mount } from 'enzyme'
 import Button from '../src/Button'
 import Windmill from '../src/Windmill'
-import { ThemeContext } from '../src/context/ThemeContext'
+import { WindmillContext } from '../src'
 
 function TestButton() {
-  const { toggleTheme } = useContext(ThemeContext)
+  const { toggleTheme } = useContext(WindmillContext)
 
   return <button onClick={toggleTheme}>Click</button>
 }
 
-beforeEach(() => {
-  document.documentElement.className = ''
-})
-
 describe('Windmill Context', () => {
+  beforeEach(() => {
+    document.documentElement.className = ''
+  })
+
   it('should use defaultTheme styles', () => {
     const expected =
       'inline-flex items-center justify-center cursor-pointer leading-5 transition-colors duration-150 font-medium focus:outline-none'
@@ -54,17 +54,6 @@ describe('Windmill Context', () => {
     expect(document.documentElement.getAttribute('class')).toBe(expected)
   })
 
-  it('should add dark theme class to html element', () => {
-    const expected = 'theme-dark'
-    mount(
-      <Windmill dark>
-        <Button />
-      </Windmill>
-    )
-
-    expect(document.documentElement.getAttribute('class')).toBe(expected)
-  })
-
   it('should execute the toggleTheme method', () => {
     const expected = 'theme-dark'
     const wrapper = mount(
@@ -76,6 +65,38 @@ describe('Windmill Context', () => {
     const button = wrapper.find('button')
 
     button.simulate('click')
+
+    expect(document.documentElement.getAttribute('class')).toBe(expected)
+  })
+
+  it('should add dark theme based on users preference', () => {
+    Object.defineProperty(window, 'matchMedia', {
+      value: jest.fn(() => {
+        return {
+          matches: true,
+          addEventListener: jest.fn(),
+          removeEventListener: jest.fn(),
+        }
+      }),
+    })
+
+    const expected = 'theme-dark'
+    mount(
+      <Windmill>
+        <Button />
+      </Windmill>
+    )
+
+    expect(document.documentElement.getAttribute('class')).toBe(expected)
+  })
+
+  it('should add dark theme class to html element', () => {
+    const expected = 'theme-dark'
+    mount(
+      <Windmill dark>
+        <Button />
+      </Windmill>
+    )
 
     expect(document.documentElement.getAttribute('class')).toBe(expected)
   })
