@@ -1,3 +1,10 @@
+# [0.1.0-alpha.7](https://github.com/estevanmaito/windmill-react-ui/compare/0.1.0-alpha.6...0.1.0-alpha.7) (2020-06-30)
+
+
+### Bug Fixes
+
+* **windmill:** improve theme handling when user have stored theme ([d71b6df](https://github.com/estevanmaito/windmill-react-ui/commit/d71b6dfcebb2e78d2c72d1956d8d2d0e0bd3786c))
+
 # [0.1.0-alpha.6](https://github.com/estevanmaito/windmill-react-ui/compare/0.1.0-alpha.5...0.1.0-alpha.6) (2020-06-29)
 
 
