@@ -1,7 +1,7 @@
 export default {
   // Pagination
   pagination: {
-    base: 'flex flex-col justify-between sm:flex-row',
+    base: 'flex flex-col justify-between text-xs sm:flex-row',
     navigationButton: {
       base: 'px-3 py-1 rounded-md rounded-l-lg focus:outline-none focus:shadow-outline-purple',
       disabled: 'cursor-not-allowed opacity-50',
@@ -14,7 +14,7 @@ export default {
   // TableFooter
   tableFooter: {
     base:
-      'flex flex-col justify-between px-4 py-3 text-xs font-semibold tracking-wide text-gray-500 uppercase border-t dark:border-gray-700 sm:flex-row bg-gray-50 dark:text-gray-400 dark:bg-gray-800',
+      'px-4 py-3 border-t dark:border-gray-700 bg-gray-50 text-gray-500 dark:text-gray-400 dark:bg-gray-800',
   },
   // TableRow
   tableRow: {

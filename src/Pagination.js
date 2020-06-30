@@ -140,7 +140,7 @@ function Pagination({ totalResults, resultsPerPage, label, onChange }) {
 
   return (
     <div className={baseStyle}>
-      <span className="flex items-center">
+      <span className="flex items-center font-semibold tracking-wide uppercase">
         Showing {activePage * resultsPerPage - resultsPerPage + 1}-
         {Math.min.apply(this, [activePage * resultsPerPage, totalResults])} of {totalResults}
       </span>
