@@ -5,9 +5,9 @@ import Windmill from '../src/Windmill'
 import { WindmillContext } from '../src'
 
 function TestButton() {
-  const { toggleTheme } = useContext(WindmillContext)
+  const { toggleMode } = useContext(WindmillContext)
 
-  return <button onClick={toggleTheme}>Click</button>
+  return <button onClick={toggleMode}>Click</button>
 }
 
 describe('Windmill Context', () => {
@@ -44,7 +44,7 @@ describe('Windmill Context', () => {
   })
 
   it('should not add dark theme class to html element', () => {
-    const expected = ''
+    const expected = 'theme-light'
     mount(
       <Windmill>
         <Button />

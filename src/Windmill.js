@@ -1,45 +1,28 @@
-import React, { useLayoutEffect, useMemo, useState } from 'react'
+import React, { useLayoutEffect, useMemo } from 'react'
 import PropTypes from 'prop-types'
 import { ThemeContext } from './context/ThemeContext'
 import defaultTheme from './themes/default'
 import { mergeDeep } from '../utils/mergeDeep'
+import useDarkMode from '../utils/useDarkMode'
 
-function Windmill({ children, theme, dark }) {
-  const mergedTheme = mergeDeep(defaultTheme, theme)
-  const [isDark, setIsDark] = useState(false)
-  const userPrefersDark =
-    !!window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
-
-  useLayoutEffect(() => {
-    const userPreference = JSON.parse(window.localStorage.getItem('dark')) || userPrefersDark
-    if (userPreference) {
-      document.documentElement.classList.add(`theme-dark`)
-    }
-  }, [])
-
-  useLayoutEffect(() => {
-    window.localStorage.setItem('dark', isDark)
-  }, [isDark])
+function Windmill({ children, theme: customTheme, dark }) {
+  const mergedTheme = mergeDeep(defaultTheme, customTheme)
+  const [mode, setMode, toggleMode] = useDarkMode()
 
   useLayoutEffect(() => {
     if (dark) {
-      setIsDark(true)
+      setMode('dark')
       document.documentElement.classList.add(`theme-dark`)
     }
   }, [dark])
 
-  function toggleTheme() {
-    setIsDark(!isDark)
-    document.documentElement.classList.toggle('theme-dark')
-  }
-
   const value = useMemo(
     () => ({
       theme: mergedTheme,
-      isDark,
-      toggleTheme,
+      mode,
+      toggleMode,
     }),
-    [theme, isDark]
+    [mode]
   )
 
   return <ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>
