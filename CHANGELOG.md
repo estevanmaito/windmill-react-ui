@@ -1,3 +1,11 @@
+# [0.1.0-alpha.8](https://github.com/estevanmaito/windmill-react-ui/compare/0.1.0-alpha.7...0.1.0-alpha.8) (2020-06-30)
+
+
+### Bug Fixes
+
+* **defaulttheme:** export defaultTheme as Common JS and remove deprecated theme toggler ([d60e5c2](https://github.com/estevanmaito/windmill-react-ui/commit/d60e5c24d75206e753770630dce074cf028146dc))
+* **table pagination:** remove layout styles from table footer that were interfering with pagination ([f9e7b9d](https://github.com/estevanmaito/windmill-react-ui/commit/f9e7b9d3b53d415cc0c02f9376856f4c6564716a))
+
 # [0.1.0-alpha.7](https://github.com/estevanmaito/windmill-react-ui/compare/0.1.0-alpha.6...0.1.0-alpha.7) (2020-06-30)
 
 
