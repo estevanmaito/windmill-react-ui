@@ -163,7 +163,8 @@ export default {
     },
     link: {
       base: 'text-gray-600 dark:text-gray-400 focus:outline-none',
-      active: 'hover:bg-gray-100 focus:shadow-outline-gray',
+      active:
+        'dark:active:bg-transparent hover:bg-gray-100 focus:shadow-outline-gray dark:hover:bg-gray-500 dark:hover:text-gray-300 dark:hover:bg-opacity-10',
       disabled: 'opacity-50 cursor-not-allowed',
     },
     // this is the button that lives inside the DropdownItem

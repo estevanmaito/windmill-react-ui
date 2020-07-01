@@ -168,6 +168,11 @@ const minWidth = (theme) => ({
   ...theme('spacing'),
 })
 
+const backgroundOpacity = (theme) => ({
+  '10': '0.1',
+  ...theme('backgroundOpacity'),
+})
+
 const maxHeight = (theme) => ({
   '0': '0',
   xl: '36rem',
@@ -194,11 +199,13 @@ module.exports = plugin.withOptions(
     theme: {
       themeVariants: ['dark'],
       colors,
+      backgroundOpacity,
       maxHeight,
       minWidth,
       customForms,
     },
     variants: {
+      backgroundOpacity: ['dark:hover'],
       backgroundColor: [
         'hover',
         'focus',
