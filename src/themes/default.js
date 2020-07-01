@@ -87,7 +87,7 @@ export default {
   // Backdrop
   backdrop: {
     base:
-      'fixed inset-0 z-10 flex items-end bg-black bg-opacity-50 sm:items-center sm:justify-center',
+      'fixed inset-0 z-50 flex items-end bg-black bg-opacity-50 sm:items-center sm:justify-center',
   },
   // Textarea
   textarea: {
