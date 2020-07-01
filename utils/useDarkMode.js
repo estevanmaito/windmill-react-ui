@@ -1,13 +1,7 @@
 import { useEffect, useState } from 'react'
 
 export const useDarkMode = () => {
-  const userPreference =
-    !!window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
-
-  const [mode, setMode] = useState(
-    // use stored theme; fallback to user preference
-    window.localStorage.getItem('theme') || (userPreference ? 'dark' : 'light')
-  )
+  const [mode, setMode] = useState()
 
   const toggleMode = () => {
     if (mode === 'light') {
@@ -22,8 +16,20 @@ export const useDarkMode = () => {
   }
 
   useEffect(() => {
-    window.localStorage.setItem('theme', mode)
-    document.documentElement.classList.add(`theme-${mode}`)
+    const userPreference =
+      !!window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+
+    setMode(
+      // use stored theme; fallback to user preference
+      window.localStorage.getItem('theme') || (userPreference ? 'dark' : 'light')
+    )
+  }, [])
+
+  useEffect(() => {
+    if (mode) {
+      window.localStorage.setItem('theme', mode)
+      document.documentElement.classList.add(`theme-${mode}`)
+    }
   }, [mode])
 
   return [mode, setMode, toggleMode]
