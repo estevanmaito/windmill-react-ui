@@ -1,3 +1,10 @@
+# [0.1.0-alpha.10](https://github.com/estevanmaito/windmill-react-ui/compare/0.1.0-alpha.9...0.1.0-alpha.10) (2020-07-06)
+
+
+### Bug Fixes
+
+* **plugin:** fix call stack on backgroundOpacity ([a9b9038](https://github.com/estevanmaito/windmill-react-ui/commit/a9b90380c8d349417f3c190abd00f2b36985c06c))
+
 # [0.1.0-alpha.9](https://github.com/estevanmaito/windmill-react-ui/compare/0.1.0-alpha.8...0.1.0-alpha.9) (2020-07-06)
 
 
