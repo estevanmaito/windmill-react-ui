@@ -50,7 +50,7 @@ export default {
   },
   // Avatar
   avatar: {
-    base: 'relative rounded-full',
+    base: 'relative rounded-full inline-block',
     size: {
       large: 'w-10 h-10',
       regular: 'w-8 h-8',
