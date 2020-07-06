@@ -3,7 +3,7 @@ import classNames from 'classnames'
 import PropTypes from 'prop-types'
 import { ThemeContext } from './context/ThemeContext'
 
-function Avatar({ size, img, alt, className, ...other }) {
+function Avatar({ size, src, alt, className, ...other }) {
   const {
     theme: { avatar },
   } = useContext(ThemeContext)
@@ -19,7 +19,7 @@ function Avatar({ size, img, alt, className, ...other }) {
 
   return (
     <div className={cls} {...other}>
-      <img className="object-cover w-full h-full rounded-full" src={img} alt={alt} loading="lazy" />
+      <img className="object-cover w-full h-full rounded-full" src={src} alt={alt} loading="lazy" />
       <div className="absolute inset-0 rounded-full shadow-inner" aria-hidden="true"></div>
     </div>
   )
@@ -29,7 +29,7 @@ Avatar.propTypes = {
   size: PropTypes.oneOf(['large', 'regular', 'small']),
   className: PropTypes.string,
   alt: PropTypes.string,
-  img: PropTypes.any.isRequired,
+  src: PropTypes.any.isRequired,
 }
 
 Avatar.defaultProps = {
