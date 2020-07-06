@@ -1,3 +1,26 @@
+# [0.1.0-alpha.9](https://github.com/estevanmaito/windmill-react-ui/compare/0.1.0-alpha.8...0.1.0-alpha.9) (2020-07-06)
+
+
+### Bug Fixes
+
+* **avatar:** add inline-block to avatar ([c1d4dc1](https://github.com/estevanmaito/windmill-react-ui/commit/c1d4dc115e6e9aa2a74c376f769eb50e284da524))
+* **backdrop:** increase backdrop z-index ([951c489](https://github.com/estevanmaito/windmill-react-ui/commit/951c48946d663d1b9071b3d2073bcfcb8a06882a))
+* **button:** fix link style for dark buttons ([1002423](https://github.com/estevanmaito/windmill-react-ui/commit/1002423618d29ef8cab320b629c762f3d2b7d408)), closes [#4](https://github.com/estevanmaito/windmill-react-ui/issues/4)
+* **dark mode:** fix window not being available on SSR ([af2d464](https://github.com/estevanmaito/windmill-react-ui/commit/af2d46409ed719a7103f50d8915440082fd02787))
+
+
+### Code Refactoring
+
+* **avatar:** use src instead of img ([e988424](https://github.com/estevanmaito/windmill-react-ui/commit/e98842497c588b5bd33b4feedd5ad6beb8d9f771))
+
+
+### BREAKING CHANGES
+
+* **avatar:** Avatar now uses src instead of img to pass the image src
+* **avatar:** add inline-block
+* **button:** different colors for dark mode
+* **backdrop:** z-index increased from 10 to 50
+
 # [0.1.0-alpha.8](https://github.com/estevanmaito/windmill-react-ui/compare/0.1.0-alpha.7...0.1.0-alpha.8) (2020-06-30)
 
 
