@@ -1,4 +1,5 @@
 const plugin = require('tailwindcss/plugin')
+const defaultTheme = require('tailwindcss/defaultTheme')
 const Color = require('color')
 const customFormsPlugin = require('@tailwindcss/custom-forms')
 const multiThemePlugin = require('tailwindcss-multi-theme')
@@ -168,10 +169,10 @@ const minWidth = (theme) => ({
   ...theme('spacing'),
 })
 
-const backgroundOpacity = (theme) => ({
+const backgroundOpacity = {
   '10': '0.1',
-  ...theme('backgroundOpacity'),
-})
+  ...defaultTheme.backgroundOpacity,
+}
 
 const maxHeight = (theme) => ({
   '0': '0',
