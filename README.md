@@ -71,7 +71,7 @@ ReactDOM.render(
 )
 ```
 
-Note that your theme will be merge to the default theme, so you just need to change the properties you want (or everything if that fits you).
+Note that your theme will be merged to the default theme, so you just need to change the properties you want (or everything if that fits you).
 
 While `dark` is a boolean property that just applies the `dark` theme. You should use this if you want just the dark theme applied to your project.
 
