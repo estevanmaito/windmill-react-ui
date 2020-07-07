@@ -8,7 +8,7 @@ describe('Badge', () => {
   })
 
   it('should render with base styles', () => {
-    const expected = 'px-2 py-1 text-xs font-medium leading-none rounded-full'
+    const expected = 'inline-flex px-2 text-xs font-medium leading-5 rounded-full'
     const wrapper = mount(<Badge />)
 
     expect(wrapper.find('span').getDOMNode().getAttribute('class')).toContain(expected)
