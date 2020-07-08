@@ -1,5 +1,5 @@
-import React, { useEffect, useContext } from 'react'
-import ReactDOM from 'react-dom'
+import React, { useEffect, useContext, useState } from 'react'
+import { createPortal } from 'react-dom'
 import Backdrop from './Backdrop'
 import Transition from './Transition'
 import FocusLock from 'react-focus-lock'
@@ -29,7 +29,13 @@ const Modal = React.forwardRef(function Modal(props, ref) {
     }
   })
 
-  return ReactDOM.createPortal(
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  const modalComponent = (
     <Transition show={isOpen}>
       <>
         <Transition
@@ -85,9 +91,10 @@ const Modal = React.forwardRef(function Modal(props, ref) {
           </Backdrop>
         </Transition>
       </>
-    </Transition>,
-    document.body
+    </Transition>
   )
+
+  return mounted ? createPortal(modalComponent, document.body) : null
 })
 
 Modal.propTypes = {
