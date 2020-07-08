@@ -1,3 +1,17 @@
+# [0.1.0-alpha.11](https://github.com/estevanmaito/windmill-react-ui/compare/0.1.0-alpha.10...0.1.0-alpha.11) (2020-07-08)
+
+
+### Bug Fixes
+
+* **badge:** add flex styles to badge ([bf7c412](https://github.com/estevanmaito/windmill-react-ui/commit/bf7c412c0baf28079f8faeb143251f3efc0f904e))
+* **plugin:** fix backgroundOpacity variant overwrite ([d843446](https://github.com/estevanmaito/windmill-react-ui/commit/d84344612bf7f3dec6ed3dbcb6feeb789d787769))
+
+
+### BREAKING CHANGES
+
+* **badge:** it now behaves as inline-flex instead of default inline span. py-1 was also removed
+in favor of leading increase, so it better aligns in the center of the pill.
+
 # [0.1.0-alpha.10](https://github.com/estevanmaito/windmill-react-ui/compare/0.1.0-alpha.9...0.1.0-alpha.10) (2020-07-06)
 
 
