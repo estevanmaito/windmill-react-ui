@@ -92,7 +92,13 @@ export default {
   // Textarea
   textarea: {
     base:
-      'block w-full text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-textarea focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray',
+      'block w-full text-sm dark:text-gray-300 dark:border-gray-600 form-textarea focus:outline-none',
+    active:
+      'focus:border-purple-400 dark:focus:border-gray-600 dark:bg-gray-700 dark:focus:shadow-outline-gray focus:shadow-outline-purple',
+    disabled: 'cursor-not-allowed opacity-50 bg-gray-300 dark:bg-gray-800',
+    valid: 'border-green-600 dark:bg-gray-700 focus:border-green-400 focus:shadow-outline-green',
+    invalid:
+      'border-red-600 dark:text-gray-300 dark:bg-gray-700 focus:border-red-400 focus:shadow-outline-red',
   },
   // Select
   select: {
