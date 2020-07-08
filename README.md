@@ -100,10 +100,6 @@ TODO
 
 ## 🗺 Roadmap
 
-- [ ] Docs
-  - [ ] Next.js + MDX (see [Tailwind Starter Kit](https://github.com/estevanmaito/tailwind-starter-kit))
-- [ ] Themes (separate themes into dark/light?)
-- [ ] Save user preferences to `localStorage` and get `prefers-color-scheme`
 - [ ] Development live server (currently using Styleguidist; polutes the `src` directory)
 
 ```js
@@ -116,29 +112,7 @@ purge: [windmillTheme],
 plugins: [windmillPlugin()]
 ```
 
-### Components
-
-- [x] Button
-- [x] Card
-- [x] Dropdown
-- [x] Form
-- [x] Modal
-- [x] Table
-- [x] Avatar
-- [x] Transition
-- [x] Backdrop
-- [x] Badge
-- [x] Pagination
-
 Things that are not in the plans for the near future and why:
-
-#### Different button _states_ like 'danger', 'warning', 'pink', etc
-
-It introduces unnecessary noise. If you feel you need a red button to tell users that something is dangerous, you're approaching the problem wrongfully.
-
-- Colorblind people will see it in unpredictable colors;
-- You're probably giving the user an option like: Delete your account? [cancel][delete]; Here you have a primary and a secondary action, where you can use something like a `link` or `outline` button for cancel and a normal, primary button for delete.
-- If the action is too dangerous, you should implement additional confirmation, like a modal. Consider people have cats and they will step in their keyboards when focus is over the delete button. 🐱‍💻
 
 #### New components
 
