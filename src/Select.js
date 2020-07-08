@@ -24,7 +24,7 @@ const Select = React.forwardRef(function Select(props, ref) {
   )
 
   return (
-    <select className={cls} ref={ref} multiple={!!multiple} {...other}>
+    <select className={cls} ref={ref} disabled={disabled} multiple={!!multiple} {...other}>
       {children}
     </select>
   )
