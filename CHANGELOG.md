@@ -1,3 +1,11 @@
+# [0.1.0-alpha.12](https://github.com/estevanmaito/windmill-react-ui/compare/0.1.0-alpha.11...0.1.0-alpha.12) (2020-07-08)
+
+
+### Bug Fixes
+
+* **modal:** do not render modal if it is not on client ([2cbe55a](https://github.com/estevanmaito/windmill-react-ui/commit/2cbe55a61862456c650d1c2bc4f30f8874dabd67))
+* **plugin:** use opacity from theme for backgroundOpacity ([1c2931f](https://github.com/estevanmaito/windmill-react-ui/commit/1c2931f018f8f3af4ab0f84220aebfbc70af93bb))
+
 # [0.1.0-alpha.11](https://github.com/estevanmaito/windmill-react-ui/compare/0.1.0-alpha.10...0.1.0-alpha.11) (2020-07-08)
 
 
