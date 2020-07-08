@@ -206,7 +206,7 @@ module.exports = plugin.withOptions(
       customForms,
     },
     variants: {
-      backgroundOpacity: ['dark:hover'],
+      backgroundOpacity: ['responsive', 'hover', 'focus', 'dark:hover'],
       backgroundColor: [
         'hover',
         'focus',
