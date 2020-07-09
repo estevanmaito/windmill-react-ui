@@ -18,7 +18,7 @@ export default {
   },
   // TableRow
   tableRow: {
-    base: 'text-gray-700 dark:text-gray-400',
+    base: '',
   },
   // TableHeader
   tableHeader: {
@@ -35,7 +35,8 @@ export default {
   },
   // TableBody
   tableBody: {
-    base: 'bg-white divide-y dark:divide-gray-700 dark:bg-gray-800',
+    base:
+      'bg-white divide-y dark:divide-gray-700 dark:bg-gray-800 text-gray-700 dark:text-gray-400',
   },
   // DropdownItem
   // this is the <li> that lives inside the Dropdown <ul>

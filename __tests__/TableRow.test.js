@@ -13,8 +13,8 @@ describe('TableRow', () => {
     )
   })
 
-  it('should render with base styles', () => {
-    const expected = 'text-gray-700 dark:text-gray-400'
+  it('should not have base styles', () => {
+    const expected = ''
     const wrapper = mount(
       <table>
         <tbody>
@@ -23,6 +23,6 @@ describe('TableRow', () => {
       </table>
     )
 
-    expect(wrapper.find('tr').getDOMNode().getAttribute('class')).toContain(expected)
+    expect(wrapper.find('tr').getDOMNode().getAttribute('class')).toBe(expected)
   })
 })

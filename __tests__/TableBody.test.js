@@ -12,7 +12,8 @@ describe('TableBody', () => {
   })
 
   it('should render with base styles', () => {
-    const expected = 'bg-white divide-y dark:divide-gray-700 dark:bg-gray-800'
+    const expected =
+      'bg-white divide-y dark:divide-gray-700 dark:bg-gray-800 text-gray-700 dark:text-gray-400'
     const wrapper = mount(
       <table>
         <TableBody />
