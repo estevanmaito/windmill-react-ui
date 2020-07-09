@@ -102,11 +102,16 @@ export default {
   },
   // Select
   select: {
-    base:
-      'block w-full text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray',
+    base: 'block w-full text-sm dark:text-gray-300 focus:outline-none',
+    active:
+      'focus:border-purple-400 dark:border-gray-600 dark:bg-gray-700 focus:shadow-outline-purple dark:focus:shadow-outline-gray dark:focus:border-gray-600',
     select: 'form-select',
     multiple: 'form-multiselect',
     disabled: 'cursor-not-allowed opacity-50 bg-gray-300 dark:bg-gray-800',
+    valid:
+      'border-green-600 dark:bg-gray-700 focus:border-green-400 dark:focus:border-green-400 focus:shadow-outline-green dark:focus:shadow-outline-green',
+    invalid:
+      'border-red-600 dark:bg-gray-700 focus:border-red-400 dark:focus:border-red-400 focus:shadow-outline-red dark:focus:shadow-outline-red',
   },
   // Label
   label: {
