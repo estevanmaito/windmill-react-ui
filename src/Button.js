@@ -44,6 +44,11 @@ const Button = React.forwardRef(function Button(props, ref) {
     large: button.size.large,
     regular: button.size.regular,
     small: button.size.small,
+    /**
+     * Only used in Pagination.
+     * Not meant for general use.
+     */
+    pagination: button.size.pagination,
   }
   const iconSizeStyles = {
     larger: button.size.icon.larger,
@@ -107,7 +112,7 @@ Button.propTypes = {
   children: PropTypes.node,
   tag: PropTypes.string,
   disabled: PropTypes.bool,
-  size: PropTypes.oneOf(['larger', 'large', 'regular', 'small']),
+  size: PropTypes.oneOf(['larger', 'large', 'regular', 'small', 'pagination']),
   icon: PropTypes.any,
   iconLeft: PropTypes.any,
   iconRight: PropTypes.any,

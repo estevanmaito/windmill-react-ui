@@ -8,23 +8,6 @@ describe('NavigationButton', () => {
     mount(<NavigationButton directionIcon="prev" onClick={onClick} />)
   })
 
-  it('should render with base styles', () => {
-    const onClick = () => {}
-    const expected =
-      'px-3 py-1 rounded-md rounded-l-lg focus:outline-none focus:shadow-outline-purple'
-    const wrapper = mount(<NavigationButton directionIcon="prev" onClick={onClick} />)
-
-    expect(wrapper.find('button').getDOMNode().getAttribute('class')).toContain(expected)
-  })
-
-  it('should render with disabled styles', () => {
-    const onClick = () => {}
-    const expected = 'cursor-not-allowed opacity-50'
-    const wrapper = mount(<NavigationButton directionIcon="prev" disabled onClick={onClick} />)
-
-    expect(wrapper.find('button').getDOMNode().getAttribute('class')).toContain(expected)
-  })
-
   it('should contain "Previous" aria-label based on directionIcon', () => {
     const onClick = () => {}
     const expected = 'Previous'
@@ -39,6 +22,15 @@ describe('NavigationButton', () => {
     const wrapper = mount(<NavigationButton directionIcon="next" onClick={onClick} />)
 
     expect(wrapper.find('button').getDOMNode().getAttribute('aria-label')).toContain(expected)
+  })
+
+  it('should contain a child SVG', () => {
+    const onClick = () => {}
+    const expectedSvg = 'h-3 w-3'
+    const wrapper = mount(<NavigationButton directionIcon="prev" onClick={onClick} />)
+
+    expect(wrapper.find('svg')).toBeDefined()
+    expect(wrapper.find('svg').getDOMNode().getAttribute('class')).toContain(expectedSvg)
   })
 
   it('should call onClick', () => {
@@ -56,28 +48,20 @@ describe('PageButton', () => {
     mount(<PageButton page={1} onClick={onClick} />)
   })
 
-  it('should render with base styles', () => {
-    const onClick = () => {}
-    const expected = 'px-3 py-1 rounded-md focus:outline-none focus:shadow-outline-purple'
-    const wrapper = mount(<PageButton page={1} onClick={onClick} />)
-
-    expect(wrapper.find('button').getDOMNode().getAttribute('class')).toContain(expected)
-  })
-
-  it('should render with active styles', () => {
-    const onClick = () => {}
-    const expected = 'text-white transition-colors duration-150 bg-purple-600'
-    const wrapper = mount(<PageButton isActive page={1} onClick={onClick} />)
-
-    expect(wrapper.find('button').getDOMNode().getAttribute('class')).toContain(expected)
-  })
-
   it('should render the right page', () => {
     const onClick = () => {}
     const expected = 1
     const wrapper = mount(<PageButton isActive page={1} onClick={onClick} />)
 
     expect(wrapper.find('button').text()).toContain(expected)
+  })
+
+  it('should contain text-xs', () => {
+    const onClick = () => {}
+    const expected = 'text-xs'
+    const wrapper = mount(<PageButton isActive page={1} onClick={onClick} />)
+
+    expect(wrapper.find('button').getDOMNode().getAttribute('class')).toContain(expected)
   })
 
   it('should call onClick', () => {

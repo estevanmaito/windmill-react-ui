@@ -1,40 +1,46 @@
 import React, { useState, useEffect, useContext } from 'react'
-import classNames from 'classnames'
 import PropTypes from 'prop-types'
 import { ThemeContext } from './context/ThemeContext'
+import Button from './Button'
+
+function PrevIcon(props) {
+  return (
+    <svg {...props} aria-hidden="true" fill="currentColor" viewBox="0 0 20 20">
+      <path
+        d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
+        clipRule="evenodd"
+        fillRule="evenodd"
+      ></path>
+    </svg>
+  )
+}
+
+function NextIcon(props) {
+  return (
+    <svg {...props} aria-hidden="true" fill="currentColor" viewBox="0 0 20 20">
+      <path
+        d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+        clipRule="evenodd"
+        fillRule="evenodd"
+      ></path>
+    </svg>
+  )
+}
 
 export function NavigationButton({ onClick, disabled, directionIcon }) {
-  const {
-    theme: { pagination },
-  } = useContext(ThemeContext)
-
-  const baseStyle = pagination.navigationButton.base
-  const disabledStyle = pagination.navigationButton.disabled
-
-  const cls = classNames(baseStyle, disabled && disabledStyle)
-
   const ariaLabel = directionIcon === 'prev' ? 'Previous' : 'Next'
 
+  const icon = directionIcon === 'prev' ? PrevIcon : NextIcon
+
   return (
-    <button className={cls} onClick={onClick} aria-label={ariaLabel}>
-      {directionIcon === 'prev' ? (
-        <svg aria-hidden="true" className="w-4 h-4 fill-current" viewBox="0 0 20 20">
-          <path
-            d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
-            clipRule="evenodd"
-            fillRule="evenodd"
-          ></path>
-        </svg>
-      ) : (
-        <svg className="w-4 h-4 fill-current" aria-hidden="true" viewBox="0 0 20 20">
-          <path
-            d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
-            clipRule="evenodd"
-            fillRule="evenodd"
-          ></path>
-        </svg>
-      )}
-    </button>
+    <Button
+      size="small"
+      layout="link"
+      icon={icon}
+      onClick={onClick}
+      disabled={disabled}
+      aria-label={ariaLabel}
+    />
   )
 }
 
@@ -45,19 +51,10 @@ NavigationButton.propTypes = {
 }
 
 export function PageButton({ page, isActive, onClick }) {
-  const {
-    theme: { pagination },
-  } = useContext(ThemeContext)
-
-  const baseStyle = pagination.pageButton.base
-  const activeStyle = pagination.pageButton.active
-
-  const cls = classNames(baseStyle, isActive && activeStyle)
-
   return (
-    <button className={cls} onClick={onClick}>
+    <Button size="pagination" layout={isActive ? 'primary' : 'link'} onClick={onClick}>
       {page}
-    </button>
+    </Button>
   )
 }
 
@@ -79,14 +76,10 @@ function Pagination({ totalResults, resultsPerPage, label, onChange }) {
   const MAX_VISIBLE_PAGES = 7
 
   function handlePreviousClick() {
-    if (activePage === FIRST_PAGE) return false
-
     setActivePage(activePage - 1)
   }
 
   function handleNextClick() {
-    if (activePage === LAST_PAGE) return false
-
     setActivePage(activePage + 1)
   }
 

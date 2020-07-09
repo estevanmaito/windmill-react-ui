@@ -211,6 +211,15 @@ describe('DropdownItem Button', () => {
   })
 })
 
+describe('Pagination Button', () => {
+  it('should contain PageButton classes', () => {
+    const expected = 'px-3 py-1 rounded-md text-xs'
+    const wrapper = mount(<Button size="pagination" />)
+
+    expect(wrapper.find('button').getDOMNode().getAttribute('class')).toContain(expected)
+  })
+})
+
 describe('Icon', () => {
   it('should contain an svg as a children', () => {
     const wrapper = mount(

@@ -2,14 +2,6 @@ export default {
   // Pagination
   pagination: {
     base: 'flex flex-col justify-between text-xs sm:flex-row',
-    navigationButton: {
-      base: 'px-3 py-1 rounded-md rounded-l-lg focus:outline-none focus:shadow-outline-purple',
-      disabled: 'cursor-not-allowed opacity-50',
-    },
-    pageButton: {
-      base: 'px-3 py-1 rounded-md focus:outline-none focus:shadow-outline-purple',
-      active: 'text-white transition-colors duration-150 bg-purple-600',
-    },
   },
   // TableFooter
   tableFooter: {
@@ -166,6 +158,7 @@ export default {
         regular: 'p-2 rounded-lg',
         small: 'p-2 rounded-md',
       },
+      pagination: 'px-3 py-1 rounded-md text-xs',
     },
     // styles applied to the SVG icon
     icon: {
