@@ -1,3 +1,17 @@
+# [0.1.0-alpha.13](https://github.com/estevanmaito/windmill-react-ui/compare/0.1.0-alpha.12...0.1.0-alpha.13) (2020-07-09)
+
+
+### Bug Fixes
+
+* **form:** fix dark validation styles for input and textarea ([39af5d1](https://github.com/estevanmaito/windmill-react-ui/commit/39af5d1a9fc17c68e730f4ace177a9fcd62fa292))
+
+
+### Features
+
+* **select:** add disabled attribute ([d429e7a](https://github.com/estevanmaito/windmill-react-ui/commit/d429e7aa6ccbf0476509fe65ed3fb1f24024a613))
+* **select:** add validation styles ([71d4dfe](https://github.com/estevanmaito/windmill-react-ui/commit/71d4dfe4f4c453ecb0be53ce5331f3183055c6e0))
+* **textarea:** add validation and disabled styles ([6108c06](https://github.com/estevanmaito/windmill-react-ui/commit/6108c06584f4f3a91af587aee4963b3e50021abd))
+
 # [0.1.0-alpha.12](https://github.com/estevanmaito/windmill-react-ui/compare/0.1.0-alpha.11...0.1.0-alpha.12) (2020-07-08)
 
 
