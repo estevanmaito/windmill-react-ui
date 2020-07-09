@@ -1,6 +1,7 @@
 import React from 'react'
 import { mount } from 'enzyme'
 import Button from '../src/Button'
+import HeartIcon from './utils/heart.svg'
 
 describe('Base Button', () => {
   it('should render without crashing', () => {
@@ -11,6 +12,24 @@ describe('Base Button', () => {
     const wrapper = mount(<Button />)
 
     expect(wrapper.find('button')).toHaveLength(1)
+  })
+
+  it('should render a button with type button', () => {
+    const wrapper = mount(<Button />)
+
+    expect(wrapper.find('button[type="button"]')).toHaveLength(1)
+  })
+
+  it('should render a button with type submit', () => {
+    const wrapper = mount(<Button type="submit" />)
+
+    expect(wrapper.find('button[type="submit"]')).toHaveLength(1)
+  })
+
+  it('should render a button with type reset', () => {
+    const wrapper = mount(<Button type="reset" />)
+
+    expect(wrapper.find('button[type="reset"]')).toHaveLength(1)
   })
 
   it('should render an anchor element', () => {
@@ -42,12 +61,6 @@ describe('Base Button', () => {
     const wrapper = mount(<Button type="submit" />)
 
     expect(wrapper.find('button').getDOMNode().getAttribute('type')).toBe(expected)
-  })
-
-  it('should render an input button', () => {
-    const wrapper = mount(<Button tag="input" type="submit" />)
-
-    expect(wrapper.find('input')).toHaveLength(1)
   })
 
   it('should render a full width button', () => {
@@ -105,13 +118,6 @@ describe('Sizes', () => {
   it('should render a small button', () => {
     const expected = 'px-3 py-1 rounded-md text-sm'
     const wrapper = mount(<Button size="small" />)
-
-    expect(wrapper.find('button').getDOMNode().getAttribute('class')).toContain(expected)
-  })
-
-  it('should render an icon sized button', () => {
-    const expected = 'px-2 py-2 rounded-lg'
-    const wrapper = mount(<Button size="icon" aria-label="icon" />)
 
     expect(wrapper.find('button').getDOMNode().getAttribute('class')).toContain(expected)
   })
@@ -202,5 +208,111 @@ describe('DropdownItem Button', () => {
     const wrapper = mount(<Button layout="__dropdownItem" />)
 
     expect(wrapper.find('button').getDOMNode().getAttribute('class')).toContain(expected)
+  })
+})
+
+describe('Icon', () => {
+  it('should contain an svg as a children', () => {
+    const wrapper = mount(
+      <Button>
+        <HeartIcon />
+      </Button>
+    )
+
+    expect(wrapper.find('svg')).toBeDefined()
+  })
+
+  it('should contain an svg passed as prop', () => {
+    const wrapper = mount(<Button icon={HeartIcon}>Test</Button>)
+
+    expect(wrapper.find('svg')).toBeDefined()
+  })
+
+  it('should render an icon as the first child of the button, using icon', () => {
+    const wrapper = mount(<Button icon={HeartIcon}>Lorem</Button>)
+
+    expect(wrapper.find('button').children()).toHaveLength(2)
+    expect(wrapper.find('button').childAt(0).type()).toBe(HeartIcon)
+    expect(wrapper.find('button').childAt(1).text()).toBe('Lorem')
+  })
+
+  it('should render an icon as the first child of the button, using iconLeft', () => {
+    const wrapper = mount(<Button iconLeft={HeartIcon}>Lorem</Button>)
+
+    expect(wrapper.find('button').children()).toHaveLength(2)
+    expect(wrapper.find('button').childAt(0).type()).toBe(HeartIcon)
+    expect(wrapper.find('button').childAt(1).text()).toBe('Lorem')
+  })
+
+  it('should render an icon as the last child of the button', () => {
+    const wrapper = mount(<Button iconRight={HeartIcon}>Lorem</Button>)
+
+    expect(wrapper.find('button').children()).toHaveLength(2)
+    expect(wrapper.find('button').childAt(0).text()).toBe('Lorem')
+    expect(wrapper.find('button').childAt(1).type()).toBe(HeartIcon)
+  })
+
+  it('should not contain left or right styles', () => {
+    const expected = 'mr-2 -ml-1 ml-2 -mr-1'
+    const wrapper = mount(<Button icon={HeartIcon} />)
+
+    expect(wrapper.find('svg').getDOMNode().getAttribute('class')).not.toContain(expected)
+  })
+
+  it('should render an icon with left styles', () => {
+    const expected = 'mr-2 -ml-1'
+    const wrapper = mount(<Button iconLeft={HeartIcon}>Lorem</Button>)
+
+    expect(wrapper.find('svg').getDOMNode().getAttribute('class')).toContain(expected)
+  })
+
+  it('should render an icon with right styles', () => {
+    const expected = 'ml-2 -mr-1'
+    const wrapper = mount(<Button iconRight={HeartIcon}>Lorem</Button>)
+
+    expect(wrapper.find('svg').getDOMNode().getAttribute('class')).toContain(expected)
+  })
+
+  it('should render a button with regular styles if children is present', () => {
+    const expected = 'px-4 py-2 rounded-lg text-sm'
+    const wrapper = mount(<Button iconLeft={HeartIcon}>Lorem</Button>)
+
+    expect(wrapper.find('button').getDOMNode().getAttribute('class')).toContain(expected)
+  })
+
+  it('should contain regular sized button icon classes', () => {
+    const expectedButton = 'p-2 rounded-lg'
+    const expectedSvg = 'h-5 w-5'
+    const wrapper = mount(<Button icon={HeartIcon} />)
+
+    expect(wrapper.find('button').getDOMNode().getAttribute('class')).toContain(expectedButton)
+    expect(wrapper.find('svg').getDOMNode().getAttribute('class')).toContain(expectedSvg)
+  })
+
+  it('should contain small sized button icon classes', () => {
+    const expectedButton = 'p-2 rounded-md'
+    const expectedSvg = 'h-3 w-3'
+    const wrapper = mount(<Button size="small" icon={HeartIcon} />)
+
+    expect(wrapper.find('button').getDOMNode().getAttribute('class')).toContain(expectedButton)
+    expect(wrapper.find('svg').getDOMNode().getAttribute('class')).toContain(expectedSvg)
+  })
+
+  it('should contain large sized button icon classes', () => {
+    const expectedButton = 'p-3 rounded-lg'
+    const expectedSvg = 'h-5 w-5'
+    const wrapper = mount(<Button size="large" icon={HeartIcon} />)
+
+    expect(wrapper.find('button').getDOMNode().getAttribute('class')).toContain(expectedButton)
+    expect(wrapper.find('svg').getDOMNode().getAttribute('class')).toContain(expectedSvg)
+  })
+
+  it('should contain larger sized button icon classes', () => {
+    const expectedButton = 'p-4 rounded-lg'
+    const expectedSvg = 'h-5 w-5'
+    const wrapper = mount(<Button size="larger" icon={HeartIcon} />)
+
+    expect(wrapper.find('button').getDOMNode().getAttribute('class')).toContain(expectedButton)
+    expect(wrapper.find('svg').getDOMNode().getAttribute('class')).toContain(expectedSvg)
   })
 })
