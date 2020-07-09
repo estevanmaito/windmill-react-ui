@@ -187,7 +187,7 @@ describe('Link Button', () => {
 
   it('should contain link active classes', () => {
     const expected =
-      'dark:active:bg-transparent hover:bg-gray-100 focus:shadow-outline-gray dark:hover:bg-gray-500 dark:hover:text-gray-300 dark:hover:bg-opacity-10'
+      'active:bg-transparent hover:bg-gray-100 focus:shadow-outline-gray dark:hover:bg-gray-500 dark:hover:text-gray-300 dark:hover:bg-opacity-10'
     const wrapper = mount(<Button layout="link" />)
 
     expect(wrapper.find('button').getDOMNode().getAttribute('class')).toContain(expected)
