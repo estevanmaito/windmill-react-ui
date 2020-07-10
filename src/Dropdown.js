@@ -1,4 +1,4 @@
-import React, { useEffect, useContext } from 'react'
+import React, { useEffect, useContext, useRef } from 'react'
 import classNames from 'classnames'
 import PropTypes from 'prop-types'
 import { ThemeContext } from './context/ThemeContext'
@@ -18,9 +18,18 @@ function Dropdown({ children, onClose, isOpen, className, ...other }) {
     }
   }
 
+  const dropdownRef = useRef()
+  function handleClickOutside(e) {
+    if (dropdownRef.current && !dropdownRef.current.contains(e.target)) {
+      onClose()
+    }
+  }
+
   useEffect(() => {
+    document.addEventListener('click', handleClickOutside)
     document.addEventListener('keydown', handleEsc)
     return () => {
+      document.removeEventListener('click', handleClickOutside)
       document.removeEventListener('keydown', handleEsc)
     }
   })
@@ -36,7 +45,7 @@ function Dropdown({ children, onClose, isOpen, className, ...other }) {
     >
       <div>
         <FocusLock returnFocus>
-          <ul className={cls} aria-label="submenu" {...other}>
+          <ul className={cls} ref={dropdownRef} aria-label="submenu" {...other}>
             {children}
           </ul>
         </FocusLock>

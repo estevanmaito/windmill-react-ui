@@ -30,6 +30,32 @@ describe('Dropdown', () => {
     expect(onClose).toHaveBeenCalled()
   })
 
+  it('should close dropdown when clicking outside it', () => {
+    const map = {}
+    document.addEventListener = jest.fn((e, cb) => {
+      map[e] = cb
+    })
+    const onClose = jest.fn()
+    mount(<Dropdown isOpen={true} onClose={onClose} />)
+
+    map.click({ target: document.body })
+
+    expect(onClose).toHaveBeenCalled()
+  })
+
+  it('should not close dropdown when clicking inside it', () => {
+    const map = {}
+    document.addEventListener = jest.fn((e, cb) => {
+      map[e] = cb
+    })
+    const onClose = jest.fn()
+    const wrapper = mount(<Dropdown isOpen={true} onClose={onClose} />)
+
+    map.click({ target: wrapper.find('ul').getDOMNode() })
+
+    expect(onClose).not.toHaveBeenCalled()
+  })
+
   it('should not call onClose when other key than Esc is pressed', () => {
     const map = {}
     document.addEventListener = jest.fn((e, cb) => {
