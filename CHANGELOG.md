@@ -1,3 +1,27 @@
+# [0.1.0-alpha.14](https://github.com/estevanmaito/windmill-react-ui/compare/0.1.0-alpha.13...0.1.0-alpha.14) (2020-07-10)
+
+
+### Bug Fixes
+
+* **button:** fix link button active state ([cb0877e](https://github.com/estevanmaito/windmill-react-ui/commit/cb0877e19b2064a1556756da2b3ed6499ff1c8f6))
+
+
+### Features
+
+* **button:** add icon prop to button ([62453c1](https://github.com/estevanmaito/windmill-react-ui/commit/62453c19b9ba007fe40d634b9c9fa934220ca1bd))
+* **dropdown:** add outside click handler ([c316cd4](https://github.com/estevanmaito/windmill-react-ui/commit/c316cd44ceadfc11be021308f977396eb282baba))
+* **table:** remove styles from TableRow and apply to TableBody ([f5051c2](https://github.com/estevanmaito/windmill-react-ui/commit/f5051c216a3f776f09df85e397afb661cdaa97f5))
+
+
+### BREAKING CHANGES
+
+* **dropdown:** You don't need to provide an outside click handler to close the dropdown anymore as
+it's now done internally calling the passed onClose prop
+* **table:** TableRow could only be used inside TableBody because it would apply styles that
+would overwirte TableHead, like text colors. Now these styles live only inside TableBody, leaving
+TableRow without styles, even though it's entry is still in defaultTheme for further theme
+customization.
+
 # [0.1.0-alpha.13](https://github.com/estevanmaito/windmill-react-ui/compare/0.1.0-alpha.12...0.1.0-alpha.13) (2020-07-09)
 
 
