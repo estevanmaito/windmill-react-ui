@@ -32,7 +32,7 @@ function Dropdown({ children, onClose, isOpen, className, ...other }) {
       document.removeEventListener('click', handleClickOutside)
       document.removeEventListener('keydown', handleEsc)
     }
-  })
+  }, [isOpen])
 
   const cls = classNames(baseStyle, className)
 
