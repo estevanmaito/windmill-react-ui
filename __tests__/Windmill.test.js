@@ -43,8 +43,19 @@ describe('Windmill Context', () => {
     expect(wrapper.find('button').getDOMNode().getAttribute('class')).toContain(expected)
   })
 
-  it('should not add dark theme class to html element', () => {
+  it('should add theme-light class to html element is usePreferences is present', () => {
     const expected = 'theme-light'
+    mount(
+      <Windmill usePreferences>
+        <Button />
+      </Windmill>
+    )
+
+    expect(document.documentElement.getAttribute('class')).toBe(expected)
+  })
+
+  it('should not add any class to html element if usePreferences is ausent', () => {
+    const expected = ''
     mount(
       <Windmill>
         <Button />
@@ -57,7 +68,7 @@ describe('Windmill Context', () => {
   it('should execute the toggleTheme method', () => {
     const expected = 'theme-dark'
     const wrapper = mount(
-      <Windmill>
+      <Windmill usePreferences>
         <TestButton />
       </Windmill>
     )
@@ -82,7 +93,7 @@ describe('Windmill Context', () => {
 
     const expected = 'theme-dark'
     mount(
-      <Windmill>
+      <Windmill usePreferences>
         <Button />
       </Windmill>
     )
@@ -94,6 +105,17 @@ describe('Windmill Context', () => {
     const expected = 'theme-dark'
     mount(
       <Windmill dark>
+        <Button />
+      </Windmill>
+    )
+
+    expect(document.documentElement.getAttribute('class')).toBe(expected)
+  })
+
+  it('should add dark theme class to html element when usePreferences is enabled', () => {
+    const expected = 'theme-dark'
+    mount(
+      <Windmill dark usePreferences>
         <Button />
       </Windmill>
     )
