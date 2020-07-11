@@ -5,12 +5,13 @@ import { ThemeContext } from './context/ThemeContext'
 import Transition from './Transition'
 import FocusLock from 'react-focus-lock'
 
-function Dropdown({ children, onClose, isOpen, className, ...other }) {
+function Dropdown({ children, onClose, isOpen, className, align, ...other }) {
   const {
     theme: { dropdown },
   } = useContext(ThemeContext)
 
   const baseStyle = dropdown.base
+  const alignStyle = dropdown.align[align]
 
   function handleEsc(e) {
     if (e.key === 'Esc' || e.key === 'Escape') {
@@ -34,7 +35,7 @@ function Dropdown({ children, onClose, isOpen, className, ...other }) {
     }
   }, [isOpen])
 
-  const cls = classNames(baseStyle, className)
+  const cls = classNames(baseStyle, alignStyle, className)
 
   return (
     <Transition
@@ -59,6 +60,11 @@ Dropdown.propTypes = {
   className: PropTypes.string,
   onClose: PropTypes.func.isRequired,
   isOpen: PropTypes.bool.isRequired,
+  align: PropTypes.string,
+}
+
+Dropdown.defaultProps = {
+  align: 'left',
 }
 
 export default Dropdown

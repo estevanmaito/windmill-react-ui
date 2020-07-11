@@ -11,8 +11,32 @@ describe('Dropdown', () => {
   it('should render with base styles', () => {
     const onClose = jest.fn()
     const expected =
-      'absolute right-0 w-56 p-2 mt-2 text-gray-600 bg-white border border-gray-100 rounded-lg shadow-md min-w-max-content dark:text-gray-300 dark:border-gray-700 dark:bg-gray-700'
+      'absolute w-56 p-2 mt-2 text-gray-600 bg-white border border-gray-100 rounded-lg shadow-md min-w-max-content dark:text-gray-300 dark:border-gray-700 dark:bg-gray-700 left-0'
     const wrapper = mount(<Dropdown isOpen={true} onClose={onClose} />)
+
+    expect(wrapper.find('ul').getDOMNode().getAttribute('class')).toContain(expected)
+  })
+
+  it('should render aligned to the default position', () => {
+    const onClose = jest.fn()
+    const expected = 'left-0'
+    const wrapper = mount(<Dropdown isOpen={true} onClose={onClose} />)
+
+    expect(wrapper.find('ul').getDOMNode().getAttribute('class')).toContain(expected)
+  })
+
+  it('should render aligned to the left', () => {
+    const onClose = jest.fn()
+    const expected = 'left-0'
+    const wrapper = mount(<Dropdown align="left" isOpen={true} onClose={onClose} />)
+
+    expect(wrapper.find('ul').getDOMNode().getAttribute('class')).toContain(expected)
+  })
+
+  it('should render aligned to the right', () => {
+    const onClose = jest.fn()
+    const expected = 'right-0'
+    const wrapper = mount(<Dropdown align="right" isOpen={true} onClose={onClose} />)
 
     expect(wrapper.find('ul').getDOMNode().getAttribute('class')).toContain(expected)
   })
