@@ -1,6 +1,6 @@
 # Windmill React UI
 
-The Tailwind CSS React component library
+The component library for fast and accessible development of gorgeous interfaces.
 
 <p>
   <a href="https://codecov.io/gh/estevanmaito/windmill-react-ui"><img src="https://codecov.io/gh/estevanmaito/windmill-react-ui/branch/master/graph/badge.svg" alt="codecov" /></a>
@@ -11,11 +11,13 @@ The Tailwind CSS React component library
 
 Projects using it: [Windmill Dashboard React](https://github.com/estevanmaito/windmill-dashboard-react)
 
-- [Roadmap](#roadmap)
+- [Roadmap](#-roadmap)
 
 ## Mission
 
 Be the most accessible it can be out of the box and the fastest way to production.
+
+- [Go to docs to see complete, live examples](https://windmillui.com/react-ui)
 
 ## 🚀 Usage
 
@@ -25,7 +27,19 @@ Install
 npm i windmill-react-ui
 ```
 
-Place `Windmill` at the root of your project (the order doesn't matter, as long as your application is inside).
+Inside `tailwind.config.js`
+
+```js
+//tailwind.config.js
+// this is responsible for theme classes and could also be used for customization
+import windmillTheme from 'windmill-react-ui/defaultTheme'
+// solve the extension/custom styles problem
+import windmillPlugin from 'windmill-react-ui/plugin'
+purge: [windmillTheme],
+plugins: [windmillPlugin()]
+```
+
+Then place `Windmill` at the root of your project (the order doesn't matter, as long as your application is inside).
 
 ```js
 // index.js
@@ -54,63 +68,9 @@ function App() {
 export default App
 ```
 
-### Changing styles and theme
-
-`Windmill` accepts two properties: `dark` and `theme`. With `theme` you can provide your own theme:
-
-```diff
-import { Windmill } from 'windmill-react-ui'
-+ import myTheme from './myTheme.js'
-
-ReactDOM.render(
-- <Windmill>
-+ <Windmill theme={myTheme}>
-    <App />
-  </Windmill>,
-  document.getElementById('root')
-)
-```
-
-Note that your theme will be merged to the default theme, so you just need to change the properties you want (or everything if that fits you).
-
-While `dark` is a boolean property that just applies the `dark` theme. You should use this if you want just the dark theme applied to your project.
-
-### Dynamic theme changing
-
-Import a helper that just toggles the theme, between light and dark. Inside your component:
-
-```diff
-import { Button } from 'windmill-react-ui'
-+ import { toggleTheme } from 'windmill-react-ui/themes'
-
-function App() {
--  return <Button>Hi there!</Button>
-+  return <Button onClick={toggleTheme}>Change theme</Button>
-}
-
-export default App
-```
-
-### Purge
-
-TODO
-
-- How to import default themes and pass it into purge
-- How to add own theme to purge
-
 ## 🗺 Roadmap
 
 - [ ] Development live server (currently using Styleguidist; polutes the `src` directory)
-
-```js
-//tailwind.config.js
-// this is responsible for theme classes and could also be used for customization
-import windmillTheme from 'windmill-react-ui/defaultTheme'
-// solve the extension/custom styles problem
-import windmillPlugin from 'windmill-react-ui/plugin'
-purge: [windmillTheme],
-plugins: [windmillPlugin()]
-```
 
 Things that are not in the plans for the near future and why:
 
@@ -130,6 +90,8 @@ How long will it take? A week, a month, it depends on the time I can put into it
 - `npm run dev`
 
 It will start a local server at `localhost:6060` with all components rendered.
+
+> This needs improvement. I'm looking for a better way to create a local dev server.
 
 To see a new component rendered, add an `.md` file with the same name as the component (see current components), and add components inside like:
 
