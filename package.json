@@ -5,7 +5,8 @@
   "main": "dist/index.js",
   "files": [
     "dist",
-    "themes.js",
+    "lib",
+    "defaultTheme.js",
     "plugin.js",
     "README.md"
   ],
@@ -21,7 +22,8 @@
     "test:coverage": "jest --coverage",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "prebuild": "rimraf dist",
+    "build:lib": "babel src/themes --out-dir lib",
+    "prebuild": "rimraf dist && build:lib",
     "build": "webpack",
     "prerelease": "npm run build",
     "release": "release-it",

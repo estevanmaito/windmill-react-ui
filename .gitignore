@@ -3,3 +3,4 @@ coverage
 dist
 dev
 style/output.css
+lib
