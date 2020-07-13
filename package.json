@@ -23,7 +23,7 @@
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "build:lib": "babel src/themes --out-dir lib",
-    "prebuild": "rimraf dist && build:lib",
+    "prebuild": "rimraf dist && npm run build:lib",
     "build": "webpack",
     "prerelease": "npm run build",
     "release": "release-it",
