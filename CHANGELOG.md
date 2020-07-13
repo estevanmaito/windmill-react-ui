@@ -1,3 +1,34 @@
+# [0.1.0](https://github.com/estevanmaito/windmill-react-ui/compare/0.1.0-alpha.14...0.1.0) (2020-07-13)
+
+
+### Bug Fixes
+
+* **backdrop:** use z index 40 ([48c4348](https://github.com/estevanmaito/windmill-react-ui/commit/48c4348e6503296ddddabe5a44211f9302d88826))
+* **card:** hide card overflow ([7cfa036](https://github.com/estevanmaito/windmill-react-ui/commit/7cfa036f453e33d82b1f8d554278fe7f5b754b83))
+* **dropdown:** fix dropdown event handlers dependencies ([8490872](https://github.com/estevanmaito/windmill-react-ui/commit/84908725fbfe47f465b7ab2458ff6f535efb060e))
+* **pagination:** add base text styles to pagination ([9258df1](https://github.com/estevanmaito/windmill-react-ui/commit/9258df1f630eecd811220cd4807172fcfd4552b1))
+
+
+### Features
+
+* **defaulttheme:** add defaultTheme export for purge ([22ac723](https://github.com/estevanmaito/windmill-react-ui/commit/22ac72365c6a565802aab592f5aac1f97c764702))
+* **dropdown:** add align prop to dropdown ([7297426](https://github.com/estevanmaito/windmill-react-ui/commit/7297426205f85eaeaf1644085d5a8e0b4562a618))
+* **windmill:** add usePreferences to windmill ([a619a28](https://github.com/estevanmaito/windmill-react-ui/commit/a619a283afb8829fd6659c788261fbca8197b37f))
+
+
+### BREAKING CHANGES
+
+* **pagination:** Pagination now has its own text colors, instead of depending on parent styles or
+own classes. It makes it useful outside elements like TableFooter, which would add text styles
+before. The breaking change is that it doesn't inherit TableFooter (or any parent) colors anymore.
+* **windmill:** Now you need to use the prop `usePreferences` in the root Windmill component if you
+want access to theme utilities like the current theme or theme toggler, user preferences and user
+theme storage. These features were enabled by default before. You get the old behavior just adding
+`usePreferences` to the root Windmill component.
+* **dropdown:** Dropdown now accepts an align prop that can be 'right' or 'left'. It now defaults
+to 'left' if align is not used, which is the natural align of the DOM, instead of the old right
+alignment. Change your dropdowns to align="right" if you were using the old default style.
+
 # [0.1.0-alpha.14](https://github.com/estevanmaito/windmill-react-ui/compare/0.1.0-alpha.13...0.1.0-alpha.14) (2020-07-10)
 
 
