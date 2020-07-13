@@ -94,7 +94,8 @@ describe('Pagination', () => {
 
   it('should render with base styles', () => {
     const onChange = () => {}
-    const expected = 'flex flex-col justify-between text-xs sm:flex-row'
+    const expected =
+      'flex flex-col justify-between text-xs sm:flex-row text-gray-600 dark:text-gray-400'
     const wrapper = mount(<Pagination totalResults={123} label="Navigation" onChange={onChange} />)
 
     expect(wrapper.find(Pagination).getDOMNode().getAttribute('class')).toContain(expected)

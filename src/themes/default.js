@@ -1,7 +1,7 @@
 export default {
   // Pagination
   pagination: {
-    base: 'flex flex-col justify-between text-xs sm:flex-row',
+    base: 'flex flex-col justify-between text-xs sm:flex-row text-gray-600 dark:text-gray-400',
   },
   // TableFooter
   tableFooter: {
