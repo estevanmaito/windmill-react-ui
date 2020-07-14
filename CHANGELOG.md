@@ -1,3 +1,10 @@
+## [0.1.1](https://github.com/estevanmaito/windmill-react-ui/compare/0.1.0...0.1.1) (2020-07-14)
+
+
+### Bug Fixes
+
+* **defaulttheme:** export an object instead of string ([9a720e5](https://github.com/estevanmaito/windmill-react-ui/commit/9a720e5db588653977107684dfa4ec4bd04fa930))
+
 # [0.1.0](https://github.com/estevanmaito/windmill-react-ui/compare/0.1.0-alpha.14...0.1.0) (2020-07-13)
 
 
