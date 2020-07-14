@@ -4,7 +4,7 @@ The component library for fast and accessible development of gorgeous interfaces
 
 <p>
   <a href="https://codecov.io/gh/estevanmaito/windmill-react-ui"><img src="https://codecov.io/gh/estevanmaito/windmill-react-ui/branch/master/graph/badge.svg" alt="codecov" /></a>
-  <a href="https://travis-ci.com/github/estevanmaito/windmill-react-ui"><img src="https://img.shields.io/travis/estevanmaito/windmill-react-ui" alt="Travis (.org)" /></a>
+  <img src="https://github.com/estevanmaito/windmill-react-ui/workflows/Build/badge.svg" alt="Build" />
   <a href="https://www.npmjs.com/package/windmill-react-ui"><img src="https://img.shields.io/npm/v/windmill-react-ui" alt="npm" /></a>
   <a href="https://github.com/estevanmaito/windmill-react-ui/blob/master/LICENSE"><img src="https://img.shields.io/github/license/estevanmaito/windmill-react-ui" alt="MIT License" /></a>
 </p>
