@@ -1,3 +1,3 @@
-const defaultTheme = require('./lib/default')
+const defaultTheme = require('./lib/defaultTheme')
 
-module.exports = JSON.stringify(defaultTheme)
+module.exports = defaultTheme
