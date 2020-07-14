@@ -4,3 +4,4 @@ dist
 dev
 style/output.css
 lib
+.env

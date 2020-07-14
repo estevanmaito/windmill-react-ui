@@ -26,7 +26,7 @@
     "prebuild": "rimraf dist lib && npm run build:lib",
     "build": "webpack",
     "prerelease": "npm run build",
-    "release": "release-it",
+    "release": "dotenv release-it",
     "semantic-release": "semantic-release"
   },
   "peerDependencies": {
@@ -55,6 +55,7 @@
     "commitizen": "4.1.2",
     "css-loader": "3.6.0",
     "cz-conventional-changelog": "3.2.0",
+    "dotenv-cli": "3.2.0",
     "enzyme": "3.11.0",
     "enzyme-adapter-react-16": "1.15.2",
     "eslint": "7.0.0",
@@ -94,6 +95,9 @@
   },
   "homepage": "https://github.com/estevanmaito/windmill-react-ui#readme",
   "release-it": {
+    "github": {
+      "release": true
+    },
     "plugins": {
       "@release-it/conventional-changelog": {
         "preset": "angular",
