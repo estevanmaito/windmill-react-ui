@@ -1,3 +1,17 @@
+## [0.1.2-beta.0](https://github.com/estevanmaito/windmill-react-ui/compare/0.1.1...0.1.2-beta.0) (2020-07-17)
+
+
+### Features
+
+* **config:** add a global config wrapper ([6a6de16](https://github.com/estevanmaito/windmill-react-ui/commit/6a6de16190479fabc2613077f1844c97716190ad))
+
+
+### BREAKING CHANGES
+
+* **config:** Instead of adding Windmill files to `purge` or to `plugins`, now you only need to
+encapsulate your Tailwind config using this wrapper. It will automatically add what Windmill needs
+to work properly and you can use your `tailwind.config.js` file as before, as it will be merged.
+
 ## [0.1.1](https://github.com/estevanmaito/windmill-react-ui/compare/0.1.0...0.1.1) (2020-07-14)
 
 
