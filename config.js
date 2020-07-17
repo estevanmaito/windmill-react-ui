@@ -1,4 +1,4 @@
-const plugin = require('tailwindcss/plugin')
+const deepMerge = require('deepmerge')
 const Color = require('color')
 const customFormsPlugin = require('@tailwindcss/custom-forms')
 const multiThemePlugin = require('tailwindcss-multi-theme')
@@ -189,49 +189,78 @@ const customForms = (theme) => ({
   },
 })
 
-module.exports = plugin.withOptions(
-  () => (options) => {
-    customFormsPlugin(options)
-    multiThemePlugin(options)
-    shadowOutlinePlugin(options)
+const windmillConfig = {
+  purge: {
+    content: [
+      'node_modules/windmill-react-ui/lib/defaultTheme.js',
+      'node_modules/windmill-react-ui/dist/index.js',
+    ],
+    options: {
+      whitelist: ['theme-dark'],
+    },
   },
-  () => ({
-    theme: {
-      themeVariants: ['dark'],
-      colors,
-      backgroundOpacity,
-      maxHeight,
-      minWidth,
-      customForms,
-    },
-    variants: {
-      backgroundOpacity: ['responsive', 'hover', 'focus', 'dark:hover'],
-      backgroundColor: [
-        'hover',
-        'focus',
-        'active',
-        'odd',
-        'dark',
-        'dark:hover',
-        'dark:focus',
-        'dark:active',
-        'dark:odd',
-      ],
-      display: ['responsive', 'dark'],
-      textColor: [
-        'focus-within',
-        'hover',
-        'active',
-        'dark',
-        'dark:focus-within',
-        'dark:hover',
-        'dark:active',
-      ],
-      placeholderColor: ['focus', 'dark', 'dark:focus'],
-      borderColor: ['focus', 'hover', 'dark', 'dark:focus', 'dark:hover'],
-      divideColor: ['dark'],
-      boxShadow: ['focus', 'dark:focus'],
-      margin: ['responsive', 'last'],
-    },
-  })
-)
+  theme: {
+    themeVariants: ['dark'],
+    colors,
+    backgroundOpacity,
+    maxHeight,
+    minWidth,
+    customForms,
+  },
+  variants: {
+    backgroundOpacity: ['responsive', 'hover', 'focus', 'dark:hover'],
+    backgroundColor: [
+      'hover',
+      'focus',
+      'active',
+      'odd',
+      'dark',
+      'dark:hover',
+      'dark:focus',
+      'dark:active',
+      'dark:odd',
+    ],
+    display: ['responsive', 'dark'],
+    textColor: [
+      'focus-within',
+      'hover',
+      'active',
+      'dark',
+      'dark:focus-within',
+      'dark:hover',
+      'dark:active',
+    ],
+    placeholderColor: ['focus', 'dark', 'dark:focus'],
+    borderColor: ['responsive', 'hover', 'focus', 'dark', 'dark:focus', 'dark:hover'],
+    divideColor: ['dark'],
+    boxShadow: ['focus', 'dark:focus'],
+    margin: ['responsive', 'last'],
+  },
+  plugins: [customFormsPlugin, multiThemePlugin, shadowOutlinePlugin],
+}
+
+function arrayMergeFn(destinationArray, sourceArray) {
+  return destinationArray.concat(sourceArray).reduce((acc, cur) => {
+    if (acc.includes(cur)) return acc
+    return [...acc, cur]
+  }, [])
+}
+
+/**
+ * Merge Windmill and Tailwind CSS configurations
+ * @param {object} tailwindConfig - Tailwind config object
+ * @return {object} new config object
+ */
+function wrapper(tailwindConfig) {
+  let purge
+  if (Array.isArray(tailwindConfig.purge)) {
+    purge = {
+      content: tailwindConfig.purge,
+    }
+  } else {
+    purge = tailwindConfig.purge
+  }
+  return deepMerge({ ...tailwindConfig, purge }, windmillConfig, { arrayMerge: arrayMergeFn })
+}
+
+module.exports = wrapper

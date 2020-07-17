@@ -5,9 +5,7 @@
   "main": "dist/index.js",
   "files": [
     "dist",
-    "lib",
-    "defaultTheme.js",
-    "plugin.js",
+    "config.js",
     "README.md"
   ],
   "scripts": {
@@ -27,6 +25,7 @@
     "build": "webpack",
     "prerelease": "npm run build",
     "release": "dotenv release-it",
+    "pre:release": "dotenv release-it -- --preRelease=beta",
     "semantic-release": "semantic-release"
   },
   "peerDependencies": {
@@ -38,6 +37,7 @@
     "@tailwindcss/custom-forms": "0.2.1",
     "classnames": "2.2.6",
     "color": "3.1.2",
+    "deepmerge": "4.2.2",
     "prop-types": "15.7.2",
     "react-focus-lock": "2.4.0",
     "react-transition-group": "4.4.1",
