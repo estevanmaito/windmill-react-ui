@@ -24,8 +24,7 @@
     "prebuild": "rimraf dist lib && npm run build:lib",
     "build": "webpack",
     "prerelease": "npm run build",
-    "release": "dotenv release-it",
-    "pre:release": "dotenv release-it -- --preRelease=beta",
+    "release": "release-it",
     "semantic-release": "semantic-release"
   },
   "peerDependencies": {
@@ -55,7 +54,6 @@
     "commitizen": "4.1.2",
     "css-loader": "3.6.0",
     "cz-conventional-changelog": "3.2.0",
-    "dotenv-cli": "3.2.0",
     "enzyme": "3.11.0",
     "enzyme-adapter-react-16": "1.15.2",
     "eslint": "7.0.0",
@@ -76,7 +74,6 @@
     "react-styleguidist": "11.0.8",
     "release-it": "13.6.3",
     "rimraf": "3.0.2",
-    "semantic-release": "^17.0.7",
     "style-loader": "1.2.1",
     "tailwindcss": "1.4.6",
     "webpack": "5.0.0-beta.18",
@@ -103,6 +100,35 @@
         "preset": "angular",
         "infile": "CHANGELOG.md"
       }
+    }
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-env",
+      "@babel/preset-react"
+    ]
+  },
+  "prettier": {
+    "printWidth": 100,
+    "semi": false,
+    "singleQuote": true,
+    "trailingComma": "es5",
+    "endOfLine": "lf"
+  },
+  "jest": {
+    "collectCoverageFrom": ["src/**/*.js", "!src/Transition.js"],
+    "setupFilesAfterEnv": ["./setupTests.js"],
+    "coverageThreshold": {
+      "global": {
+        "branches": 100,
+        "functions": 100,
+        "lines": 100,
+        "statements": 100
+      }
+    },
+    "transform": {
+      "^.+\\.jsx?$": "babel-jest",
+      "^.+\\.svg$": "jest-svg-transformer"
     }
   },
   "config": {
