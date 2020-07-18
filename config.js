@@ -210,6 +210,7 @@ const windmillConfig = {
   variants: {
     backgroundOpacity: ['responsive', 'hover', 'focus', 'dark:hover'],
     backgroundColor: [
+      'responsive',
       'hover',
       'focus',
       'active',
@@ -222,6 +223,8 @@ const windmillConfig = {
     ],
     display: ['responsive', 'dark'],
     textColor: [
+      'responsive',
+      'focus',
       'focus-within',
       'hover',
       'active',
@@ -230,10 +233,10 @@ const windmillConfig = {
       'dark:hover',
       'dark:active',
     ],
-    placeholderColor: ['focus', 'dark', 'dark:focus'],
+    placeholderColor: ['responsive', 'focus', 'dark', 'dark:focus'],
     borderColor: ['responsive', 'hover', 'focus', 'dark', 'dark:focus', 'dark:hover'],
-    divideColor: ['dark'],
-    boxShadow: ['focus', 'dark:focus'],
+    divideColor: ['responsive', 'dark'],
+    boxShadow: ['responsive', 'hover', 'focus', 'dark:focus'],
     margin: ['responsive', 'last'],
   },
   plugins: [customFormsPlugin, multiThemePlugin, shadowOutlinePlugin],
