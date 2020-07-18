@@ -11,13 +11,11 @@ The component library for fast and accessible development of gorgeous interfaces
 
 Projects using it: [Windmill Dashboard React](https://github.com/estevanmaito/windmill-dashboard-react)
 
-- [Roadmap](#-roadmap)
-
 ## Mission
 
 Be the most accessible it can be out of the box and the fastest way to production.
 
-- [Go to docs to see complete, live examples](https://windmillui.com/react-ui)
+[Go to docs to see complete, live examples](https://windmillui.com/react-ui)
 
 ## 🚀 Usage
 
@@ -30,13 +28,15 @@ npm i windmill-react-ui
 Inside `tailwind.config.js`
 
 ```js
-//tailwind.config.js
-// this is responsible for theme classes and could also be used for customization
-import windmillTheme from 'windmill-react-ui/defaultTheme'
-// solve the extension/custom styles problem
-import windmillPlugin from 'windmill-react-ui/plugin'
-purge: [windmillTheme],
-plugins: [windmillPlugin()]
+const windmill = require('windmill-react-ui/config')
+module.exports = windmill({
+  purge: [],
+  theme: {
+    extend: {},
+  },
+  variants: {},
+  plugins: [],
+})
 ```
 
 Then place `Windmill` at the root of your project (the order doesn't matter, as long as your application is inside).
@@ -99,6 +99,6 @@ To see a new component rendered, add an `.md` file with the same name as the com
 <Button size="larger">Larger</Button>
 ```
 
-⚠ Use `npm run cz` instead of `git commit`! It will guide through some short questions and guarantee that you commit message is standardized.
+⚠ Use `npm run cz` instead of `git commit`! It will guide you through some short questions and guarantee that you commit message is standardized.
 
 Commit will also trigger linting and test coverage.
