@@ -3,7 +3,8 @@ import classNames from 'classnames'
 import PropTypes from 'prop-types'
 import { ThemeContext } from './context/ThemeContext'
 
-function CardBody({ className, children }) {
+const CardBody = React.forwardRef(function CardBody(props, ref) {
+  const { className, children, ...other } = props
   const {
     theme: { cardBody },
   } = useContext(ThemeContext)
@@ -12,8 +13,12 @@ function CardBody({ className, children }) {
 
   const cls = classNames(baseStyle, className)
 
-  return <div className={cls}>{children}</div>
-}
+  return (
+    <div className={cls} ref={ref} {...other}>
+      {children}
+    </div>
+  )
+})
 
 CardBody.propTypes = {
   children: PropTypes.element,

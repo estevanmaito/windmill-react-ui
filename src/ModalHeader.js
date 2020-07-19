@@ -3,7 +3,8 @@ import classNames from 'classnames'
 import PropTypes from 'prop-types'
 import { ThemeContext } from './context/ThemeContext'
 
-function ModalHeader({ children, className }) {
+const ModalHeader = React.forwardRef(function ModalHeader(props, ref) {
+  const { children, className, ...other } = props
   const {
     theme: { modalHeader },
   } = useContext(ThemeContext)
@@ -12,8 +13,12 @@ function ModalHeader({ children, className }) {
 
   const cls = classNames(baseStyle, className)
 
-  return <p className={cls}>{children}</p>
-}
+  return (
+    <p className={cls} ref={ref} {...other}>
+      {children}
+    </p>
+  )
+})
 
 ModalHeader.propTypes = {
   children: PropTypes.node,

@@ -3,7 +3,8 @@ import classNames from 'classnames'
 import PropTypes from 'prop-types'
 import { ThemeContext } from './context/ThemeContext'
 
-function ModalBody({ children, className }) {
+const ModalBody = React.forwardRef(function ModalBody(props, ref) {
+  const { children, className, ...other } = props
   const {
     theme: { modalBody },
   } = useContext(ThemeContext)
@@ -12,8 +13,12 @@ function ModalBody({ children, className }) {
 
   const cls = classNames(baseStyle, className)
 
-  return <div className={cls}>{children}</div>
-}
+  return (
+    <div className={cls} ref={ref} {...other}>
+      {children}
+    </div>
+  )
+})
 
 ModalBody.propTypes = {
   children: PropTypes.node,

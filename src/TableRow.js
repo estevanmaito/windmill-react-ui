@@ -3,7 +3,7 @@ import classNames from 'classnames'
 import PropTypes from 'prop-types'
 import { ThemeContext } from './context/ThemeContext'
 
-function TableRow(props) {
+const TableRow = React.forwardRef(function TableRow(props, ref) {
   const { className, children, ...other } = props
 
   const {
@@ -15,11 +15,11 @@ function TableRow(props) {
   const cls = classNames(baseStyle, className)
 
   return (
-    <tr className={cls} {...other}>
+    <tr className={cls} ref={ref} {...other}>
       {children}
     </tr>
   )
-}
+})
 
 TableRow.propTypes = {
   children: PropTypes.node,

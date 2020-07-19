@@ -3,7 +3,7 @@ import classNames from 'classnames'
 import PropTypes from 'prop-types'
 import { ThemeContext } from './context/ThemeContext'
 
-function TableFooter(props) {
+const TableFooter = React.forwardRef(function TableFooter(props, ref) {
   const { className, children, ...other } = props
 
   const {
@@ -15,11 +15,11 @@ function TableFooter(props) {
   const cls = classNames(baseStyle, className)
 
   return (
-    <div className={cls} {...other}>
+    <div className={cls} ref={ref} {...other}>
       {children}
     </div>
   )
-}
+})
 
 TableFooter.propTypes = {
   children: PropTypes.node,

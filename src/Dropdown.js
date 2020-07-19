@@ -5,7 +5,8 @@ import { ThemeContext } from './context/ThemeContext'
 import Transition from './Transition'
 import FocusLock from 'react-focus-lock'
 
-function Dropdown({ children, onClose, isOpen, className, align, ...other }) {
+const Dropdown = React.forwardRef(function Dropdown(props, ref) {
+  const { children, onClose, isOpen, className, align, ...other } = props
   const {
     theme: { dropdown },
   } = useContext(ThemeContext)
@@ -44,7 +45,7 @@ function Dropdown({ children, onClose, isOpen, className, align, ...other }) {
       leaveFrom="opacity-100"
       leaveTo="opacity-0"
     >
-      <div>
+      <div ref={ref}>
         <FocusLock returnFocus>
           <ul className={cls} ref={dropdownRef} aria-label="submenu" {...other}>
             {children}
@@ -53,7 +54,7 @@ function Dropdown({ children, onClose, isOpen, className, align, ...other }) {
       </div>
     </Transition>
   )
-}
+})
 
 Dropdown.propTypes = {
   children: PropTypes.node,

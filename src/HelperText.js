@@ -3,7 +3,8 @@ import classNames from 'classnames'
 import PropTypes from 'prop-types'
 import { ThemeContext } from './context/ThemeContext'
 
-function HelperText({ children, valid, className }) {
+const HelperText = React.forwardRef(function HelperText(props, ref) {
+  const { children, valid, className, ...other } = props
   const {
     theme: { helperText },
   } = useContext(ThemeContext)
@@ -24,8 +25,12 @@ function HelperText({ children, valid, className }) {
 
   const cls = classNames(baseStyle, validationStyle(valid), className)
 
-  return <span className={cls}>{children}</span>
-}
+  return (
+    <span className={cls} ref={ref} {...other}>
+      {children}
+    </span>
+  )
+})
 
 HelperText.propTypes = {
   children: PropTypes.node,

@@ -3,7 +3,8 @@ import classNames from 'classnames'
 import PropTypes from 'prop-types'
 import { ThemeContext } from './context/ThemeContext'
 
-function ModalFooter({ children, className }) {
+const ModalFooter = React.forwardRef(function ModalFooter(props, ref) {
+  const { children, className, ...other } = props
   const {
     theme: { modalFooter },
   } = useContext(ThemeContext)
@@ -12,8 +13,12 @@ function ModalFooter({ children, className }) {
 
   const cls = classNames(baseStyle, className)
 
-  return <footer className={cls}>{children}</footer>
-}
+  return (
+    <footer className={cls} ref={ref} {...other}>
+      {children}
+    </footer>
+  )
+})
 
 ModalFooter.propTypes = {
   children: PropTypes.node,

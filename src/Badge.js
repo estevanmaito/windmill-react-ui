@@ -3,7 +3,7 @@ import classNames from 'classnames'
 import PropTypes from 'prop-types'
 import { ThemeContext } from './context/ThemeContext'
 
-function Badge(props) {
+const Badge = React.forwardRef(function Badge(props, ref) {
   const { className, children, type, ...other } = props
 
   const {
@@ -22,11 +22,11 @@ function Badge(props) {
   const cls = classNames(baseStyle, typeStyle[type], className)
 
   return (
-    <span className={cls} {...other}>
+    <span className={cls} ref={ref} {...other}>
       {children}
     </span>
   )
-}
+})
 
 Badge.propTypes = {
   children: PropTypes.node,

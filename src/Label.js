@@ -3,7 +3,8 @@ import classNames from 'classnames'
 import PropTypes from 'prop-types'
 import { ThemeContext } from './context/ThemeContext'
 
-function Label({ children, check, radio, disabled, className }) {
+const Label = React.forwardRef(function Label(props, ref) {
+  const { children, check, radio, disabled, className, ...other } = props
   const {
     theme: { label },
   } = useContext(ThemeContext)
@@ -20,8 +21,12 @@ function Label({ children, check, radio, disabled, className }) {
     className
   )
 
-  return <label className={cls}>{children}</label>
-}
+  return (
+    <label className={cls} ref={ref} {...other}>
+      {children}
+    </label>
+  )
+})
 
 Label.propTypes = {
   children: PropTypes.element,

@@ -3,7 +3,7 @@ import classNames from 'classnames'
 import PropTypes from 'prop-types'
 import { ThemeContext } from './context/ThemeContext'
 
-function TableContainer(props) {
+const TableContainer = React.forwardRef(function TableContainer(props, ref) {
   const { className, children, ...other } = props
 
   const {
@@ -15,11 +15,11 @@ function TableContainer(props) {
   const cls = classNames(baseStyle, className)
 
   return (
-    <div className={cls} {...other}>
+    <div className={cls} ref={ref} {...other}>
       {children}
     </div>
   )
-}
+})
 
 TableContainer.propTypes = {
   children: PropTypes.node,

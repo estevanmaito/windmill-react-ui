@@ -3,7 +3,7 @@ import classNames from 'classnames'
 import PropTypes from 'prop-types'
 import { ThemeContext } from './context/ThemeContext'
 
-function TableHeader(props) {
+const TableHeader = React.forwardRef(function TableHeader(props, ref) {
   const { className, children, ...other } = props
 
   const {
@@ -15,11 +15,11 @@ function TableHeader(props) {
   const cls = classNames(baseStyle, className)
 
   return (
-    <thead className={cls} {...other}>
+    <thead className={cls} ref={ref} {...other}>
       {children}
     </thead>
   )
-}
+})
 
 TableHeader.propTypes = {
   children: PropTypes.node,

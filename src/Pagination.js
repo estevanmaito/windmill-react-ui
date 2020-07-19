@@ -66,7 +66,8 @@ PageButton.propTypes = {
 
 export const EmptyPageButton = () => <span className="px-2 py-1">...</span>
 
-function Pagination({ totalResults, resultsPerPage, label, onChange }) {
+const Pagination = React.forwardRef(function Pagination(props, ref) {
+  const { totalResults, resultsPerPage, label, onChange, ...other } = props
   const [pages, setPages] = useState([])
   const [activePage, setActivePage] = useState(1)
 
@@ -132,7 +133,10 @@ function Pagination({ totalResults, resultsPerPage, label, onChange }) {
   const baseStyle = pagination.base
 
   return (
-    <div className={baseStyle}>
+    <div className={baseStyle} ref={ref} {...other}>
+      {/*
+       * This (label) should probably be an option, and not the default
+       */}
       <span className="flex items-center font-semibold tracking-wide uppercase">
         Showing {activePage * resultsPerPage - resultsPerPage + 1}-
         {Math.min.apply(this, [activePage * resultsPerPage, totalResults])} of {totalResults}
@@ -173,7 +177,7 @@ function Pagination({ totalResults, resultsPerPage, label, onChange }) {
       </div>
     </div>
   )
-}
+})
 
 Pagination.propTypes = {
   totalResults: PropTypes.number.isRequired,
