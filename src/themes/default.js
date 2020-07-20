@@ -102,7 +102,7 @@ export default {
     base: 'block w-full text-sm dark:text-gray-300 focus:outline-none',
     active:
       'focus:border-purple-400 dark:border-gray-600 dark:bg-gray-700 focus:shadow-outline-purple dark:focus:shadow-outline-gray dark:focus:border-gray-600',
-    select: 'form-select',
+    select: 'form-select leading-5',
     multiple: 'form-multiselect',
     disabled: 'cursor-not-allowed opacity-50 bg-gray-300 dark:bg-gray-800',
     valid:
@@ -119,7 +119,7 @@ export default {
   },
   // Input
   input: {
-    base: 'block w-full text-sm focus:outline-none dark:text-gray-300 form-input',
+    base: 'block w-full text-sm focus:outline-none dark:text-gray-300 form-input leading-5',
     active:
       'focus:border-purple-400 dark:border-gray-600 focus:shadow-outline-purple dark:focus:border-gray-600 dark:focus:shadow-outline-gray dark:bg-gray-700',
     disabled: 'cursor-not-allowed opacity-50 bg-gray-300 dark:bg-gray-800',

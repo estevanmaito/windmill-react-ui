@@ -8,7 +8,8 @@ describe('Input', () => {
   })
 
   it('should render with base styles', () => {
-    const expected = 'block w-full text-sm focus:outline-none dark:text-gray-300 form-input'
+    const expected =
+      'block w-full text-sm focus:outline-none dark:text-gray-300 form-input leading-5'
     const wrapper = mount(<Input />)
 
     expect(wrapper.find('input').getDOMNode().getAttribute('class')).toContain(expected)

@@ -15,7 +15,7 @@ describe('Select', () => {
   })
 
   it('should render with select styles', () => {
-    const expected = 'form-select'
+    const expected = 'form-select leading-5'
     const wrapper = mount(<Select />)
 
     expect(wrapper.find('select').getDOMNode().getAttribute('class')).toContain(expected)
