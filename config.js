@@ -192,8 +192,8 @@ const customForms = (theme) => ({
 const windmillConfig = {
   purge: {
     content: [
-      'node_modules/windmill-react-ui/lib/defaultTheme.js',
-      'node_modules/windmill-react-ui/dist/index.js',
+      'node_modules/@windmill/react-ui/lib/defaultTheme.js',
+      'node_modules/@windmill/react-ui/dist/index.js',
     ],
     options: {
       whitelist: ['theme-dark'],

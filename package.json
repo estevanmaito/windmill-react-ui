@@ -4,6 +4,7 @@
   "description": "React UI component library built with Tailwind CSS",
   "main": "dist/index.js",
   "files": [
+    "lib",
     "dist",
     "config.js",
     "README.md"
