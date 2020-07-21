@@ -5,7 +5,7 @@ The component library for fast and accessible development of gorgeous interfaces
 <p>
   <a href="https://codecov.io/gh/estevanmaito/windmill-react-ui"><img src="https://codecov.io/gh/estevanmaito/windmill-react-ui/branch/master/graph/badge.svg" alt="codecov" /></a>
   <img src="https://github.com/estevanmaito/windmill-react-ui/workflows/Build/badge.svg" alt="Build" />
-  <a href="https://www.npmjs.com/package/windmill-react-ui"><img src="https://img.shields.io/npm/v/windmill-react-ui" alt="npm" /></a>
+  <a href="https://www.npmjs.com/package/@windmill/react-ui"><img src="https://img.shields.io/npm/v/@windmill/react-ui" alt="npm" /></a>
   <a href="https://github.com/estevanmaito/windmill-react-ui/blob/master/LICENSE"><img src="https://img.shields.io/github/license/estevanmaito/windmill-react-ui" alt="MIT License" /></a>
 </p>
 
@@ -22,13 +22,13 @@ Be the most accessible it can be out of the box and the fastest way to productio
 Install
 
 ```sh
-npm i windmill-react-ui
+npm i @windmill/react-ui
 ```
 
 Inside `tailwind.config.js`
 
 ```js
-const windmill = require('windmill-react-ui/config')
+const windmill = require('@windmill/react-ui/config')
 module.exports = windmill({
   purge: [],
   theme: {
@@ -46,7 +46,7 @@ Then place `Windmill` at the root of your project (the order doesn't matter, as 
 import React from 'react'
 import ReactDOM from 'react-dom'
 import App from './App'
-import { Windmill } from 'windmill-react-ui'
+import { Windmill } from '@windmill/react-ui'
 
 ReactDOM.render(
   <Windmill>
@@ -59,7 +59,7 @@ ReactDOM.render(
 Use components inside your project
 
 ```js
-import { Button } from 'windmill-react-ui'
+import { Button } from '@windmill/react-ui'
 
 function App() {
   return <Button>Hi there!</Button>
