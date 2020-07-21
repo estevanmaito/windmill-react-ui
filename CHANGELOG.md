@@ -1,3 +1,10 @@
+## [0.3.1](https://github.com/estevanmaito/windmill-react-ui/compare/0.3.0...0.3.1) (2020-07-21)
+
+
+### Bug Fixes
+
+* **config:** fix purge content and ad lib to npm published files ([abf8c24](https://github.com/estevanmaito/windmill-react-ui/commit/abf8c2425e13001700791fe0ed5cbee097dd2267))
+
 # [0.3.0](https://github.com/estevanmaito/windmill-react-ui/compare/0.2.0...0.3.0) (2020-07-21)
 
 ### Build System
