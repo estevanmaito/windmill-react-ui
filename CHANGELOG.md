@@ -1,3 +1,16 @@
+# [0.3.0](https://github.com/estevanmaito/windmill-react-ui/compare/0.2.0...0.3.0) (2020-07-21)
+
+
+### Build System
+
+* **scope:** use [@windmill](https://github.com/windmill) as scope ([e6862da](https://github.com/estevanmaito/windmill-react-ui/commit/e6862dab1744bc94b3a94ce8774bd93a010862af))
+
+
+### BREAKING CHANGES
+
+* **scope:** Use `@windmill/react-ui` to install the package as `windmill-react-ui` is
+deprecated.
+
 # [0.2.0](https://github.com/estevanmaito/windmill-react-ui/compare/0.1.2...0.2.0) (2020-07-20)
 
 
