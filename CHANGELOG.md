@@ -1,29 +1,24 @@
 # [0.3.0](https://github.com/estevanmaito/windmill-react-ui/compare/0.2.0...0.3.0) (2020-07-21)
 
-
 ### Build System
 
-* **scope:** use [@windmill](https://github.com/windmill) as scope ([e6862da](https://github.com/estevanmaito/windmill-react-ui/commit/e6862dab1744bc94b3a94ce8774bd93a010862af))
-
+- **scope:** use `@windmill` as scope ([e6862da](https://github.com/estevanmaito/windmill-react-ui/commit/e6862dab1744bc94b3a94ce8774bd93a010862af))
 
 ### BREAKING CHANGES
 
-* **scope:** Use `@windmill/react-ui` to install the package as `windmill-react-ui` is
-deprecated.
+- **scope:** Use `@windmill/react-ui` to install the package as `windmill-react-ui` is deprecated.
 
 # [0.2.0](https://github.com/estevanmaito/windmill-react-ui/compare/0.1.2...0.2.0) (2020-07-20)
 
-
 ### Bug Fixes
 
-* **form:** fix 1px off input and select ([4a3bc13](https://github.com/estevanmaito/windmill-react-ui/commit/4a3bc133f7b81744f0869b65deb136d2ed5516d1))
-
+- **form:** fix 1px off input and select ([4a3bc13](https://github.com/estevanmaito/windmill-react-ui/commit/4a3bc133f7b81744f0869b65deb136d2ed5516d1))
 
 ### BREAKING CHANGES
 
-* **form:** Regular Inputs and Selects had a height of 39px, which looked terrible when used
-side-by-side with a regular button (38px height). Reducing the `line-height` to `leading-5` solved
-it, and now regular inputs and selects have a 38px height.
+- **form:** Regular Inputs and Selects had a height of 39px, which looked terrible when used
+  side-by-side with a regular button (38px height). Reducing the `line-height` to `leading-5` solved
+  it, and now regular inputs and selects have a 38px height.
 
 ## [0.1.2](https://github.com/estevanmaito/windmill-react-ui/compare/0.1.2-beta.0...0.1.2) (2020-07-19)
 
