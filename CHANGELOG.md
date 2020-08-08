@@ -1,9 +1,14 @@
-## [0.3.1](https://github.com/estevanmaito/windmill-react-ui/compare/0.3.0...0.3.1) (2020-07-21)
-
+## [0.3.2](https://github.com/estevanmaito/windmill-react-ui/compare/0.3.1...0.3.2) (2020-08-08)
 
 ### Bug Fixes
 
-* **config:** fix purge content and ad lib to npm published files ([abf8c24](https://github.com/estevanmaito/windmill-react-ui/commit/abf8c2425e13001700791fe0ed5cbee097dd2267))
+- **button:** fix gradient style applied to anchor buttons due to type being incorrectly inherited from button defaults ([131bd69](https://github.com/estevanmaito/windmill-react-ui/commit/131bd69580622a98e4fddabe2330db812648c1a1)), closes [#7](https://github.com/estevanmaito/windmill-react-ui/issues/7)
+
+## [0.3.1](https://github.com/estevanmaito/windmill-react-ui/compare/0.3.0...0.3.1) (2020-07-21)
+
+### Bug Fixes
+
+- **config:** fix purge content and add lib to npm published files ([abf8c24](https://github.com/estevanmaito/windmill-react-ui/commit/abf8c2425e13001700791fe0ed5cbee097dd2267))
 
 # [0.3.0](https://github.com/estevanmaito/windmill-react-ui/compare/0.2.0...0.3.0) (2020-07-21)
 
