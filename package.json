@@ -51,7 +51,7 @@
     "@release-it/conventional-changelog": "1.1.4",
     "babel-jest": "26.1.0",
     "babel-loader": "8.1.0",
-    "codecov": "3.6.5",
+    "codecov": "3.7.1",
     "commitizen": "4.1.2",
     "css-loader": "3.6.0",
     "cz-conventional-changelog": "3.2.0",
