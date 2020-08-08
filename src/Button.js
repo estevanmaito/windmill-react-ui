@@ -12,7 +12,6 @@ const Button = React.forwardRef(function Button(props, ref) {
     iconRight,
     disabled,
     size,
-    type,
     layout,
     block,
     className,
@@ -22,6 +21,11 @@ const Button = React.forwardRef(function Button(props, ref) {
   const {
     theme: { button },
   } = useContext(ThemeContext)
+
+  // Fix https://github.com/estevanmaito/windmill-react-ui/issues/7
+  if ((tag === 'button' || tag === 'input') && !other.type) {
+    other.type = 'button'
+  }
 
   function hasIcon() {
     return !!icon || !!iconLeft || !!iconRight
@@ -100,7 +104,7 @@ const Button = React.forwardRef(function Button(props, ref) {
   const iconRightStyles = classNames(iconStyle, children ? button.icon.right : '')
 
   return (
-    <Component className={cls} ref={ref} disabled={disabled} type={type} {...other}>
+    <Component className={cls} ref={ref} disabled={disabled} {...other}>
       {(icon || iconLeft) && <IconLeft className={iconLeftStyles} aria-hidden="true" />}
       {children}
       {iconRight && <IconRight className={iconRightStyles} aria-hidden="true" />}
@@ -128,7 +132,6 @@ Button.defaultProps = {
   layout: 'primary',
   block: false,
   disabled: false,
-  type: 'button',
 }
 
 export default Button

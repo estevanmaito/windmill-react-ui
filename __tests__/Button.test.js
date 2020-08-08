@@ -38,6 +38,12 @@ describe('Base Button', () => {
     expect(wrapper.find('a')).toHaveLength(1)
   })
 
+  it('should not contain type for anchor element', () => {
+    const wrapper = mount(<Button tag="a" />)
+
+    expect(wrapper.find('a').getDOMNode().getAttribute('type')).toBeNull()
+  })
+
   it('should render its children', () => {
     const wrapper = mount(<Button>Hi</Button>)
 
