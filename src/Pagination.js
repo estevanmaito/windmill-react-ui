@@ -120,7 +120,7 @@ const Pagination = React.forwardRef(function Pagination(props, ref) {
         TOTAL_PAGES,
       ])
     }
-  }, [activePage])
+  }, [activePage, totalResults])
 
   useEffect(() => {
     onChange(activePage)
