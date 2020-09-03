@@ -25,8 +25,7 @@
     "prebuild": "rimraf dist lib && npm run build:lib",
     "build": "webpack",
     "prerelease": "npm run build",
-    "release": "release-it",
-    "semantic-release": "semantic-release"
+    "release": "release-it"
   },
   "peerDependencies": {
     "react": ">=16.8.0",
