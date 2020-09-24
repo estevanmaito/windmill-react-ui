@@ -3,20 +3,24 @@ import classNames from 'classnames'
 import warn from './utils/warning'
 import { ThemeContext } from './context/ThemeContext'
 
-interface Props {
+type IconType =
+  | string
+  | React.FunctionComponent<{ className: string; 'aria-hidden': boolean }>
+  | React.ComponentClass<{ className: string; 'aria-hidden': boolean }>
+
+interface Props extends React.HTMLAttributes<HTMLButtonElement | HTMLInputElement> {
   children?: React.ReactNode
   tag?: string
   disabled?: boolean
   size?: 'larger' | 'large' | 'regular' | 'small' | 'pagination'
   // NEEDS REVIEW - could it be more specific?
-  icon?: any
-  iconLeft?: any
-  iconRight?: any
+  icon?: IconType
+  iconLeft?: IconType
+  iconRight?: IconType
   layout?: 'outline' | 'link' | 'primary' | '__dropdownItem'
   type?: 'button' | 'submit' | 'reset'
   block?: boolean
   className?: string
-  onClick?: React.MouseEvent
 }
 
 type Ref = ReactNode | HTMLElement | string
@@ -76,6 +80,7 @@ const Button = React.forwardRef<Ref, Props>(function Button(props, ref) {
     large: button.size.icon.large,
     regular: button.size.icon.regular,
     small: button.size.icon.small,
+    pagination: button.size.icon.regular,
   }
   const iconStyle = button.icon[size]
   const layoutStyles = {
@@ -120,12 +125,21 @@ const Button = React.forwardRef<Ref, Props>(function Button(props, ref) {
   const iconLeftStyles = classNames(iconStyle, children ? button.icon.left : '')
   const iconRightStyles = classNames(iconStyle, children ? button.icon.right : '')
 
-  return (
-    <Component className={cls} ref={ref} disabled={disabled} {...other}>
-      {(icon || iconLeft) && <IconLeft className={iconLeftStyles} aria-hidden="true" />}
-      {children}
-      {iconRight && <IconRight className={iconRightStyles} aria-hidden="true" />}
-    </Component>
+  return React.createElement(
+    tag,
+    {
+      className: cls,
+      ref,
+      disabled,
+      ...other,
+    },
+    IconLeft
+      ? React.createElement(IconLeft, { className: iconLeftStyles, 'aria-hidden': true })
+      : null,
+    children,
+    IconRight
+      ? React.createElement(IconRight, { className: iconRightStyles, 'aria-hidden': true })
+      : null
   )
 })
 
