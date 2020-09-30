@@ -101,7 +101,7 @@ const Button = React.forwardRef<Ref, Props>(function Button(props, ref) {
    */
   const dropdownItemStyle = button.dropdownItem.base
 
-  const cls =
+  const buttonStyles =
     layout === '__dropdownItem'
       ? classNames(dropdownItemStyle, className)
       : classNames(
@@ -124,9 +124,10 @@ const Button = React.forwardRef<Ref, Props>(function Button(props, ref) {
   return React.createElement(
     tag,
     {
-      className: cls,
+      className: buttonStyles,
       ref,
       disabled,
+      type,
       ...other,
     },
     IconLeft
