@@ -2,17 +2,9 @@ import React, { useContext } from 'react'
 import classNames from 'classnames'
 import { ThemeContext } from './context/ThemeContext'
 
-// NEEDS REVIEW - Is there a way to accept all possible events without
-// specifying every single one? ..other is there for a reason :|
-interface Props {
-  children?: React.ReactNode
-  className?: string
-  onClick?: () => void
-}
+interface Props extends React.HTMLAttributes<HTMLDivElement> {}
 
-type Ref = HTMLDivElement
-
-const Backdrop = React.forwardRef<Ref, Props>(function Backdrop(props, ref) {
+const Backdrop = React.forwardRef<HTMLDivElement, Props>(function Backdrop(props, ref) {
   const { className, ...other } = props
   const {
     theme: { backdrop },

@@ -2,15 +2,11 @@ import React, { useContext } from 'react'
 import classNames from 'classnames'
 import { ThemeContext } from './context/ThemeContext'
 
-interface Props {
-  children?: React.ReactNode
-  className?: string
+interface Props extends React.HTMLAttributes<HTMLDivElement> {
   colored?: boolean
 }
 
-type Ref = HTMLDivElement
-
-const Card = React.forwardRef<Ref, Props>(function Card(props, ref) {
+const Card = React.forwardRef<HTMLDivElement, Props>(function Card(props, ref) {
   const { className, children, colored = false, ...other } = props
   const {
     theme: { card },

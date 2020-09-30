@@ -6,15 +6,12 @@ import FocusLock from 'react-focus-lock'
 
 import { ThemeContext } from './context/ThemeContext'
 
-interface Props {
-  children: React.ReactNode
+interface Props extends React.HTMLAttributes<HTMLDivElement> {
   onClose: () => void
   isOpen: boolean
 }
 
-type Ref = HTMLDivElement
-
-const Modal = React.forwardRef<Ref, Props>(function Modal(props, ref) {
+const Modal = React.forwardRef<HTMLDivElement, Props>(function Modal(props, ref) {
   const { children, onClose, isOpen, ...other } = props
 
   const {

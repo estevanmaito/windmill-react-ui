@@ -2,16 +2,12 @@ import React, { useContext } from 'react'
 import classNames from 'classnames'
 import { ThemeContext } from './context/ThemeContext'
 
-interface Props {
-  children: React.ReactNode
+interface Props extends React.HTMLAttributes<HTMLTextAreaElement> {
   valid?: boolean
   disabled?: boolean
-  className?: string
 }
 
-type Ref = HTMLTextAreaElement
-
-const Textarea = React.forwardRef<Ref, Props>(function Textarea(props, ref) {
+const Textarea = React.forwardRef<HTMLTextAreaElement, Props>(function Textarea(props, ref) {
   const { valid, disabled, className, children, ...other } = props
 
   const {

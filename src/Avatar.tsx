@@ -2,17 +2,13 @@ import React, { useContext } from 'react'
 import classNames from 'classnames'
 import { ThemeContext } from './context/ThemeContext'
 
-interface Props {
+interface Props extends React.HTMLAttributes<HTMLDivElement> {
   size?: 'large' | 'regular' | 'small'
-  className?: string
   alt?: string
-  // NEEDS REVIEW - could it be more specific?
-  src: any
+  src: string
 }
 
-type Ref = HTMLDivElement
-
-const Avatar = React.forwardRef<Ref, Props>(function Avatar(props, ref) {
+const Avatar = React.forwardRef<HTMLDivElement, Props>(function Avatar(props, ref) {
   const { size = 'regular', src, alt, className, ...other } = props
   const {
     theme: { avatar },

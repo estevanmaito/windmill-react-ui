@@ -1,7 +1,6 @@
-import React, { useState, useEffect, useContext } from 'react'
-import PropTypes from 'prop-types'
+import React, { useContext, useEffect, useState } from 'react'
+import Button, { ButtonAsButtonProps } from './Button'
 import { ThemeContext } from './context/ThemeContext'
-import Button from './Button'
 
 const PrevIcon: React.FC = function PrevIcon(props) {
   return (
@@ -27,9 +26,7 @@ const NextIcon: React.FC = function NextIcon(props) {
   )
 }
 
-interface NavigationButtonProps {
-  onClick: React.MouseEvent
-  disabled?: boolean
+interface NavigationButtonProps extends ButtonAsButtonProps {
   directionIcon: 'prev' | 'next'
 }
 
@@ -54,10 +51,9 @@ export const NavigationButton: React.FC<NavigationButtonProps> = function Naviga
   )
 }
 
-interface PageButtonProps {
+interface PageButtonProps extends ButtonAsButtonProps {
   page: string | number
   isActive?: boolean
-  onClick: React.MouseEvent
 }
 
 export const PageButton: React.FC<PageButtonProps> = function PageButton({
@@ -156,7 +152,7 @@ const Pagination = React.forwardRef<Ref, PaginationProps>(function Pagination(pr
        */}
       <span className="flex items-center font-semibold tracking-wide uppercase">
         Showing {activePage * resultsPerPage - resultsPerPage + 1}-
-        {Math.min.apply(this, [activePage * resultsPerPage, totalResults])} of {totalResults}
+        {Math.min(activePage * resultsPerPage, totalResults)} of {totalResults}
       </span>
 
       <div className="flex mt-2 sm:mt-auto sm:justify-end">
@@ -170,7 +166,7 @@ const Pagination = React.forwardRef<Ref, PaginationProps>(function Pagination(pr
               />
             </li>
             {pages.map((p, i) => (
-              <li key={p + i}>
+              <li key={p.toString() + i}>
                 {p === '...' ? (
                   <EmptyPageButton />
                 ) : (

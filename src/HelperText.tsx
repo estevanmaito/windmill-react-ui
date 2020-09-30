@@ -2,15 +2,11 @@ import React, { useContext } from 'react'
 import classNames from 'classnames'
 import { ThemeContext } from './context/ThemeContext'
 
-interface Props {
-  children: React.ReactNode
+interface Props extends React.HTMLAttributes<HTMLSpanElement> {
   valid?: boolean
-  className?: string
 }
 
-type Ref = HTMLSpanElement
-
-const HelperText = React.forwardRef<Ref, Props>(function HelperText(props, ref) {
+const HelperText = React.forwardRef<HTMLSpanElement, Props>(function HelperText(props, ref) {
   const { children, valid, className, ...other } = props
   const {
     theme: { helperText },

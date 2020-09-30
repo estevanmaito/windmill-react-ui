@@ -4,8 +4,7 @@ import defaultTheme from './themes/default'
 import { mergeDeep } from './utils/mergeDeep'
 import useDarkMode from './utils/useDarkMode'
 
-interface Props {
-  children: React.ReactNode
+interface Props extends React.HTMLAttributes<HTMLDivElement> {
   theme?: object
   dark?: boolean
   usePreferences?: boolean

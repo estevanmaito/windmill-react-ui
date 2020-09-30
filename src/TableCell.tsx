@@ -2,14 +2,9 @@ import React, { useContext } from 'react'
 import classNames from 'classnames'
 import { ThemeContext } from './context/ThemeContext'
 
-interface Props {
-  children: React.ReactNode
-  className?: string
-}
+interface Props extends React.TdHTMLAttributes<HTMLTableCellElement> {}
 
-type Ref = HTMLTableCellElement
-
-const TableCell = React.forwardRef<Ref, Props>(function TableCell(props, ref) {
+const TableCell = React.forwardRef<HTMLTableCellElement, Props>(function TableCell(props, ref) {
   const { className, children, ...other } = props
 
   const {

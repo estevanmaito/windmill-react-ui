@@ -2,10 +2,7 @@ import React, { useContext } from 'react'
 import classNames from 'classnames'
 import { ThemeContext } from './context/ThemeContext'
 
-interface Props {
-  children: HTMLTableCellElement
-  className?: string
-}
+interface Props extends React.HTMLAttributes<HTMLTableSectionElement> {}
 
 type Ref = HTMLTableSectionElement
 

@@ -4,17 +4,13 @@ import { ThemeContext } from './context/ThemeContext'
 import Transition from './Transition'
 import FocusLock from 'react-focus-lock'
 
-interface Props {
-  children: React.ReactNode
-  className?: string
+interface Props extends React.HTMLAttributes<HTMLUListElement> {
   onClose: () => void
   isOpen: boolean
   align?: 'left' | 'right'
 }
 
-type Ref = HTMLDivElement
-
-const Dropdown = React.forwardRef<Ref, Props>(function Dropdown(props, ref) {
+const Dropdown = React.forwardRef<HTMLDivElement, Props>(function Dropdown(props, ref) {
   const { children, onClose, isOpen, className, align = 'left', ...other } = props
   const {
     theme: { dropdown },

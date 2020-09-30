@@ -2,17 +2,13 @@ import React, { useContext } from 'react'
 import classNames from 'classnames'
 import { ThemeContext } from './context/ThemeContext'
 
-interface Props {
-  children: React.ReactNode
+interface Props extends React.HTMLAttributes<HTMLLabelElement> {
   check?: boolean
   radio?: boolean
   disabled?: boolean
-  className?: string
 }
 
-type Ref = HTMLLabelElement
-
-const Label = React.forwardRef<Ref, Props>(function Label(props, ref) {
+const Label = React.forwardRef<HTMLLabelElement, Props>(function Label(props, ref) {
   const { children, check, radio, disabled, className, ...other } = props
   const {
     theme: { label },

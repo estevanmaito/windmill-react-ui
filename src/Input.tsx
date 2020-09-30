@@ -2,16 +2,13 @@ import React, { useContext } from 'react'
 import classNames from 'classnames'
 import { ThemeContext } from './context/ThemeContext'
 
-interface Props {
+interface Props extends React.HTMLAttributes<HTMLInputElement> {
   valid?: boolean
   disabled?: boolean
-  className?: string
   type?: string
 }
 
-type Ref = HTMLInputElement
-
-const Input = React.forwardRef<Ref, Props>(function Input(props, ref) {
+const Input = React.forwardRef<HTMLInputElement, Props>(function Input(props, ref) {
   const { valid, disabled, className, type = 'text', ...other } = props
 
   const {
