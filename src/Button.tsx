@@ -28,6 +28,8 @@ type Ref = ReactNode | HTMLElement | string
 const Button = React.forwardRef<Ref, Props>(function Button(props, ref) {
   const {
     tag = 'button',
+    // Fix https://github.com/estevanmaito/windmill-react-ui/issues/7
+    type = tag === 'button' ? 'button' : undefined,
     disabled = false,
     size = 'regular',
     layout = 'primary',
@@ -42,11 +44,6 @@ const Button = React.forwardRef<Ref, Props>(function Button(props, ref) {
   const {
     theme: { button },
   } = useContext(ThemeContext)
-
-  // Fix https://github.com/estevanmaito/windmill-react-ui/issues/7
-  if ((tag === 'button' || tag === 'input') && !other.type) {
-    other.type = 'button'
-  }
 
   function hasIcon() {
     return !!icon || !!iconLeft || !!iconRight
