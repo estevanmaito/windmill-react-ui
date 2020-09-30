@@ -1,20 +1,16 @@
 /**
  * Check if item is Object
- * @param item
- * @return {boolean}
  */
-export function isObject(item) {
+export function isObject(item: any): boolean {
   return item && typeof item === 'object' && !Array.isArray(item)
 }
 
 /**
  * Deep merge two objects.
- * @param {object} target
- * @param {object} ...sources
- * @return {object} merged object
+ * @return merged object
  */
-export function mergeDeep(target, ...sources) {
-  if (!sources.length) return target
+export function mergeDeep(target: any, ...sources: any[]): any {
+  if (sources.length === 0) return target
   const source = sources.shift()
 
   if (isObject(target) && isObject(source)) {
