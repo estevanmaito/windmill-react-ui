@@ -50,7 +50,7 @@ const Button = React.forwardRef<Ref, Props>(function Button(props, ref) {
   }
 
   warn(
-    hasIcon() && !other['aria-label'],
+    hasIcon() && !other['aria-label'] && !children,
     'Button',
     'You are using an icon button, but no "aria-label" attribute was found. Add an "aria-label" attribute to work as a label for screen readers.'
   )
