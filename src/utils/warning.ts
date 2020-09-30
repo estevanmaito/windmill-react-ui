@@ -4,7 +4,7 @@
  * @param {string} scope - location of the warning, usually a component
  * @param {string} message - instructions about the warning
  */
-function warn(assert, scope, message) {
+function warn(assert: boolean, scope: string, message: string) {
   if (process.env.NODE_ENV !== 'production') {
     if (assert) {
       if (console.warn) {
