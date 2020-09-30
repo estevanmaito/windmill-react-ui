@@ -42,7 +42,7 @@ describe('Dropdown', () => {
   })
 
   it('should call onClose when Esc is pressed', () => {
-    const map = {}
+    const map = {} as ListenerMap
     document.addEventListener = jest.fn((e, cb) => {
       map[e] = cb
     })
@@ -55,7 +55,7 @@ describe('Dropdown', () => {
   })
 
   it('should close dropdown when clicking outside it', () => {
-    const map = {}
+    const map = {} as ListenerMap
     document.addEventListener = jest.fn((e, cb) => {
       map[e] = cb
     })
@@ -68,7 +68,7 @@ describe('Dropdown', () => {
   })
 
   it('should not close dropdown when clicking inside it', () => {
-    const map = {}
+    const map = {} as ListenerMap
     document.addEventListener = jest.fn((e, cb) => {
       map[e] = cb
     })
@@ -81,7 +81,7 @@ describe('Dropdown', () => {
   })
 
   it('should not call onClose when other key than Esc is pressed', () => {
-    const map = {}
+    const map = {} as ListenerMap
     document.addEventListener = jest.fn((e, cb) => {
       map[e] = cb
     })
@@ -94,7 +94,7 @@ describe('Dropdown', () => {
   })
 
   it('should remove the event listener on unmount', () => {
-    const map = {}
+    const map = {} as ListenerMap
     const removeListener = jest.fn((e, cb) => {
       map[e] = cb
     })
