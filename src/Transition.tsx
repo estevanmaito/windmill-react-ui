@@ -1,16 +1,17 @@
 /**
  * https://gist.github.com/adamwathan/e0a791aa0419098a7ece70028b2e641e
  */
-import React, { useRef, useEffect, useContext } from 'react'
-
+import React, { useContext, useEffect, useRef } from 'react'
 import { CSSTransition as ReactCSSTransition } from 'react-transition-group'
 
-// NEEDS REVIEW
-interface TransitionContextInterface {
-  parent: any
+interface TransitionContext {
+  parent: {
+    appear?: string
+    show?: boolean
+    isInitialRender?: boolean
+  }
 }
-
-const TransitionContext = React.createContext<TransitionContextInterface>({
+const transitionContext = React.createContext<TransitionContext>({
   parent: {},
 })
 
@@ -95,33 +96,26 @@ const CSSTransition: React.FC<TransitionProps> = function CSSTransition({
 }
 
 const Transition: React.FC<TransitionProps> = function Transition({ show, appear, ...rest }) {
-  const { parent } = useContext(TransitionContext)
+  const { parent } = useContext(transitionContext)
   const isInitialRender = useIsInitialRender()
   const isChild = show === undefined
 
   if (isChild) {
+    return <CSSTransition appear={parent.appear} show={parent.show} {...rest} />
+  } else
     return (
-      <CSSTransition
-        appear={parent.appear || !parent.isInitialRender}
-        show={parent.show}
-        {...rest}
-      />
+      <transitionContext.Provider
+        value={{
+          parent: {
+            show,
+            isInitialRender,
+            appear,
+          },
+        }}
+      >
+        <CSSTransition appear={appear} show={show} {...rest} />
+      </transitionContext.Provider>
     )
-  }
-
-  return (
-    <TransitionContext.Provider
-      value={{
-        parent: {
-          show,
-          isInitialRender,
-          appear,
-        },
-      }}
-    >
-      <CSSTransition appear={appear} show={show} {...rest} />
-    </TransitionContext.Provider>
-  )
 }
 
 export default Transition
