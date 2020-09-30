@@ -131,6 +131,9 @@
   },
   "jest": {
     "preset": "ts-jest",
+    "testPathIgnorePatterns": [
+      ".*\\.d\\.ts"
+    ],
     "collectCoverageFrom": [
       "src/**/*.tsx?$",
       "!src/Transition.js"
