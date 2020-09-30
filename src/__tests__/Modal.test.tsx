@@ -28,7 +28,7 @@ describe('Modal', () => {
   })
 
   it('should call onClose when Esc is pressed', () => {
-    const map = {}
+    const map = {} as ListenerMap
     document.addEventListener = jest.fn((e, cb) => {
       map[e] = cb
     })
@@ -45,7 +45,7 @@ describe('Modal', () => {
   })
 
   it('should not call onClose when other key than Esc is pressed', () => {
-    const map = {}
+    const map = {} as ListenerMap
     document.addEventListener = jest.fn((e, cb) => {
       map[e] = cb
     })
@@ -62,7 +62,7 @@ describe('Modal', () => {
   })
 
   it('should remove the event listener on unmount', () => {
-    const map = {}
+    const map = {} as ListenerMap
     const removeListener = jest.fn((e, cb) => {
       map[e] = cb
     })
@@ -80,7 +80,7 @@ describe('Modal', () => {
   })
 
   it('should not close modal when clicking inside it', () => {
-    const map = {}
+    const map = {} as ListenerMap
     document.addEventListener = jest.fn((e, cb) => {
       map[e] = cb
     })
