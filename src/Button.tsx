@@ -1,31 +1,38 @@
-import React, { useContext, ReactNode } from 'react'
 import classNames from 'classnames'
-import warn from './utils/warning'
+import React, { ReactNode, useContext } from 'react'
 import { ThemeContext } from './context/ThemeContext'
+import warn from './utils/warning'
 
 type IconType =
   | string
   | React.FunctionComponent<{ className: string; 'aria-hidden': boolean }>
   | React.ComponentClass<{ className: string; 'aria-hidden': boolean }>
 
-interface Props extends React.HTMLAttributes<HTMLButtonElement | HTMLInputElement> {
+interface Props {
   children?: React.ReactNode
-  tag?: string
   disabled?: boolean
   size?: 'larger' | 'large' | 'regular' | 'small' | 'pagination'
-  // NEEDS REVIEW - could it be more specific?
   icon?: IconType
   iconLeft?: IconType
   iconRight?: IconType
   layout?: 'outline' | 'link' | 'primary' | '__dropdownItem'
-  type?: 'button' | 'submit' | 'reset'
   block?: boolean
-  className?: string
 }
+
+export interface ButtonAsButtonProps extends Props, React.ButtonHTMLAttributes<HTMLButtonElement> {
+  tag?: 'button'
+  type?: 'button' | 'submit' | 'reset'
+}
+
+export interface ButtonAsAnchorProps extends Props, React.AnchorHTMLAttributes<HTMLAnchorElement> {
+  tag: 'a'
+}
+
+export type ButtonProps = ButtonAsButtonProps | ButtonAsAnchorProps
 
 type Ref = ReactNode | HTMLElement | string
 
-const Button = React.forwardRef<Ref, Props>(function Button(props, ref) {
+const Button = React.forwardRef<Ref, ButtonProps>(function Button(props, ref) {
   const {
     tag = 'button',
     // Fix https://github.com/estevanmaito/windmill-react-ui/issues/7
