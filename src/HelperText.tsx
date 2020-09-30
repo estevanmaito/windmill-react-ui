@@ -16,16 +16,15 @@ const HelperText = React.forwardRef<HTMLSpanElement, Props>(function HelperText(
   const validStyle = helperText.valid
   const invalidStyle = helperText.invalid
 
-  function hasValidation(valid: boolean | undefined) {
-    return valid !== undefined
-  }
-
-  // NEEDS REVIEW - return type?
-  function validationStyle(valid: boolean | undefined): string {
-    if (hasValidation(valid)) {
-      return valid ? validStyle : invalidStyle
+  const validationStyle = (valid: boolean | undefined): string => {
+    switch (valid) {
+      case true:
+        return validStyle
+      case false:
+        return invalidStyle
+      default:
+        return ''
     }
-    return ''
   }
 
   const cls = classNames(baseStyle, validationStyle(valid), className)
