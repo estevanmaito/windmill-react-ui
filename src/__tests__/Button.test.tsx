@@ -44,6 +44,12 @@ describe('Base Button', () => {
     expect(wrapper.find('a').getDOMNode().getAttribute('type')).toBeNull()
   })
 
+  it('should render an arbitrary element', () => {
+    const wrapper = mount(<Button aria-label="test" tag="div" />)
+
+    expect(wrapper.find('div')).toHaveLength(1)
+  })
+
   it('should render its children', () => {
     const wrapper = mount(<Button>Hi</Button>)
 
