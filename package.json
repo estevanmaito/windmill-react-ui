@@ -10,22 +10,23 @@
     "README.md"
   ],
   "scripts": {
+    "prebuild": "rimraf dist lib && npm run build:lib && npm run build:ts",
+    "build:ts": "tsc --declaration --declarationMap --emitDeclarationOnly",
+    "build:lib": "babel src/themes/default.ts --out-file lib/defaultTheme.js",
+    "build:styleguide": "styleguidist build",
     "build:tailwind": "tailwindcss build style/tailwind.css -o style/output.css -c style/tailwind.config.js",
+    "build": "webpack",
+    "codecov": "codecov",
+    "cz": "git-cz",
     "predev": "npm run build:tailwind",
     "dev": "styleguidist server",
-    "build:styleguide": "styleguidist build",
-    "cz": "git-cz",
-    "test": "jest",
-    "codecov": "codecov",
-    "test:watch": "jest --watch",
-    "test:coverage": "jest --coverage",
-    "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "build:lib": "babel src/themes/default.ts --out-file lib/defaultTheme.js",
-    "prebuild": "rimraf dist lib && npm run build:lib",
-    "build": "webpack",
+    "lint": "eslint .",
     "prerelease": "npm run build",
-    "release": "release-it"
+    "release": "release-it",
+    "test:coverage": "jest --coverage",
+    "test:watch": "jest --watch",
+    "test": "jest"
   },
   "peerDependencies": {
     "react": ">=16.8.0",
@@ -87,9 +88,9 @@
     "ts-jest": "26.3.0",
     "ts-loader": "8.0.3",
     "typescript": "4.0.2",
-    "webpack": "5.0.0-beta.18",
+    "webpack": "5.0.0",
     "webpack-bundle-analyzer": "3.8.0",
-    "webpack-cli": "4.0.0-beta.8"
+    "webpack-cli": "4.0.0"
   },
   "repository": {
     "type": "git",
