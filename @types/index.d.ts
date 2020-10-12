@@ -1,3 +1,6 @@
+// used in ThemeContext
+type Mode = string | null
+
 declare module '*.svg' {
   const content: any
   export default content
