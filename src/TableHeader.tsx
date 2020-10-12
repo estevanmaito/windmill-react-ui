@@ -4,9 +4,10 @@ import { ThemeContext } from './context/ThemeContext'
 
 interface Props extends React.HTMLAttributes<HTMLTableSectionElement> {}
 
-type Ref = HTMLTableSectionElement
-
-const TableHeader = React.forwardRef<Ref, Props>(function TableHeader(props, ref) {
+const TableHeader = React.forwardRef<HTMLTableSectionElement, Props>(function TableHeader(
+  props,
+  ref
+) {
   const { className, children, ...other } = props
 
   const {
