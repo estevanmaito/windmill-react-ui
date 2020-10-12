@@ -4,7 +4,6 @@ import { ThemeContext } from './context/ThemeContext'
 
 interface Props extends React.SelectHTMLAttributes<HTMLSelectElement> {
   valid?: boolean
-  multiple?: boolean
 }
 
 const Select = React.forwardRef<HTMLSelectElement, Props>(function Select(props, ref) {
