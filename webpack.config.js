@@ -14,6 +14,9 @@ module.exports = {
     react: 'react',
     'react-dom': 'react-dom',
   },
+  resolve: {
+    extensions: ['.tsx', '.ts', '.js'],
+  },
   module: {
     rules: [
       {
