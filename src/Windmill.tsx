@@ -5,6 +5,7 @@ import { mergeDeep } from './utils/mergeDeep'
 import useDarkMode from './utils/useDarkMode'
 
 interface Props extends React.HTMLAttributes<HTMLDivElement> {
+  children: React.ReactNode
   theme?: object
   dark?: boolean
   usePreferences?: boolean
