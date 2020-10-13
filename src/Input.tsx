@@ -4,12 +4,13 @@ import { ThemeContext } from './context/ThemeContext'
 
 interface Props extends React.HTMLAttributes<HTMLInputElement> {
   valid?: boolean
+  autoFocus?: boolean
   disabled?: boolean
   type?: string
 }
 
 const Input = React.forwardRef<HTMLInputElement, Props>(function Input(props, ref) {
-  const { valid, disabled, className, type = 'text', ...other } = props
+  const { valid, disabled, autoFocus, className, type = 'text', ...other } = props
 
   const {
     theme: { input },
@@ -55,7 +56,16 @@ const Input = React.forwardRef<HTMLInputElement, Props>(function Input(props, re
     className
   )
 
-  return <input className={cls} type={type} ref={ref} disabled={disabled} {...other} />
+  return (
+    <input
+      className={cls}
+      type={type}
+      ref={ref}
+      disabled={disabled}
+      autoFocus={autoFocus}
+      {...other}
+    />
+  )
 })
 
 export default Input
