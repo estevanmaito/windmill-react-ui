@@ -2,7 +2,7 @@ const path = require('path')
 // const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 
 module.exports = {
-  entry: './src/index.js',
+  entry: './src/index.ts',
   output: {
     globalObject: 'this',
     path: path.resolve(__dirname, 'dist'),
@@ -14,14 +14,15 @@ module.exports = {
     react: 'react',
     'react-dom': 'react-dom',
   },
+  resolve: {
+    extensions: ['.tsx', '.ts', '.js'],
+  },
   module: {
     rules: [
       {
-        test: /\.m?js$/,
-        exclude: /(node_modules|bower_components)/,
-        use: {
-          loader: 'babel-loader',
-        },
+        test: /\.tsx?$/,
+        loader: 'ts-loader',
+        exclude: /node_modules/,
       },
     ],
   },
