@@ -8,7 +8,7 @@ type IconType =
   | React.FunctionComponent<{ className: string; 'aria-hidden': boolean }>
   | React.ComponentClass<{ className: string; 'aria-hidden': boolean }>
 
-interface Props {
+export interface Props {
   children?: React.ReactNode
   disabled?: boolean
   size?: 'larger' | 'large' | 'regular' | 'small' | 'pagination'

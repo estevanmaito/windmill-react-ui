@@ -22,7 +22,7 @@ const Windmill: React.FC<Props> = ({
 
   useLayoutEffect(() => {
     if (dark) {
-      if (mode != null && setMode != null) {
+      if (setMode != null) {
         setMode('dark')
       }
       document.documentElement.classList.add(`theme-dark`)
