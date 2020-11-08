@@ -266,4 +266,36 @@ describe('Pagination', () => {
 
     expect(onChange).toHaveBeenCalledWith(3)
   })
+
+  it('should update the pages total when totalResults is updated', () => {
+    const onChange = () => {}
+    const expectedBeforeUpdate = 6
+    const expectedAfterUpdate = 4
+
+    const wrapper = mount(
+      <Pagination totalResults={30} resultsPerPage={5} label="Navigation" onChange={onChange} />
+    )
+
+    expect(wrapper.find(PageButton).children().length).toBe(expectedBeforeUpdate)
+
+    wrapper.setProps({ totalResults: 20, resultsPerPage: 5 })
+    wrapper.update()
+    expect(wrapper.find(PageButton).children().length).toBe(expectedAfterUpdate)
+  })
+
+  it('should update the pages total when resultsPerPage is updated', () => {
+    const onChange = () => {}
+    const expectedBeforeUpdate = 6
+    const expectedAfterUpdate = 3
+
+    const wrapper = mount(
+      <Pagination totalResults={30} resultsPerPage={5} label="Navigation" onChange={onChange} />
+    )
+
+    expect(wrapper.find(PageButton).children().length).toBe(expectedBeforeUpdate)
+
+    wrapper.setProps({ resultsPerPage: 10 })
+    wrapper.update()
+    expect(wrapper.find(PageButton).children().length).toBe(expectedAfterUpdate)
+  })
 })

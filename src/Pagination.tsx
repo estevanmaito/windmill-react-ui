@@ -133,7 +133,7 @@ const Pagination = React.forwardRef<Ref, PaginationProps>(function Pagination(pr
         TOTAL_PAGES,
       ])
     }
-  }, [activePage])
+  }, [activePage, TOTAL_PAGES])
 
   useEffect(() => {
     onChange(activePage)
