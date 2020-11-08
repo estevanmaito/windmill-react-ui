@@ -1,11 +1,17 @@
-# [0.4.0-beta.0](https://github.com/estevanmaito/windmill-react-ui/compare/0.3.1...0.4.0-beta.0) (2020-10-26)
+# [0.4.0](https://github.com/estevanmaito/windmill-react-ui/compare/0.3.1...0.4.0) (2020-11-08)
 
+### Features
+
+- **alert:** add alert component ([b0855c7](https://github.com/estevanmaito/windmill-react-ui/commit/b0855c7152f71618c548876a64ccc5573e65c509))
+- **TypeScript rewrite**
+
+# [0.4.0-beta.0](https://github.com/estevanmaito/windmill-react-ui/compare/0.3.1...0.4.0-beta.0) (2020-10-26)
 
 ### Bug Fixes
 
-* **button:** fix gradient style applied to anchor buttons due to type ([131bd69](https://github.com/estevanmaito/windmill-react-ui/commit/131bd69580622a98e4fddabe2330db812648c1a1)), closes [#7](https://github.com/estevanmaito/windmill-react-ui/issues/7)
-* **component:** add event handlers to button props ([90a3d69](https://github.com/estevanmaito/windmill-react-ui/commit/90a3d694dd82e99b8169b17c4f080c8fa994b65a))
-* **packages:** update dependencies ([330a535](https://github.com/estevanmaito/windmill-react-ui/commit/330a53547028ee42da16cbb4d02157268df6e6a2))
+- **button:** fix gradient style applied to anchor buttons due to type ([131bd69](https://github.com/estevanmaito/windmill-react-ui/commit/131bd69580622a98e4fddabe2330db812648c1a1)), closes [#7](https://github.com/estevanmaito/windmill-react-ui/issues/7)
+- **component:** add event handlers to button props ([90a3d69](https://github.com/estevanmaito/windmill-react-ui/commit/90a3d694dd82e99b8169b17c4f080c8fa994b65a))
+- **packages:** update dependencies ([330a535](https://github.com/estevanmaito/windmill-react-ui/commit/330a53547028ee42da16cbb4d02157268df6e6a2))
 
 ## [0.3.2](https://github.com/estevanmaito/windmill-react-ui/compare/0.3.1...0.3.2) (2020-08-08)
 
