@@ -11,7 +11,13 @@ enum AlertEnum {
 }
 
 export interface AlertProps extends React.HTMLAttributes<HTMLDivElement> {
+  /**
+   * The type of the alert
+   */
   type?: keyof typeof AlertEnum
+  /**
+   * If defined, shows the close icon that calls this function
+   */
   onClose?: () => void
 }
 

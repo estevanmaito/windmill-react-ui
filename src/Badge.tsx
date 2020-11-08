@@ -3,6 +3,9 @@ import classNames from 'classnames'
 import { ThemeContext } from './context/ThemeContext'
 
 interface Props extends React.HTMLAttributes<HTMLSpanElement> {
+  /**
+   * The type of the badge
+   */
   type?: 'success' | 'danger' | 'warning' | 'neutral' | 'primary'
 }
 

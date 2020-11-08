@@ -3,8 +3,17 @@ import classNames from 'classnames'
 import { ThemeContext } from './context/ThemeContext'
 
 interface Props extends React.HTMLAttributes<HTMLDivElement> {
+  /**
+   * The size of the avatar
+   */
   size?: 'large' | 'regular' | 'small'
+  /**
+   * Alternative text for the avatar image
+   */
   alt?: string
+  /**
+   * The source for the avatar image
+   */
   src: string
 }
 
