@@ -1,3 +1,11 @@
+## [0.4.1](https://github.com/estevanmaito/windmill-react-ui/compare/0.4.0...0.4.1) (2020-11-08)
+
+
+### Bug Fixes
+
+* **alert:** actually export the Alert ([ccade2c](https://github.com/estevanmaito/windmill-react-ui/commit/ccade2c73fadf6ad620e249a7850b21725aa320c))
+* **pagination:** fix pagination update when totalResults or resultsPerPage change ([fbedd18](https://github.com/estevanmaito/windmill-react-ui/commit/fbedd18572d64cbbc5d292d7cb8ffc0636e9ef29))
+
 # [0.4.0](https://github.com/estevanmaito/windmill-react-ui/compare/0.3.1...0.4.0) (2020-11-08)
 
 ### Features
