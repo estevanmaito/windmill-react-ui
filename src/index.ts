@@ -1,5 +1,6 @@
 export { ThemeContext as WindmillContext } from './context/ThemeContext'
 
+export { default as Alert } from './Alert'
 export { default as Avatar } from './Avatar'
 export { default as Backdrop } from './Backdrop'
 export { default as Badge } from './Badge'
