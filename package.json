@@ -26,7 +26,9 @@
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "prerelease": "npm run build",
-    "release": "release-it"
+    "release": "release-it",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "peerDependencies": {
     "react": ">=16.8.0",
@@ -50,6 +52,10 @@
     "@babel/preset-react": "7.10.1",
     "@babel/preset-typescript": "7.10.4",
     "@release-it/conventional-changelog": "2.0.0",
+    "@storybook/addon-actions": "6.1.0-alpha.31",
+    "@storybook/addon-essentials": "6.1.0-alpha.31",
+    "@storybook/addon-links": "6.1.0-alpha.31",
+    "@storybook/react": "6.1.0-alpha.31",
     "@types/classnames": "2.2.10",
     "@types/enzyme": "3.10.5",
     "@types/enzyme-adapter-react-16": "1.0.6",
@@ -74,12 +80,14 @@
     "eslint-plugin-promise": "4.2.1",
     "eslint-plugin-react": "7.20.0",
     "eslint-plugin-standard": "4.0.1",
+    "html-webpack-plugin": "5.0.0-alpha.7",
     "husky": "4.2.5",
     "jest": "26.0.1",
     "jest-svg-transformer": "1.0.0",
     "prettier": "2.0.5",
     "react": "16.13.1",
     "react-dom": "16.13.1",
+    "react-is": "17.0.1",
     "react-styleguidist": "11.0.8",
     "release-it": "14.2.0",
     "rimraf": "3.0.2",
@@ -133,11 +141,13 @@
   "jest": {
     "preset": "ts-jest",
     "testPathIgnorePatterns": [
-      ".*\\.d\\.ts"
+      ".*\\.d\\.ts",
+      "/node_modules/"
     ],
     "collectCoverageFrom": [
-      "src/**/*.tsx?$",
-      "!src/Transition.js"
+      "src/**/*.{ts,tsx}",
+      "!src/{Transition,index}.{ts,tsx}",
+      "!src/{stories,utils}/*"
     ],
     "setupFilesAfterEnv": [
       "./setupTests.ts"
@@ -158,6 +168,11 @@
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint && npm run test:coverage"
     }
   }
 }
