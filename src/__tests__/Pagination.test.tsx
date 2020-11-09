@@ -1,6 +1,6 @@
 import React from 'react'
 import { mount } from 'enzyme'
-import Pagination, { PageButton, NavigationButton, EmptyPageButton } from '../Pagination'
+import Pagination, { PageButton, NavigationButton, EmptyPageButton, CurrentPageTextParams } from '../Pagination'
 
 describe('NavigationButton', () => {
   it('should render without crashing', () => {
@@ -297,5 +297,28 @@ describe('Pagination', () => {
     wrapper.setProps({ resultsPerPage: 10 })
     wrapper.update()
     expect(wrapper.find(PageButton).children().length).toBe(expectedAfterUpdate)
+  })
+
+  it('should work without currentPageText prop', () => {
+    const onChange = () => {}
+
+    const wrapper = mount(
+      <Pagination totalResults={30} resultsPerPage={5} label="Navigation" onChange={onChange} />
+    )
+
+    expect(wrapper.find('[data-testid="current-page-text"]').text()).toEqual('Showing 1-5 of 30')
+  })
+
+  it('should use currentPageText prop for custom text formatting', () => {
+    const onChange = () => {}
+
+    const currentPageText = ({ pageStart, pageEnd, totalResults }: CurrentPageTextParams) =>
+      `Total results: ${totalResults}. Showing between ${pageStart} and ${pageEnd}.`
+
+    const wrapper = mount(
+      <Pagination totalResults={30} resultsPerPage={5} label="Navigation" onChange={onChange} currentPageText={currentPageText} />
+    )
+
+    expect(wrapper.find('[data-testid="current-page-text"]').text()).toEqual('Total results: 30. Showing between 1 and 5.')
   })
 })

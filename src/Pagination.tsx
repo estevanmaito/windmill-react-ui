@@ -70,17 +70,27 @@ export const PageButton: React.FC<PageButtonProps> = function PageButton({
 
 export const EmptyPageButton = () => <span className="px-2 py-1">...</span>
 
+export interface CurrentPageTextParams {
+  pageStart: number,
+  pageEnd: number,
+  totalResults: number
+}
+
+const defaultCurrentPageText = ({ pageStart, pageEnd, totalResults }: CurrentPageTextParams): string =>
+  `Showing ${pageStart}-${pageEnd} of ${totalResults}`;
+
 interface PaginationProps {
   totalResults: number
   resultsPerPage?: number
   label: string
+  currentPageText?: (params: CurrentPageTextParams) => string,
   onChange: (activePage: number) => void
 }
 
 type Ref = HTMLDivElement
 
 const Pagination = React.forwardRef<Ref, PaginationProps>(function Pagination(props, ref) {
-  const { totalResults, resultsPerPage = 10, label, onChange, ...other } = props
+  const { totalResults, resultsPerPage = 10, label, onChange, currentPageText = defaultCurrentPageText, ...other } = props
   const [pages, setPages] = useState<(number | string)[]>([])
   const [activePage, setActivePage] = useState(1)
 
@@ -150,9 +160,12 @@ const Pagination = React.forwardRef<Ref, PaginationProps>(function Pagination(pr
       {/*
        * This (label) should probably be an option, and not the default
        */}
-      <span className="flex items-center font-semibold tracking-wide uppercase">
-        Showing {activePage * resultsPerPage - resultsPerPage + 1}-
-        {Math.min(activePage * resultsPerPage, totalResults)} of {totalResults}
+      <span data-testid="current-page-text" className="flex items-center font-semibold tracking-wide uppercase">
+        {currentPageText({
+          pageStart: activePage * resultsPerPage - resultsPerPage + 1,
+          pageEnd: Math.min(activePage * resultsPerPage, totalResults),
+          totalResults,
+        })}
       </span>
 
       <div className="flex mt-2 sm:mt-auto sm:justify-end">
