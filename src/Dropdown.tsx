@@ -42,8 +42,8 @@ const Dropdown = React.forwardRef<HTMLDivElement, Props>(function Dropdown(props
   }
 
   useEffect(() => {
-    document.addEventListener('click', handleClickOutside)
-    document.addEventListener('keydown', handleEsc)
+    document.addEventListener('click', handleClickOutside, { capture: true })
+    document.addEventListener('keydown', handleEsc, { capture: true })
     return () => {
       document.removeEventListener('click', handleClickOutside)
       document.removeEventListener('keydown', handleEsc)
