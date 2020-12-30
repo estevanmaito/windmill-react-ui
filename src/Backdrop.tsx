@@ -2,9 +2,9 @@ import React, { useContext } from 'react'
 import classNames from 'classnames'
 import { ThemeContext } from './context/ThemeContext'
 
-interface Props extends React.HTMLAttributes<HTMLDivElement> {}
+export interface BackdropProps extends React.HTMLAttributes<HTMLDivElement> {}
 
-const Backdrop = React.forwardRef<HTMLDivElement, Props>(function Backdrop(props, ref) {
+const Backdrop = React.forwardRef<HTMLDivElement, BackdropProps>(function Backdrop(props, ref) {
   const { className, ...other } = props
   const {
     theme: { backdrop },

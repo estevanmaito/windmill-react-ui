@@ -9,7 +9,7 @@ const shadowOutlinePlugin = ({ addUtilities, theme, variants }) => {
     const color = value[300] ? value[300] : value
     const hsla = Color(color).alpha(0.45).hsl().string()
 
-    newUtilities[`.shadow-outline-${name}`] = {
+    newUtilities[`.ring-${name}`] = {
       'box-shadow': `0 0 0 3px ${hsla}`,
     }
   })

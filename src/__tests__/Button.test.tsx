@@ -144,7 +144,7 @@ describe('Primary Button', () => {
   })
 
   it('should contain primary active classes', () => {
-    const expected = 'active:bg-purple-600 hover:bg-purple-700 focus:shadow-outline-purple'
+    const expected = 'active:bg-purple-600 hover:bg-purple-700 focus:ring-purple'
     const wrapper = mount(<Button aria-label="test" />)
 
     expect(wrapper.find('button').getDOMNode().getAttribute('class')).toContain(expected)
@@ -158,7 +158,7 @@ describe('Primary Button', () => {
   })
 
   it('should not contain primary active classes when disabled', () => {
-    const expected = 'active:bg-purple-600 hover:bg-purple-700 focus:shadow-outline-purple'
+    const expected = 'active:bg-purple-600 hover:bg-purple-700 focus:ring-purple'
     const wrapper = mount(<Button aria-label="test" disabled />)
 
     expect(wrapper.find('button').getDOMNode().getAttribute('class')).not.toContain(expected)
@@ -175,7 +175,7 @@ describe('Outline Button', () => {
 
   it('should contain outline active classes', () => {
     const expected =
-      'active:bg-transparent hover:border-gray-500 focus:border-gray-500 active:text-gray-500 focus:shadow-outline-gray'
+      'active:bg-transparent hover:border-gray-500 focus:border-gray-500 active:text-gray-500 focus:ring-gray'
     const wrapper = mount(<Button aria-label="test" layout="outline" />)
 
     expect(wrapper.find('button').getDOMNode().getAttribute('class')).toContain(expected)
@@ -199,7 +199,7 @@ describe('Link Button', () => {
 
   it('should contain link active classes', () => {
     const expected =
-      'active:bg-transparent hover:bg-gray-100 focus:shadow-outline-gray dark:hover:bg-gray-500 dark:hover:text-gray-300 dark:hover:bg-opacity-10'
+      'active:bg-transparent hover:bg-gray-100 focus:ring-gray dark:hover:bg-gray-500 dark:hover:text-gray-300 dark:hover:bg-opacity-10'
     const wrapper = mount(<Button aria-label="test" layout="link" />)
 
     expect(wrapper.find('button').getDOMNode().getAttribute('class')).toContain(expected)

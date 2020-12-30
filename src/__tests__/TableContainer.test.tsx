@@ -8,7 +8,7 @@ describe('TableContainer', () => {
   })
 
   it('should render with base styles', () => {
-    const expected = 'w-full overflow-hidden rounded-lg shadow-xs'
+    const expected = 'w-full overflow-hidden rounded-lg ring-1 ring-black ring-opacity-5'
     const wrapper = mount(<TableContainer />)
 
     expect(wrapper.find(TableContainer).getDOMNode().getAttribute('class')).toContain(expected)

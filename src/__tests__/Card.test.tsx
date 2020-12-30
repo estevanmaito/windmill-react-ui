@@ -8,7 +8,7 @@ describe('Card', () => {
   })
 
   it('should render with base styles', () => {
-    const expected = 'min-w-0 rounded-lg shadow-xs overflow-hidden'
+    const expected = 'min-w-0 rounded-lg ring-1 ring-black ring-opacity-5 overflow-hidden'
     const wrapper = mount(<Card />)
 
     expect(wrapper.find(Card).getDOMNode().getAttribute('class')).toContain(expected)
@@ -29,7 +29,7 @@ describe('Card', () => {
   })
 
   it('should add classes to base styles', () => {
-    const expected = 'min-w-0 rounded-lg shadow-xs overflow-hidden bg-red-400'
+    const expected = 'min-w-0 rounded-lg ring-1 ring-black ring-opacity-5 overflow-hidden bg-red-400'
     const wrapper = mount(<Card className="bg-red-400" colored />)
 
     expect(wrapper.find(Card).getDOMNode().getAttribute('class')).toBe(expected)

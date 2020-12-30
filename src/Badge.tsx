@@ -2,14 +2,14 @@ import React, { useContext } from 'react'
 import classNames from 'classnames'
 import { ThemeContext } from './context/ThemeContext'
 
-interface Props extends React.HTMLAttributes<HTMLSpanElement> {
+export interface BadgeProps extends React.HTMLAttributes<HTMLSpanElement> {
   /**
    * The type of the badge
    */
   type?: 'success' | 'danger' | 'warning' | 'neutral' | 'primary'
 }
 
-const Badge = React.forwardRef<HTMLSpanElement, Props>(function Badge(props, ref) {
+const Badge = React.forwardRef<HTMLSpanElement, BadgeProps>(function Badge(props, ref) {
   const { className, children, type = 'primary', ...other } = props
 
   const {
