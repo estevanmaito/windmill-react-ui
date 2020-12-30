@@ -1,6 +1,6 @@
 const deepMerge = require('deepmerge')
 const Color = require('color')
-const customFormsPlugin = require('@tailwindcss/custom-forms')
+const customFormsPlugin = require('@tailwindcss/forms')
 const multiThemePlugin = require('tailwindcss-multi-theme')
 const shadowOutlinePlugin = ({ addUtilities, theme, variants }) => {
   const newUtilities = {}
