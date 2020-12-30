@@ -6,7 +6,7 @@ const Table = React.forwardRef<HTMLTableElement, Props>(function Table(props, re
   const { children, ...other } = props
   return (
     <div className="w-full overflow-x-auto">
-      <table className="w-full whitespace-no-wrap" ref={ref} {...other}>
+      <table className="w-full whitespace-nowrap" ref={ref} {...other}>
         {children}
       </table>
     </div>

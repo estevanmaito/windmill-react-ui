@@ -34,7 +34,7 @@ describe('Select', () => {
 
   it('should render with active styles', () => {
     const expected =
-      'focus:border-purple-400 dark:border-gray-600 dark:bg-gray-700 focus:shadow-outline-purple dark:focus:shadow-outline-gray dark:focus:border-gray-600'
+      'focus:border-purple-400 dark:border-gray-600 dark:bg-gray-700 focus:ring-purple dark:focus:ring-gray dark:focus:border-gray-600'
     const wrapper = mount(<Select />)
 
     expect(wrapper.find('select').getDOMNode().getAttribute('class')).toContain(expected)
@@ -42,7 +42,7 @@ describe('Select', () => {
 
   it('should render with valid styles', () => {
     const expected =
-      'border-green-600 dark:bg-gray-700 focus:border-green-400 dark:focus:border-green-400 focus:shadow-outline-green dark:focus:shadow-outline-green'
+      'border-green-600 dark:bg-gray-700 focus:border-green-400 dark:focus:border-green-400 focus:ring-green dark:focus:ring-green'
     const wrapper = mount(<Select valid />)
 
     expect(wrapper.find('select').getDOMNode().getAttribute('class')).toContain(expected)
@@ -50,7 +50,7 @@ describe('Select', () => {
 
   it('should render with invalid styles', () => {
     const expected =
-      'border-red-600 dark:bg-gray-700 focus:border-red-400 dark:focus:border-red-400 focus:shadow-outline-red dark:focus:shadow-outline-red'
+      'border-red-600 dark:bg-gray-700 focus:border-red-400 dark:focus:border-red-400 focus:ring-red dark:focus:ring-red'
     const wrapper = mount(<Select valid={false} />)
 
     expect(wrapper.find('select').getDOMNode().getAttribute('class')).toContain(expected)
