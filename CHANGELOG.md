@@ -1,18 +1,20 @@
-# [0.5.0](https://github.com/estevanmaito/windmill-react-ui/compare/0.4.1...0.5.0) (2020-12-02)
+## [0.5.1](https://github.com/estevanmaito/windmill-react-ui/compare/0.5.0...0.5.1) (2021-02-06)
 
+- **forms**: fix prop extension to allow usage of element attributes eg. name, on `input`, `select` and `textarea`.
+
+# [0.5.0](https://github.com/estevanmaito/windmill-react-ui/compare/0.4.1...0.5.0) (2020-12-02)
 
 ### Bug Fixes
 
-* **components:** add documentation for every property, for every component ([adb7bb8](https://github.com/estevanmaito/windmill-react-ui/commit/adb7bb8c33ed350c8cb6cc4bb9abfa35da631a9f))
-* **events:** update event listeners to capture events ([997f8f8](https://github.com/estevanmaito/windmill-react-ui/commit/997f8f8e80d370a96e91567d2f9921767530c8a2)), closes [#20](https://github.com/estevanmaito/windmill-react-ui/issues/20)
+- **components:** add documentation for every property, for every component ([adb7bb8](https://github.com/estevanmaito/windmill-react-ui/commit/adb7bb8c33ed350c8cb6cc4bb9abfa35da631a9f))
+- **events:** update event listeners to capture events ([997f8f8](https://github.com/estevanmaito/windmill-react-ui/commit/997f8f8e80d370a96e91567d2f9921767530c8a2)), closes [#20](https://github.com/estevanmaito/windmill-react-ui/issues/20)
 
 ## [0.4.1](https://github.com/estevanmaito/windmill-react-ui/compare/0.4.0...0.4.1) (2020-11-08)
 
-
 ### Bug Fixes
 
-* **alert:** actually export the Alert ([ccade2c](https://github.com/estevanmaito/windmill-react-ui/commit/ccade2c73fadf6ad620e249a7850b21725aa320c))
-* **pagination:** fix pagination update when totalResults or resultsPerPage change ([fbedd18](https://github.com/estevanmaito/windmill-react-ui/commit/fbedd18572d64cbbc5d292d7cb8ffc0636e9ef29))
+- **alert:** actually export the Alert ([ccade2c](https://github.com/estevanmaito/windmill-react-ui/commit/ccade2c73fadf6ad620e249a7850b21725aa320c))
+- **pagination:** fix pagination update when totalResults or resultsPerPage change ([fbedd18](https://github.com/estevanmaito/windmill-react-ui/commit/fbedd18572d64cbbc5d292d7cb8ffc0636e9ef29))
 
 # [0.4.0](https://github.com/estevanmaito/windmill-react-ui/compare/0.3.1...0.4.0) (2020-11-08)
 
