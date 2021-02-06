@@ -65,4 +65,10 @@ describe('Input', () => {
       expected
     )
   })
+
+  it('should contain name attribute', () => {
+    const wrapper = mount(<Input name="test-name" />)
+
+    expect(wrapper.find('input[name="test-name"]').getDOMNode().getAttribute('name')).toBeDefined()
+  })
 })

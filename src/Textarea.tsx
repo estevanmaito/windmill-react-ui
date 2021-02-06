@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 import classNames from 'classnames'
 import { ThemeContext } from './context/ThemeContext'
 
-interface Props extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {
+interface Props extends React.ComponentPropsWithRef<'textarea'> {
   valid?: boolean
 }
 

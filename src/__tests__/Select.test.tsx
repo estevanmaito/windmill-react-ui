@@ -74,4 +74,14 @@ describe('Select', () => {
 
     expect(wrapper.find('select').children()).toHaveLength(expected)
   })
+
+  it('should contain name attribute', () => {
+    const wrapper = mount(
+      <Select name="test-name">
+        <option value="lorem">Lorem</option>
+      </Select>
+    )
+
+    expect(wrapper.find('select[name="test-name"]').getDOMNode().getAttribute('name')).toBeDefined()
+  })
 })

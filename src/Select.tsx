@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 import classNames from 'classnames'
 import { ThemeContext } from './context/ThemeContext'
 
-interface Props extends React.SelectHTMLAttributes<HTMLSelectElement> {
+interface Props extends React.ComponentPropsWithRef<'select'> {
   valid?: boolean
 }
 
