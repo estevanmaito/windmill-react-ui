@@ -44,4 +44,12 @@ describe('Textarea', () => {
 
     expect(wrapper.find('textarea').getDOMNode().getAttribute('class')).toContain(expected)
   })
+
+  it('should contain name attribute', () => {
+    const wrapper = mount(<Textarea name="test-name" />)
+
+    expect(wrapper.find('textarea[name="test-name"]').getDOMNode().getAttribute('name')).toBe(
+      'test-name'
+    )
+  })
 })

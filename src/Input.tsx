@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 import classNames from 'classnames'
 import { ThemeContext } from './context/ThemeContext'
 
-interface Props extends React.HTMLAttributes<HTMLInputElement> {
+interface Props extends React.ComponentPropsWithRef<'input'> {
   /**
    * Defines the color of the input
    */
