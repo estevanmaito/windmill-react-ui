@@ -3,6 +3,9 @@ import classNames from 'classnames'
 import { ThemeContext } from './context/ThemeContext'
 
 interface Props extends React.ComponentPropsWithRef<'select'> {
+  /**
+   * Defines the color of the select
+   */
   valid?: boolean
 }
 

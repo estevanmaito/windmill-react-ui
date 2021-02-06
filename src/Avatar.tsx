@@ -2,13 +2,22 @@ import React, { useContext } from 'react'
 import classNames from 'classnames'
 import { ThemeContext } from './context/ThemeContext'
 
-interface Props extends React.HTMLAttributes<HTMLDivElement> {
+export interface AvatarProps extends React.HTMLAttributes<HTMLDivElement> {
+  /**
+   * The size of the avatar
+   */
   size?: 'large' | 'regular' | 'small'
+  /**
+   * Alternative text for the avatar image
+   */
   alt?: string
+  /**
+   * The source for the avatar image
+   */
   src: string
 }
 
-const Avatar = React.forwardRef<HTMLDivElement, Props>(function Avatar(props, ref) {
+const Avatar = React.forwardRef<HTMLDivElement, AvatarProps>(function Avatar(props, ref) {
   const { size = 'regular', src, alt, className, ...other } = props
   const {
     theme: { avatar },

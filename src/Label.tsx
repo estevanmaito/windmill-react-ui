@@ -3,8 +3,17 @@ import classNames from 'classnames'
 import { ThemeContext } from './context/ThemeContext'
 
 interface Props extends React.HTMLAttributes<HTMLLabelElement> {
+  /**
+   * Applies specific styles for checkboxes
+   */
   check?: boolean
+  /**
+   * Applies specific styles for radios
+   */
   radio?: boolean
+  /**
+   * Defines if the label is disabled (you should still disable child elements)
+   */
   disabled?: boolean
 }
 

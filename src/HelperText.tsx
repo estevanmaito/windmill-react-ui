@@ -3,6 +3,9 @@ import classNames from 'classnames'
 import { ThemeContext } from './context/ThemeContext'
 
 interface Props extends React.HTMLAttributes<HTMLSpanElement> {
+  /**
+   * Defines the color of the helper text (the same as with Input, Select, etc.)
+   */
   valid?: boolean
 }
 

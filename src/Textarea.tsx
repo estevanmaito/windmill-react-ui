@@ -3,6 +3,9 @@ import classNames from 'classnames'
 import { ThemeContext } from './context/ThemeContext'
 
 interface Props extends React.ComponentPropsWithRef<'textarea'> {
+  /**
+   * Defines the color of the textarea
+   */
   valid?: boolean
 }
 

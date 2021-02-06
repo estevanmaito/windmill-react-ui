@@ -5,8 +5,17 @@ import Transition from './Transition'
 import FocusLock from 'react-focus-lock'
 
 interface Props extends React.HTMLAttributes<HTMLUListElement> {
+  /**
+   * Function executed when the dropdown is closed
+   */
   onClose: () => void
+  /**
+   * Defines if the dropdown is open
+   */
   isOpen: boolean
+  /**
+   * Defines the alignement of the dropdown related to its parent
+   */
   align?: 'left' | 'right'
 }
 
@@ -33,8 +42,8 @@ const Dropdown = React.forwardRef<HTMLDivElement, Props>(function Dropdown(props
   }
 
   useEffect(() => {
-    document.addEventListener('click', handleClickOutside)
-    document.addEventListener('keydown', handleEsc)
+    document.addEventListener('click', handleClickOutside, { capture: true })
+    document.addEventListener('keydown', handleEsc, { capture: true })
     return () => {
       document.removeEventListener('click', handleClickOutside)
       document.removeEventListener('keydown', handleEsc)

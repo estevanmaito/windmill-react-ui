@@ -52,7 +52,13 @@ export const NavigationButton: React.FC<NavigationButtonProps> = function Naviga
 }
 
 interface PageButtonProps extends ButtonAsButtonProps {
+  /**
+   * The page the button represents
+   */
   page: string | number
+  /**
+   * Defines if the button is active
+   */
   isActive?: boolean
 }
 
@@ -71,9 +77,21 @@ export const PageButton: React.FC<PageButtonProps> = function PageButton({
 export const EmptyPageButton = () => <span className="px-2 py-1">...</span>
 
 interface PaginationProps {
+  /**
+   * The total number of results
+   */
   totalResults: number
+  /**
+   * The number of results shown per page
+   */
   resultsPerPage?: number
+  /**
+   * The accessible name of the pagination (what does it refer to?)
+   */
   label: string
+  /**
+   * The function executed on page change
+   */
   onChange: (activePage: number) => void
 }
 
