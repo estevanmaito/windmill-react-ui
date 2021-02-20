@@ -165,6 +165,30 @@ describe('Primary Button', () => {
   })
 })
 
+describe('Custom Button', () => {
+  it('should contain custom base classes', () => {
+    const expected = 'text-pink-600 dark:text-pink-400'
+    const wrapper = mount(<Button aria-label="test" layout="custom" />)
+
+    expect(wrapper.find('button').getDOMNode().getAttribute('class')).toContain(expected)
+  })
+
+  it('should contain custom active classes', () => {
+    const expected =
+      'active:bg-transparent hover:bg-pink-100 dark:hover:bg-pink-500 dark:hover:text-pink-300'
+    const wrapper = mount(<Button aria-label="test" layout="custom" />)
+
+    expect(wrapper.find('button').getDOMNode().getAttribute('class')).toContain(expected)
+  })
+
+  it('should contain custom disabled classes', () => {
+    const expected = 'opacity-50 cursor-not-allowed bg-pink-300'
+    const wrapper = mount(<Button aria-label="test" layout="custom" disabled />)
+
+    expect(wrapper.find('button[disabled]').getDOMNode().getAttribute('class')).toContain(expected)
+  })
+})
+
 describe('Outline Button', () => {
   it('should contain outline base classes', () => {
     const expected = 'text-gray-600 border-gray-300 border dark:text-gray-400 focus:outline-none'

@@ -208,6 +208,12 @@ export default {
         'active:bg-transparent hover:bg-gray-100 focus:shadow-outline-gray dark:hover:bg-gray-500 dark:hover:text-gray-300 dark:hover:bg-opacity-10',
       disabled: 'opacity-50 cursor-not-allowed',
     },
+    custom: {
+      base: 'text-pink-600 dark:text-pink-400',
+      active:
+        'active:bg-transparent hover:bg-pink-100 dark:hover:bg-pink-500 dark:hover:text-pink-300',
+      disabled: 'opacity-50 cursor-not-allowed bg-pink-300',
+    },
     // this is the button that lives inside the DropdownItem
     dropdownItem: {
       base:
