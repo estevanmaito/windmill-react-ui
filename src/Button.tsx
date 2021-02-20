@@ -33,7 +33,7 @@ export interface Props {
   /**
    * The style of the button
    */
-  layout?: 'outline' | 'link' | 'primary' | '__dropdownItem'
+  layout?: 'outline' | 'link' | 'primary' | '__dropdownItem' | string
   /**
    * Shows the button as a block (full width)
    */
@@ -121,16 +121,19 @@ const Button = React.forwardRef<Ref, ButtonProps>(function Button(props, ref) {
     primary: button.primary.base,
     outline: button.outline.base,
     link: button.link.base,
+    [layout]: button[layout]?.base,
   }
   const activeStyles = {
     primary: button.primary.active,
     outline: button.outline.active,
     link: button.link.active,
+    [layout]: button[layout]?.active,
   }
   const disabledStyles = {
     primary: button.primary.disabled,
     outline: button.outline.disabled,
     link: button.link.disabled,
+    [layout]: button[layout]?.disabled,
   }
 
   /**
