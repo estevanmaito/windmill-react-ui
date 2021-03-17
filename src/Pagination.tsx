@@ -76,7 +76,7 @@ export const PageButton: React.FC<PageButtonProps> = function PageButton({
 
 export const EmptyPageButton = () => <span className="px-2 py-1">...</span>
 
-interface PaginationProps {
+export interface PaginationProps {
   /**
    * The total number of results
    */
@@ -90,6 +90,10 @@ interface PaginationProps {
    */
   label: string
   /**
+   * The current active page
+   */
+  activePage?: number
+  /**
    * The function executed on page change
    */
   onChange: (activePage: number) => void
@@ -98,9 +102,9 @@ interface PaginationProps {
 type Ref = HTMLDivElement
 
 const Pagination = React.forwardRef<Ref, PaginationProps>(function Pagination(props, ref) {
-  const { totalResults, resultsPerPage = 10, label, onChange, ...other } = props
+  const { totalResults, activePage: page = 1, resultsPerPage = 10, label, onChange, ...other } = props
   const [pages, setPages] = useState<(number | string)[]>([])
-  const [activePage, setActivePage] = useState(1)
+  const [activePage, setActivePage] = useState(page)
 
   const TOTAL_PAGES = Math.ceil(totalResults / resultsPerPage)
   const FIRST_PAGE = 1

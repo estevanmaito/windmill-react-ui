@@ -298,4 +298,16 @@ describe('Pagination', () => {
     wrapper.update()
     expect(wrapper.find(PageButton).children().length).toBe(expectedAfterUpdate)
   })
+
+  it('should start with different active page', () => {
+    const onChange = () => {}
+    const expected = 'bg-purple-600'
+
+    const wrapper = mount(
+      <Pagination totalResults={30} resultsPerPage={5} activePage={3} label="Navigation" onChange={onChange} />
+    )
+
+    // Active page
+    expect(wrapper.find('button').at(3).getDOMNode().getAttribute('class')).toContain(expected)
+  })
 })

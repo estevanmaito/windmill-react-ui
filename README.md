@@ -73,6 +73,7 @@ export default App
 - Fork
 - Clone
 - `npm install`
+- `npm rum predev`
 - `npm run storybook`
 
 It will start a local server at `localhost:6006` with all components rendered.
