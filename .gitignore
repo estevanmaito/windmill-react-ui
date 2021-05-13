@@ -5,3 +5,5 @@ dev
 style/output.css
 lib
 .env
+.DS_Store
+.idea
