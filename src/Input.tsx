@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 import classNames from 'classnames'
 import { ThemeContext } from './context/ThemeContext'
 
-interface Props extends React.ComponentPropsWithRef<'input'> {
+export interface InputProps extends React.ComponentPropsWithRef<'input'> {
   /**
    * Defines the color of the input
    */
@@ -17,7 +17,7 @@ interface Props extends React.ComponentPropsWithRef<'input'> {
   type?: string
 }
 
-const Input = React.forwardRef<HTMLInputElement, Props>(function Input(props, ref) {
+const Input = React.forwardRef<HTMLInputElement, InputProps>(function Input(props, ref) {
   const { valid, disabled, className, type = 'text', ...other } = props
 
   const {

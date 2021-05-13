@@ -2,14 +2,17 @@ import React, { useContext } from 'react'
 import classNames from 'classnames'
 import { ThemeContext } from './context/ThemeContext'
 
-interface Props extends React.HTMLAttributes<HTMLSpanElement> {
+export interface HelperTextProps extends React.HTMLAttributes<HTMLSpanElement> {
   /**
    * Defines the color of the helper text (the same as with Input, Select, etc.)
    */
   valid?: boolean
 }
 
-const HelperText = React.forwardRef<HTMLSpanElement, Props>(function HelperText(props, ref) {
+const HelperText = React.forwardRef<HTMLSpanElement, HelperTextProps>(function HelperText(
+  props,
+  ref
+) {
   const { children, valid, className, ...other } = props
   const {
     theme: { helperText },

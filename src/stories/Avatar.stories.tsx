@@ -13,22 +13,9 @@ export default {
 
 const Template: Story<AvatarProps> = (args) => <Avatar {...args} />
 
-export const Large = Template.bind({})
-Large.args = {
+export const Basic = Template.bind({})
+Basic.args = {
   size: 'large',
-  src: avatarImage,
-  alt: 'Profile image',
-}
-
-export const Regular = Template.bind({})
-Regular.args = {
-  src: avatarImage,
-  alt: 'Profile image',
-}
-
-export const Small = Template.bind({})
-Small.args = {
-  size: 'small',
   src: avatarImage,
   alt: 'Profile image',
 }
