@@ -25,6 +25,7 @@
     "lint:fix": "eslint . --fix",
     "prerelease": "npm run build",
     "release": "release-it",
+    "prestorybook": "npm run build:tailwind",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
