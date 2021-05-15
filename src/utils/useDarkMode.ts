@@ -10,11 +10,11 @@ export const useDarkMode = (
   const toggleMode = () => {
     if (mode === 'light') {
       document.documentElement.className = ''
-      document.documentElement.classList.add('theme-dark')
+      document.documentElement.classList.add('dark')
       setMode('dark')
     } else {
       document.documentElement.className = ''
-      document.documentElement.classList.add('theme-light')
+      document.documentElement.classList.add('light')
       setMode('light')
     }
   }
@@ -32,7 +32,7 @@ export const useDarkMode = (
   useEffect(() => {
     if (mode) {
       window.localStorage.setItem('theme', mode)
-      document.documentElement.classList.add(`theme-${mode}`)
+      document.documentElement.classList.add(mode)
     }
   }, [mode])
 

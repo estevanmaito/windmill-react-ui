@@ -34,7 +34,7 @@ const Windmill: React.FC<Props> = ({
       if (setMode != null) {
         setMode('dark')
       }
-      document.documentElement.classList.add(`theme-dark`)
+      document.documentElement.classList.add(`dark`)
     }
   }, [dark])
 
