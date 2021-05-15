@@ -6,7 +6,7 @@ import FocusLock from 'react-focus-lock'
 
 import { ThemeContext } from './context/ThemeContext'
 
-interface Props extends React.HTMLAttributes<HTMLDivElement> {
+export interface ModalProps extends React.HTMLAttributes<HTMLDivElement> {
   /**
    * Function executed when the dropdown is closed
    */
@@ -17,7 +17,7 @@ interface Props extends React.HTMLAttributes<HTMLDivElement> {
   isOpen: boolean
 }
 
-const Modal = React.forwardRef<HTMLDivElement, Props>(function Modal(props, ref) {
+const Modal = React.forwardRef<HTMLDivElement, ModalProps>(function Modal(props, ref) {
   const { children, onClose, isOpen, ...other } = props
 
   const {

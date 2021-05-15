@@ -1,3 +1,23 @@
+# [0.6.0-beta.0](https://github.com/estevanmaito/windmill-react-ui/compare/0.5.1...0.6.0-beta.0) (2021-05-15)
+
+
+### Bug Fixes
+
+* **dark theme:** add dark variants to tailwind ([6e0bcd3](https://github.com/estevanmaito/windmill-react-ui/commit/6e0bcd32688924584f0a3edcab6bb7b908c3dda4))
+* **dark theme:** fix focus ring for dark theme ([8095735](https://github.com/estevanmaito/windmill-react-ui/commit/8095735ab40b42b79ac0e8e5cbda695720dbdf72))
+* **dark theme:** use tailwind default `dark` class to apply theme ([4c42027](https://github.com/estevanmaito/windmill-react-ui/commit/4c420279078c7a75589fed5df3a458dbffbabd03))
+* **package.json:** add tailwind build before run storybook ([#37](https://github.com/estevanmaito/windmill-react-ui/issues/37)) ([6536826](https://github.com/estevanmaito/windmill-react-ui/commit/653682637554f175c7d9e0e8f7f81c3f854f2d0f))
+
+
+### Features
+
+* **dependencies:** upgrade dependencie ([0305963](https://github.com/estevanmaito/windmill-react-ui/commit/0305963609a958561223bb352ffbae856bda571a))
+
+
+### BREAKING CHANGES
+
+* **dependencies:** upgrade Tailwind to v2; remove multi-theme plugin; upgrade forms plugin;
+
 ## [0.5.1](https://github.com/estevanmaito/windmill-react-ui/compare/0.5.0...0.5.1) (2021-02-06)
 
 - **forms**: fix prop extension to allow usage of element attributes eg. name, on `input`, `select` and `textarea`.

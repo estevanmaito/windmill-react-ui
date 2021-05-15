@@ -76,7 +76,7 @@ export const PageButton: React.FC<PageButtonProps> = function PageButton({
 
 export const EmptyPageButton = () => <span className="px-2 py-1">...</span>
 
-interface PaginationProps {
+export interface PaginationProps {
   /**
    * The total number of results
    */

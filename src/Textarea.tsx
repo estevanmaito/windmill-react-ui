@@ -2,14 +2,17 @@ import React, { useContext } from 'react'
 import classNames from 'classnames'
 import { ThemeContext } from './context/ThemeContext'
 
-interface Props extends React.ComponentPropsWithRef<'textarea'> {
+export interface TextareaProps extends React.ComponentPropsWithRef<'textarea'> {
   /**
    * Defines the color of the textarea
    */
   valid?: boolean
 }
 
-const Textarea = React.forwardRef<HTMLTextAreaElement, Props>(function Textarea(props, ref) {
+const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(function Textarea(
+  props,
+  ref
+) {
   const { valid, disabled, className, children, ...other } = props
 
   const {

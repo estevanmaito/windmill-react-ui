@@ -1,21 +1,5 @@
 const deepMerge = require('deepmerge')
-const Color = require('color')
-const customFormsPlugin = require('@tailwindcss/custom-forms')
-const multiThemePlugin = require('tailwindcss-multi-theme')
-const shadowOutlinePlugin = ({ addUtilities, theme, variants }) => {
-  const newUtilities = {}
-  Object.entries(theme('colors')).map(([name, value]) => {
-    if (name === 'transparent' || name === 'current') return
-    const color = value[300] ? value[300] : value
-    const hsla = Color(color).alpha(0.45).hsl().string()
-
-    newUtilities[`.shadow-outline-${name}`] = {
-      'box-shadow': `0 0 0 3px ${hsla}`,
-    }
-  })
-
-  addUtilities(newUtilities, variants('boxShadow'))
-}
+const customFormsPlugin = require('@tailwindcss/forms')
 
 const colors = {
   transparent: 'transparent',
@@ -163,11 +147,6 @@ const colors = {
   },
 }
 
-const minWidth = (theme) => ({
-  'max-content': 'max-content',
-  ...theme('spacing'),
-})
-
 const backgroundOpacity = (theme) => ({
   '10': '0.1',
   ...theme('opacity'),
@@ -179,67 +158,31 @@ const maxHeight = (theme) => ({
   ...theme('spacing'),
 })
 
-const customForms = (theme) => ({
-  default: {
-    'input, textarea': {
-      '&::placeholder': {
-        color: theme('colors.gray.400'),
-      },
-    },
-  },
-})
-
 const windmillConfig = {
+  darkMode: 'class',
   purge: {
     content: [
       'node_modules/@windmill/react-ui/lib/defaultTheme.js',
       'node_modules/@windmill/react-ui/dist/index.js',
     ],
-    options: {
-      whitelist: ['theme-dark'],
-    },
   },
   theme: {
-    themeVariants: ['dark'],
     colors,
     backgroundOpacity,
     maxHeight,
-    minWidth,
-    customForms,
   },
   variants: {
-    backgroundOpacity: ['responsive', 'hover', 'focus', 'dark:hover'],
-    backgroundColor: [
-      'responsive',
-      'hover',
-      'focus',
-      'active',
-      'odd',
-      'dark',
-      'dark:hover',
-      'dark:focus',
-      'dark:active',
-      'dark:odd',
-    ],
+    backgroundOpacity: ['responsive', 'hover', 'focus', 'dark'],
+    backgroundColor: ['responsive', 'hover', 'focus', 'active', 'odd', 'dark'],
     display: ['responsive', 'dark'],
-    textColor: [
-      'responsive',
-      'focus',
-      'focus-within',
-      'hover',
-      'active',
-      'dark',
-      'dark:focus-within',
-      'dark:hover',
-      'dark:active',
-    ],
-    placeholderColor: ['responsive', 'focus', 'dark', 'dark:focus'],
-    borderColor: ['responsive', 'hover', 'focus', 'dark', 'dark:focus', 'dark:hover'],
+    textColor: ['responsive', 'focus', 'focus-within', 'hover', 'active', 'dark'],
+    placeholderColor: ['responsive', 'focus', 'dark'],
+    borderColor: ['responsive', 'hover', 'focus', 'dark'],
     divideColor: ['responsive', 'dark'],
-    boxShadow: ['responsive', 'hover', 'focus', 'dark:focus'],
+    boxShadow: ['responsive', 'hover', 'focus', 'dark'],
     margin: ['responsive', 'last'],
   },
-  plugins: [customFormsPlugin, multiThemePlugin, shadowOutlinePlugin],
+  plugins: [customFormsPlugin],
 }
 
 function arrayMergeFn(destinationArray, sourceArray) {

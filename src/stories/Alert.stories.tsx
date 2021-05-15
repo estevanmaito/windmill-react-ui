@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 
 import { Story, Meta } from '@storybook/react/types-6-0'
 
@@ -11,33 +11,10 @@ export default {
 
 const Template: Story<AlertProps> = (args) => <Alert {...args} />
 
-export const Neutral = Template.bind({})
-Neutral.args = {
+export const Basic = Template.bind({})
+Basic.args = {
   children: 'This is a neutral alert.',
-}
-
-export const Success = Template.bind({})
-Success.args = {
-  children: 'Success! Check your email to validate your account.',
-  type: 'success',
-}
-
-export const Warning = Template.bind({})
-Warning.args = {
-  children: 'Oops! Looks like you forgot something.',
-  type: 'warning',
-}
-
-export const Danger = Template.bind({})
-Danger.args = {
-  children: 'Something went wrong. Try again later.',
-  type: 'danger',
-}
-
-export const Info = Template.bind({})
-Info.args = {
-  children: 'You can always change you name in your profile.',
-  type: 'info',
+  type: 'neutral',
 }
 
 export const WithoutClose = Template.bind({})

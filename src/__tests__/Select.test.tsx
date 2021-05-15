@@ -1,6 +1,7 @@
 import React from 'react'
 import { mount } from 'enzyme'
 import Select from '../Select'
+import theme from '../themes/default'
 
 describe('Select', () => {
   it('should render without crashing', () => {
@@ -19,38 +20,28 @@ describe('Select', () => {
   })
 
   it('should render with select styles', () => {
-    const expected = 'form-select leading-5'
+    const expected = theme.select.select
     const wrapper = mount(<Select />)
 
     expect(wrapper.find('select').getDOMNode().getAttribute('class')).toContain(expected)
   })
 
-  it('should render with multiple styles', () => {
-    const expected = 'form-multiselect'
-    const wrapper = mount(<Select multiple />)
-
-    expect(wrapper.find('select').getDOMNode().getAttribute('class')).toContain(expected)
-  })
-
   it('should render with active styles', () => {
-    const expected =
-      'focus:border-purple-400 dark:border-gray-600 dark:bg-gray-700 focus:shadow-outline-purple dark:focus:shadow-outline-gray dark:focus:border-gray-600'
+    const expected = theme.select.active
     const wrapper = mount(<Select />)
 
     expect(wrapper.find('select').getDOMNode().getAttribute('class')).toContain(expected)
   })
 
   it('should render with valid styles', () => {
-    const expected =
-      'border-green-600 dark:bg-gray-700 focus:border-green-400 dark:focus:border-green-400 focus:shadow-outline-green dark:focus:shadow-outline-green'
+    const expected = theme.select.valid
     const wrapper = mount(<Select valid />)
 
     expect(wrapper.find('select').getDOMNode().getAttribute('class')).toContain(expected)
   })
 
   it('should render with invalid styles', () => {
-    const expected =
-      'border-red-600 dark:bg-gray-700 focus:border-red-400 dark:focus:border-red-400 focus:shadow-outline-red dark:focus:shadow-outline-red'
+    const expected = theme.select.invalid
     const wrapper = mount(<Select valid={false} />)
 
     expect(wrapper.find('select').getDOMNode().getAttribute('class')).toContain(expected)

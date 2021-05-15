@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 import classNames from 'classnames'
 import { ThemeContext } from './context/ThemeContext'
 
-interface Props extends React.HTMLAttributes<HTMLLabelElement> {
+export interface LabelProps extends React.HTMLAttributes<HTMLLabelElement> {
   /**
    * Applies specific styles for checkboxes
    */
@@ -17,7 +17,7 @@ interface Props extends React.HTMLAttributes<HTMLLabelElement> {
   disabled?: boolean
 }
 
-const Label = React.forwardRef<HTMLLabelElement, Props>(function Label(props, ref) {
+const Label = React.forwardRef<HTMLLabelElement, LabelProps>(function Label(props, ref) {
   const { children, check, radio, disabled, className, ...other } = props
   const {
     theme: { label },

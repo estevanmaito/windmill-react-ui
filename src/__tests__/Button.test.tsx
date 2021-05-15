@@ -2,6 +2,7 @@ import React from 'react'
 import { mount } from 'enzyme'
 import Button from '../Button'
 import HeartIcon from './utils/heart.svg'
+import theme from '../themes/default'
 
 describe('Base Button', () => {
   it('should render without crashing', () => {
@@ -144,7 +145,7 @@ describe('Primary Button', () => {
   })
 
   it('should contain primary active classes', () => {
-    const expected = 'active:bg-purple-600 hover:bg-purple-700 focus:shadow-outline-purple'
+    const expected = theme.button.primary.active
     const wrapper = mount(<Button aria-label="test" />)
 
     expect(wrapper.find('button').getDOMNode().getAttribute('class')).toContain(expected)
@@ -174,8 +175,7 @@ describe('Outline Button', () => {
   })
 
   it('should contain outline active classes', () => {
-    const expected =
-      'active:bg-transparent hover:border-gray-500 focus:border-gray-500 active:text-gray-500 focus:shadow-outline-gray'
+    const expected = theme.button.outline.active
     const wrapper = mount(<Button aria-label="test" layout="outline" />)
 
     expect(wrapper.find('button').getDOMNode().getAttribute('class')).toContain(expected)
@@ -198,8 +198,7 @@ describe('Link Button', () => {
   })
 
   it('should contain link active classes', () => {
-    const expected =
-      'active:bg-transparent hover:bg-gray-100 focus:shadow-outline-gray dark:hover:bg-gray-500 dark:hover:text-gray-300 dark:hover:bg-opacity-10'
+    const expected = theme.button.link.active
     const wrapper = mount(<Button aria-label="test" layout="link" />)
 
     expect(wrapper.find('button').getDOMNode().getAttribute('class')).toContain(expected)

@@ -2,14 +2,14 @@ import React, { useContext } from 'react'
 import classNames from 'classnames'
 import { ThemeContext } from './context/ThemeContext'
 
-interface Props extends React.ComponentPropsWithRef<'select'> {
+export interface SelectProps extends React.ComponentPropsWithRef<'select'> {
   /**
    * Defines the color of the select
    */
   valid?: boolean
 }
 
-const Select = React.forwardRef<HTMLSelectElement, Props>(function Select(props, ref) {
+const Select = React.forwardRef<HTMLSelectElement, SelectProps>(function Select(props, ref) {
   const { valid, children, className, multiple, disabled, ...other } = props
 
   const {
@@ -22,7 +22,6 @@ const Select = React.forwardRef<HTMLSelectElement, Props>(function Select(props,
   const invalidStyle = select.invalid
   const disabledStyle = select.disabled
   const selectStyle = select.select
-  const multipleStyle = select.multiple
 
   function hasValidation(valid: boolean | undefined) {
     return valid !== undefined
@@ -43,7 +42,6 @@ const Select = React.forwardRef<HTMLSelectElement, Props>(function Select(props,
     !hasValidation(valid) && disabled && disabledStyle,
     validationStyle(valid),
     !multiple && selectStyle,
-    multiple && multipleStyle,
     className
   )
 
