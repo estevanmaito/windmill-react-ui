@@ -1,6 +1,13 @@
 const deepMerge = require('deepmerge')
 const customFormsPlugin = require('@tailwindcss/forms')
 
+/**
+ * @typedef {import("tailwindcss/tailwind-config").TailwindConfig} TailwindConfig
+ */
+
+/**
+ * @type {import("tailwindcss/tailwind-config").TailwindColorConfig}
+ */
 const colors = {
   transparent: 'transparent',
   white: '#ffffff',
@@ -158,6 +165,9 @@ const maxHeight = (theme) => ({
   ...theme('spacing'),
 })
 
+/**
+ * @type {TailwindConfig}
+ */
 const windmillConfig = {
   darkMode: 'class',
   purge: {
@@ -194,8 +204,8 @@ function arrayMergeFn(destinationArray, sourceArray) {
 
 /**
  * Merge Windmill and Tailwind CSS configurations
- * @param {object} tailwindConfig - Tailwind config object
- * @return {object} new config object
+ * @param {TailwindConfig} tailwindConfig - Tailwind config object
+ * @return {TailwindConfig} new config object
  */
 function wrapper(tailwindConfig) {
   let purge
