@@ -3,14 +3,14 @@ export default {
     base: 'p-4 pl-12 relative rounded-lg leading-5',
     withClose: 'pr-12',
     success: 'bg-wm-success-50 text-wm-success-900 dark:bg-wm-success-600 dark:text-wm-darkText',
-    danger: 'bg-wm-error-50 text-wm-error-900 dark:bg-wm-error-600 dark:text-wm-darkText',
+    danger: 'bg-wm-danger-50 text-wm-danger-900 dark:bg-wm-danger-600 dark:text-wm-darkText',
     warning: 'bg-wm-warning-50 text-wm-warning-900 dark:bg-wm-warning-600 dark:text-wm-darkText',
     neutral: 'bg-wm-neutral-50 text-wm-neutral-800 dark:bg-wm-neutral-700 dark:text-wm-neutral-300',
     info: 'bg-wm-info-50 text-wm-info-900 dark:bg-wm-info-600 dark:text-wm-darkText',
     icon: {
       base: 'h-5 w-5',
       success: 'text-wm-success-400 dark:text-wm-success-300',
-      danger: 'text-wm-error-400 dark:text-wm-error-300',
+      danger: 'text-wm-danger-400 dark:text-wm-danger-300',
       warning: 'text-wm-warning-400 dark:text-wm-warning-100',
       neutral: 'text-wm-neutral-400 dark:text-wm-neutral-500',
       info: 'text-wm-info-400 dark:text-wm-info-300',
@@ -61,7 +61,7 @@ export default {
     base: 'inline-flex px-2 text-xs font-medium leading-5 rounded-full',
     success:
       'text-wm-success-700 bg-wm-success-100 dark:bg-wm-success-700 dark:text-wm-success-100',
-    danger: 'text-wm-error-700 bg-wm-error-100 dark:text-wm-error-100 dark:bg-wm-error-700',
+    danger: 'text-wm-danger-700 bg-wm-danger-100 dark:text-wm-danger-100 dark:bg-wm-danger-700',
     warning:
       'text-wm-darkWarning-700 bg-wm-darkWarning-100 dark:text-wm-darkText dark:bg-wm-darkWarning-600',
     neutral:
@@ -80,7 +80,7 @@ export default {
     valid:
       'border-wm-success-600 dark:bg-wm-neutral-700 focus:border-wm-success-400 dark:focus:border-wm-success-400 focus:ring focus:ring-wm-success-200 dark:focus:ring-wm-success-200',
     invalid:
-      'border-wm-error-600 dark:bg-wm-neutral-700 focus:border-wm-error-400 dark:focus:border-wm-error-400 focus:ring focus:ring-wm-error-200 dark:focus:ring-wm-error-200',
+      'border-wm-danger-600 dark:bg-wm-neutral-700 focus:border-wm-danger-400 dark:focus:border-wm-danger-400 focus:ring focus:ring-wm-danger-200 dark:focus:ring-wm-danger-200',
   },
   select: {
     base: 'block w-full text-sm dark:text-wm-neutral-300 focus:outline-none rounded-md',
@@ -91,7 +91,7 @@ export default {
     valid:
       'border-wm-success-600 dark:bg-wm-neutral-700 focus:border-wm-success-400 dark:focus:border-wm-success-400 focus:ring focus:ring-wm-success-200 dark:focus:ring-wm-success-200',
     invalid:
-      'border-wm-error-600 dark:bg-wm-neutral-700 focus:border-wm-error-400 dark:focus:border-wm-error-400 focus:ring focus:ring-wm-error-200 dark:focus:ring-wm-error-200',
+      'border-wm-danger-600 dark:bg-wm-neutral-700 focus:border-wm-danger-400 dark:focus:border-wm-danger-400 focus:ring focus:ring-wm-danger-200 dark:focus:ring-wm-danger-200',
   },
   label: {
     base: 'block text-sm text-wm-neutral-700 dark:text-wm-neutral-400',
@@ -106,7 +106,7 @@ export default {
     valid:
       'border-wm-success-600 dark:bg-wm-neutral-700 focus:border-wm-success-400 dark:focus:border-wm-success-400 focus:ring focus:ring-wm-success-200 dark:focus:ring-wm-success-200',
     invalid:
-      'border-wm-error-600 dark:bg-wm-neutral-700 focus:border-wm-error-400 dark:focus:border-wm-error-400 focus:ring focus:ring-wm-error-200 dark:focus:ring-wm-error-200',
+      'border-wm-danger-600 dark:bg-wm-neutral-700 focus:border-wm-danger-400 dark:focus:border-wm-danger-400 focus:ring focus:ring-wm-danger-200 dark:focus:ring-wm-danger-200',
     radio:
       'text-wm-primary-600 form-radio focus:border-wm-primary-400 focus:outline-none focus:ring focus:ring-wm-primary-300 focus:ring-offset-0 dark:focus:ring-wm-neutral-300',
     checkbox:
@@ -115,7 +115,7 @@ export default {
   helperText: {
     base: 'text-xs',
     valid: 'text-wm-success-600 dark:text-wm-success-400',
-    invalid: 'text-wm-error-600 dark:text-wm-error-400',
+    invalid: 'text-wm-danger-600 dark:text-wm-danger-400',
   },
   card: {
     base: 'min-w-0 rounded-lg ring-1 ring-black ring-opacity-5 overflow-hidden',
