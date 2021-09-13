@@ -2,6 +2,7 @@ const path = require('path')
 // const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 
 module.exports = {
+  mode: process.env.NODE_ENV !== 'production' ? 'development' : 'production',
   entry: './src/index.ts',
   output: {
     globalObject: 'this',
