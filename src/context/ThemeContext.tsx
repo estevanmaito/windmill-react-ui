@@ -1,8 +1,9 @@
 import React from 'react'
 import defaultTheme from '../themes/default'
+import type { Mode } from '../../@types/index'
 
 interface ThemeContextInterface {
-  theme: any
+  theme: typeof defaultTheme
   mode?: Mode
   toggleMode?: any
 }

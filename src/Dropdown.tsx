@@ -1,7 +1,7 @@
 import React, { useEffect, useContext, useRef } from 'react'
 import classNames from 'classnames'
 import { ThemeContext } from './context/ThemeContext'
-import Transition from './Transition'
+import { Transition } from '@headlessui/react'
 import FocusLock from 'react-focus-lock'
 
 export interface DropdownProps extends React.HTMLAttributes<HTMLUListElement> {

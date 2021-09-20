@@ -6,11 +6,20 @@ export interface BadgeProps extends React.HTMLAttributes<HTMLSpanElement> {
   /**
    * The type of the badge
    */
-  type?: 'success' | 'danger' | 'warning' | 'neutral' | 'primary'
+  type?:
+    | 'pending'
+    | 'paid'
+    | 'outstanding'
+    | 'late'
+    // | 'success'
+    // | 'danger'
+    // | 'warning'
+    // | 'neutral'
+    // | 'primary'
 }
 
 const Badge = React.forwardRef<HTMLSpanElement, BadgeProps>(function Badge(props, ref) {
-  const { className, children, type = 'primary', ...other } = props
+  const { className, children, type = 'neutral', ...other } = props
 
   const {
     theme: { badge },

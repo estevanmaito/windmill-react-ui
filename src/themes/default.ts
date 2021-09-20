@@ -23,8 +23,7 @@ export default {
   },
   // TableFooter
   tableFooter: {
-    base:
-      'px-4 py-3 border-t dark:border-gray-700 bg-gray-50 text-gray-500 dark:text-gray-400 dark:bg-gray-800',
+    base: 'px-4 py-3 border-t dark:border-gray-700 bg-gray-50 text-gray-500 dark:text-gray-400 dark:bg-gray-800',
   },
   // TableRow
   tableRow: {
@@ -32,8 +31,7 @@ export default {
   },
   // TableHeader
   tableHeader: {
-    base:
-      'text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800',
+    base: 'text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800',
   },
   // TableContainer
   tableContainer: {
@@ -45,8 +43,7 @@ export default {
   },
   // TableBody
   tableBody: {
-    base:
-      'bg-white divide-y dark:divide-gray-700 dark:bg-gray-800 text-gray-700 dark:text-gray-400',
+    base: 'bg-white divide-y dark:divide-gray-700 dark:bg-gray-800 text-gray-700 dark:text-gray-400',
   },
   // DropdownItem
   // this is the <li> that lives inside the Dropdown <ul>
@@ -56,8 +53,7 @@ export default {
   },
   // Dropdown
   dropdown: {
-    base:
-      'absolute w-56 p-2 mt-2 text-gray-600 bg-white border border-gray-100 rounded-lg shadow-md min-w-max-content dark:text-gray-300 dark:border-gray-700 dark:bg-gray-700',
+    base: 'absolute w-56 p-2 mt-2 text-gray-600 bg-white border border-gray-100 rounded-lg shadow-md min-w-max-content dark:text-gray-300 dark:border-gray-700 dark:bg-gray-700',
     align: {
       left: 'left-0',
       right: 'right-0',
@@ -74,8 +70,7 @@ export default {
   },
   // Modal
   modal: {
-    base:
-      'w-full px-6 py-4 overflow-hidden bg-white rounded-t-lg dark:bg-gray-800 sm:rounded-lg sm:m-4 sm:max-w-xl',
+    base: 'w-full px-6 py-4 overflow-hidden bg-white rounded-t-lg dark:bg-gray-800 sm:rounded-lg sm:m-4 sm:max-w-xl',
   },
   // ModalBody
   modalBody: {
@@ -83,8 +78,7 @@ export default {
   },
   // ModalFooter
   modalFooter: {
-    base:
-      'flex flex-col items-center justify-end px-6 py-3 -mx-6 -mb-4 space-y-4 sm:space-y-0 sm:space-x-6 sm:flex-row bg-gray-50 dark:bg-gray-800',
+    base: 'flex flex-col items-center justify-end px-6 py-3 -mx-6 -mb-4 space-y-4 sm:space-y-0 sm:space-x-6 sm:flex-row bg-gray-50 dark:bg-gray-800',
   },
   // ModalHeader
   modalHeader: {
@@ -101,8 +95,7 @@ export default {
   },
   // Backdrop
   backdrop: {
-    base:
-      'fixed inset-0 z-40 flex items-end bg-black bg-opacity-50 sm:items-center sm:justify-center',
+    base: 'fixed inset-0 z-40 flex items-end bg-black bg-opacity-50 sm:items-center sm:justify-center',
   },
   // Textarea
   textarea: {
@@ -165,8 +158,7 @@ export default {
   },
   // Button
   button: {
-    base:
-      'align-bottom inline-flex items-center justify-center cursor-pointer leading-5 transition-colors duration-150 font-medium focus:outline-none',
+    base: 'align-bottom inline-flex items-center justify-center cursor-pointer leading-5 transition-colors duration-150 font-medium focus:outline-none',
     block: 'w-full',
     size: {
       larger: 'px-10 py-4 rounded-lg',
@@ -209,8 +201,7 @@ export default {
     },
     // this is the button that lives inside the DropdownItem
     dropdownItem: {
-      base:
-        'inline-flex items-center cursor-pointer w-full px-2 py-1 text-sm font-medium transition-colors duration-150 rounded-md hover:bg-gray-100 hover:text-gray-800 dark:hover:bg-gray-800 dark:hover:text-gray-200',
+      base: 'inline-flex items-center cursor-pointer w-full px-2 py-1 text-sm font-medium transition-colors duration-150 rounded-md hover:bg-gray-100 hover:text-gray-800 dark:hover:bg-gray-800 dark:hover:text-gray-200',
     },
   },
 }
