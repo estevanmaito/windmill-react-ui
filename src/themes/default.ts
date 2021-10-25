@@ -106,7 +106,7 @@ export default {
   },
   // Textarea
   textarea: {
-    base: 'block w-full text-sm dark:text-gray-300 rounded-md focus:outline-none',
+    base: 'block w-full text-sm dark:text-gray-300 rounded-md focus:outline-none border px-3 py-2',
     active:
       'focus:border-purple-400 border-gray-300 dark:border-gray-600 dark:focus:border-gray-600 dark:bg-gray-700 dark:focus:ring-gray-300 focus:ring focus:ring-purple-300',
     disabled: 'cursor-not-allowed opacity-50 bg-gray-300 dark:bg-gray-800',
@@ -117,7 +117,7 @@ export default {
   },
   // Select
   select: {
-    base: 'block w-full text-sm dark:text-gray-300 focus:outline-none rounded-md',
+    base: 'block w-full text-sm dark:text-gray-300 focus:outline-none rounded-md border px-3 py-2',
     active:
       'focus:border-purple-400 border-gray-300 dark:border-gray-600 dark:bg-gray-700 focus:ring focus:ring-purple-300 dark:focus:ring-gray-300 dark:focus:border-gray-600',
     select: 'leading-5',
@@ -136,7 +136,7 @@ export default {
   },
   // Input
   input: {
-    base: 'block w-full text-sm focus:outline-none dark:text-gray-300 leading-5 rounded-md',
+    base: 'block w-full text-sm focus:outline-none dark:text-gray-300 leading-5 rounded-md border py-2 px-3',
     active:
       'focus:border-purple-400 border-gray-300 dark:border-gray-600 focus:ring focus:ring-purple-300 dark:focus:border-gray-600 dark:focus:ring-gray-300 dark:bg-gray-700',
     disabled: 'cursor-not-allowed opacity-50 bg-gray-300 dark:bg-gray-800',
