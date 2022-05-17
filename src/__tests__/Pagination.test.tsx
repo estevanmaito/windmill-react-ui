@@ -89,21 +89,24 @@ describe('EmptyPageButton', () => {
 describe('Pagination', () => {
   it('should render without crashing', () => {
     const onChange = () => {}
-    mount(<Pagination totalResults={123} label="Navigation" onChange={onChange} />)
+    const onChangeDataSet= () => {}
+    mount(<Pagination totalResults={123} label="Navigation" onChange={onChange} onChangeDataSet={onChangeDataSet} />)
   })
 
   it('should render with base styles', () => {
     const onChange = () => {}
+    const onChangeDataSet= () => {}
     const expected =
       'flex flex-col justify-between text-xs sm:flex-row text-gray-600 dark:text-gray-400'
-    const wrapper = mount(<Pagination totalResults={123} label="Navigation" onChange={onChange} />)
+    const wrapper = mount(<Pagination totalResults={123} label="Navigation" onChange={onChange} onChangeDataSet={onChangeDataSet} />)
 
     expect(wrapper.find(Pagination).getDOMNode().getAttribute('class')).toContain(expected)
   })
 
   it('should render next and previous buttons', () => {
     const onChange = () => {}
-    const wrapper = mount(<Pagination totalResults={123} label="Navigation" onChange={onChange} />)
+    const onChangeDataSet= () => {}
+    const wrapper = mount(<Pagination totalResults={123} label="Navigation" onChange={onChange} onChangeDataSet={onChangeDataSet} />)
 
     expect(wrapper.find('button[aria-label="Next"]')).toBeTruthy()
     expect(wrapper.find('button[aria-label="Previous"]')).toBeTruthy()
@@ -111,26 +114,29 @@ describe('Pagination', () => {
 
   it('should render a list with exact children', () => {
     const onChange = () => {}
+    const onChangeDataSet= () => {}
     const expected = 7
-    const wrapper = mount(<Pagination totalResults={50} label="Navigation" onChange={onChange} />)
+    const wrapper = mount(<Pagination totalResults={50} label="Navigation" onChange={onChange} onChangeDataSet={onChangeDataSet} />)
 
     expect(wrapper.find('ul').children().length).toBe(expected)
   })
 
   it('should never render a list with more than 9 children', () => {
     const onChange = () => {}
+    const onChangeDataSet= () => {}
     // accounts for 2 nav buttons
     const expected = 9
-    const wrapper = mount(<Pagination totalResults={120} label="Navigation" onChange={onChange} />)
+    const wrapper = mount(<Pagination totalResults={120} label="Navigation" onChange={onChange} onChangeDataSet={onChangeDataSet} />)
 
     expect(wrapper.find('ul').children().length).toBe(expected)
   })
 
   it('should render a list taking into account resultsPerPage', () => {
     const onChange = () => {}
+    const onChangeDataSet= () => {}
     const expected = 6
     const wrapper = mount(
-      <Pagination totalResults={30} resultsPerPage={5} label="Navigation" onChange={onChange} />
+      <Pagination totalResults={30} resultsPerPage={5} label="Navigation" onChange={onChange} onChangeDataSet={onChangeDataSet} />
     )
 
     expect(wrapper.find(PageButton).children().length).toBe(expected)
@@ -138,8 +144,9 @@ describe('Pagination', () => {
 
   it('should call click handler on next button', () => {
     const onChange = jest.fn()
+    const onChangeDataSet= jest.fn()
     const wrapper = mount(
-      <Pagination totalResults={30} resultsPerPage={5} label="Navigation" onChange={onChange} />
+      <Pagination totalResults={30} resultsPerPage={5} label="Navigation" onChange={onChange} onChangeDataSet={onChangeDataSet} />
     )
 
     const nextButton = wrapper.find('button[aria-label="Next"]')
@@ -151,8 +158,9 @@ describe('Pagination', () => {
 
   it('should call click handler on prev button', () => {
     const onChange = jest.fn()
+    const onChangeDataSet= jest.fn()
     const wrapper = mount(
-      <Pagination totalResults={30} resultsPerPage={5} label="Navigation" onChange={onChange} />
+      <Pagination totalResults={30} resultsPerPage={5} label="Navigation" onChange={onChange} onChangeDataSet={onChangeDataSet} />
     )
 
     const nextButton = wrapper.find('button[aria-label="Next"]')
@@ -169,8 +177,9 @@ describe('Pagination', () => {
 
   it('should not call click handler on prev button if first page', () => {
     const onChange = jest.fn()
+    const onChangeDataSet= jest.fn()
     const wrapper = mount(
-      <Pagination totalResults={30} resultsPerPage={5} label="Navigation" onChange={onChange} />
+      <Pagination totalResults={30} resultsPerPage={5} label="Navigation" onChange={onChange} onChangeDataSet={onChangeDataSet} />
     )
 
     const prevButton = wrapper.find('button[aria-label="Previous"]')
@@ -182,8 +191,9 @@ describe('Pagination', () => {
 
   it('should not call click handler on next button if last page', () => {
     const onChange = jest.fn()
+    const onChangeDataSet= jest.fn()
     const wrapper = mount(
-      <Pagination totalResults={10} resultsPerPage={5} label="Navigation" onChange={onChange} />
+      <Pagination totalResults={10} resultsPerPage={5} label="Navigation" onChange={onChange} onChangeDataSet={onChangeDataSet} />
     )
 
     const nextButton = wrapper.find('button[aria-label="Next"]')
@@ -196,8 +206,9 @@ describe('Pagination', () => {
 
   it('should call click handler on prev button', () => {
     const onChange = jest.fn()
+    const onChangeDataSet= jest.fn()
     const wrapper = mount(
-      <Pagination totalResults={30} resultsPerPage={5} label="Navigation" onChange={onChange} />
+      <Pagination totalResults={30} resultsPerPage={5} label="Navigation" onChange={onChange} onChangeDataSet={onChangeDataSet} />
     )
 
     const nextButton = wrapper.find('button[aria-label="Next"]')
@@ -214,8 +225,9 @@ describe('Pagination', () => {
 
   it('should render two "..." in the middle of a big list', () => {
     const onChange = () => {}
+    const onChangeDataSet= () => {}
     const wrapper = mount(
-      <Pagination totalResults={50} resultsPerPage={5} label="Navigation" onChange={onChange} />
+      <Pagination totalResults={50} resultsPerPage={5} label="Navigation" onChange={onChange} onChangeDataSet={onChangeDataSet} />
     )
 
     const nextButton = wrapper.find('button[aria-label="Next"]')
@@ -230,8 +242,9 @@ describe('Pagination', () => {
 
   it('should render the last 5 items', () => {
     const onChange = () => {}
+    const onChangeDataSet= () => {}
     const wrapper = mount(
-      <Pagination totalResults={50} resultsPerPage={5} label="Navigation" onChange={onChange} />
+      <Pagination totalResults={50} resultsPerPage={5} label="Navigation" onChange={onChange} onChangeDataSet={onChangeDataSet} />
     )
 
     const nextButton = wrapper.find('button[aria-label="Next"]')
@@ -256,8 +269,9 @@ describe('Pagination', () => {
 
   it('should call click handler on page button', () => {
     const onChange = jest.fn()
+    const onChangeDataSet= jest.fn()
     const wrapper = mount(
-      <Pagination totalResults={30} resultsPerPage={5} label="Navigation" onChange={onChange} />
+      <Pagination totalResults={30} resultsPerPage={5} label="Navigation" onChange={onChange} onChangeDataSet={onChangeDataSet} />
     )
 
     const thirdPage = wrapper.find(PageButton).at(2)
@@ -269,11 +283,12 @@ describe('Pagination', () => {
 
   it('should update the pages total when totalResults is updated', () => {
     const onChange = () => {}
+    const onChangeDataSet= () => {}
     const expectedBeforeUpdate = 6
     const expectedAfterUpdate = 4
 
     const wrapper = mount(
-      <Pagination totalResults={30} resultsPerPage={5} label="Navigation" onChange={onChange} />
+      <Pagination totalResults={30} resultsPerPage={5} label="Navigation" onChange={onChange} onChangeDataSet={onChangeDataSet} />
     )
 
     expect(wrapper.find(PageButton).children().length).toBe(expectedBeforeUpdate)
@@ -285,11 +300,12 @@ describe('Pagination', () => {
 
   it('should update the pages total when resultsPerPage is updated', () => {
     const onChange = () => {}
+    const onChangeDataSet= () => {}
     const expectedBeforeUpdate = 6
     const expectedAfterUpdate = 3
 
     const wrapper = mount(
-      <Pagination totalResults={30} resultsPerPage={5} label="Navigation" onChange={onChange} />
+      <Pagination totalResults={30} resultsPerPage={5} label="Navigation" onChange={onChange} onChangeDataSet={onChangeDataSet} />
     )
 
     expect(wrapper.find(PageButton).children().length).toBe(expectedBeforeUpdate)

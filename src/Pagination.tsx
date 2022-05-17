@@ -13,6 +13,31 @@ const PrevIcon: React.FC = function PrevIcon(props) {
     </svg>
   )
 }
+const PrevDataIcon: React.FC = function PrevDataIcon(props) {
+  return (
+    <>
+    <svg {...props} aria-hidden="true" fill="currentColor" viewBox="0 0 20 20">
+      <path
+        d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
+        clipRule="evenodd"
+        fillRule="evenodd"
+      ></path>
+      <path
+        d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
+        clipRule="evenodd"
+        fillRule="evenodd"
+      ></path>
+    </svg>
+    <svg {...props} aria-hidden="true" fill="currentColor" viewBox="0 0 20 20">
+      <path
+        d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
+        clipRule="evenodd"
+        fillRule="evenodd"
+      ></path>
+    </svg>
+    </>
+  )
+}
 
 const NextIcon: React.FC = function NextIcon(props) {
   return (
@@ -25,8 +50,31 @@ const NextIcon: React.FC = function NextIcon(props) {
     </svg>
   )
 }
+const NextDataIcon: React.FC = function NextDataIcon(props) {
+  return (
+    <>
+    <svg {...props} aria-hidden="true" fill="currentColor" viewBox="0 0 20 20">
+      <path
+        d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+        clipRule="evenodd"
+        fillRule="evenodd"
+      ></path>
+    </svg>
+    <svg {...props} aria-hidden="true" fill="currentColor" viewBox="0 0 20 20">
+      <path
+        d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+        clipRule="evenodd"
+        fillRule="evenodd"
+      ></path>
+    </svg>
+    </>
+  )
+}
 
 interface NavigationButtonProps extends ButtonAsButtonProps {
+  directionIcon: 'prev' | 'next'
+}
+interface DataNavigationProps extends ButtonAsButtonProps {
   directionIcon: 'prev' | 'next'
 }
 
@@ -50,6 +98,24 @@ export const NavigationButton: React.FC<NavigationButtonProps> = function Naviga
     />
   )
 }
+export const DataSetChangeButton: React.FC<DataNavigationProps> = function NextDataSet({
+  onClick,
+  directionIcon,
+}) {
+  const ariaLabel = directionIcon === 'prev' ? 'Previous Data' : 'Next Data'
+
+  const icon = directionIcon === 'prev' ? PrevDataIcon : NextDataIcon
+
+  return (
+    <Button
+      size="small"
+      layout="link"
+      icon={icon}
+      onClick={onClick}
+      aria-label={ariaLabel}
+    />
+  )
+}
 
 interface PageButtonProps extends ButtonAsButtonProps {
   /**
@@ -66,9 +132,10 @@ export const PageButton: React.FC<PageButtonProps> = function PageButton({
   page,
   isActive,
   onClick,
+  className
 }) {
   return (
-    <Button size="pagination" layout={isActive ? 'primary' : 'link'} onClick={onClick}>
+    <Button className={className} size="pagination" layout={isActive ? 'primary' : 'link'} onClick={onClick}>
       {page}
     </Button>
   )
@@ -93,12 +160,16 @@ export interface PaginationProps {
    * The function executed on page change
    */
   onChange: (activePage: number) => void
+  /**
+   * The function executed on Data set change
+   */
+  onChangeDataSet?: ()=>void
 }
 
 type Ref = HTMLDivElement
 
 const Pagination = React.forwardRef<Ref, PaginationProps>(function Pagination(props, ref) {
-  const { totalResults, resultsPerPage = 10, label, onChange, ...other } = props
+  const { totalResults, resultsPerPage = 10, label, onChange, onChangeDataSet, ...other } = props
   const [pages, setPages] = useState<(number | string)[]>([])
   const [activePage, setActivePage] = useState(1)
 
@@ -113,6 +184,9 @@ const Pagination = React.forwardRef<Ref, PaginationProps>(function Pagination(pr
 
   function handleNextClick() {
     setActivePage(activePage + 1)
+  }
+  function handleDataSet() {
+    typeof onChangeDataSet!=undefined?onChangeDataSet:alert("Please Pass Data Set Change Function To Pagination")
   }
 
   useEffect(() => {
@@ -177,6 +251,12 @@ const Pagination = React.forwardRef<Ref, PaginationProps>(function Pagination(pr
         <nav aria-label={label}>
           <ul className="inline-flex items-center">
             <li>
+              <DataSetChangeButton
+                directionIcon='prev'
+                onClick={handleDataSet}
+              />
+            </li>
+            <li>
               <NavigationButton
                 directionIcon="prev"
                 disabled={activePage === FIRST_PAGE}
@@ -189,6 +269,7 @@ const Pagination = React.forwardRef<Ref, PaginationProps>(function Pagination(pr
                   <EmptyPageButton />
                 ) : (
                   <PageButton
+                    className='mx-1'
                     page={p}
                     isActive={p === activePage}
                     onClick={() => setActivePage(+p)}
@@ -203,6 +284,13 @@ const Pagination = React.forwardRef<Ref, PaginationProps>(function Pagination(pr
                 onClick={handleNextClick}
               />
             </li>
+            <li>
+              <DataSetChangeButton
+              directionIcon='next'
+              onClick={handleDataSet}
+              />
+            </li>
+
           </ul>
         </nav>
       </div>
