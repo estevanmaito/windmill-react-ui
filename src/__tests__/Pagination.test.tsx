@@ -115,7 +115,7 @@ describe('Pagination', () => {
   it('should render a list with exact children', () => {
     const onChange = () => {}
     const onChangeDataSet= () => {}
-    const expected = 7
+    const expected = 9
     const wrapper = mount(<Pagination totalResults={50} label="Navigation" onChange={onChange} onChangeDataSet={onChangeDataSet} />)
 
     expect(wrapper.find('ul').children().length).toBe(expected)
@@ -125,7 +125,7 @@ describe('Pagination', () => {
     const onChange = () => {}
     const onChangeDataSet= () => {}
     // accounts for 2 nav buttons
-    const expected = 9
+    const expected = 11
     const wrapper = mount(<Pagination totalResults={120} label="Navigation" onChange={onChange} onChangeDataSet={onChangeDataSet} />)
 
     expect(wrapper.find('ul').children().length).toBe(expected)

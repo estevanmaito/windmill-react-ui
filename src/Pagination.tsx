@@ -98,7 +98,7 @@ export const NavigationButton: React.FC<NavigationButtonProps> = function Naviga
     />
   )
 }
-export const DataSetChangeButton: React.FC<DataNavigationProps> = function NextDataSet({
+export const DataSetChangeButton: React.FC<DataNavigationProps> = function DataSetChangeButton({
   onClick,
   directionIcon,
 }) {
@@ -163,7 +163,7 @@ export interface PaginationProps {
   /**
    * The function executed on Data set change
    */
-  onChangeDataSet?: ()=>void
+  onChangeDataSet?(): void
 }
 
 type Ref = HTMLDivElement
@@ -185,9 +185,7 @@ const Pagination = React.forwardRef<Ref, PaginationProps>(function Pagination(pr
   function handleNextClick() {
     setActivePage(activePage + 1)
   }
-  function handleDataSet() {
-    typeof onChangeDataSet!=undefined?onChangeDataSet:alert("Please Pass Data Set Change Function To Pagination")
-  }
+
 
   useEffect(() => {
     // [1], 2, 3, 4, 5, ..., 12 case #1
@@ -253,7 +251,7 @@ const Pagination = React.forwardRef<Ref, PaginationProps>(function Pagination(pr
             <li>
               <DataSetChangeButton
                 directionIcon='prev'
-                onClick={handleDataSet}
+                onClick={onChangeDataSet}
               />
             </li>
             <li>
@@ -287,7 +285,7 @@ const Pagination = React.forwardRef<Ref, PaginationProps>(function Pagination(pr
             <li>
               <DataSetChangeButton
               directionIcon='next'
-              onClick={handleDataSet}
+                onClick={onChangeDataSet}
               />
             </li>
 
