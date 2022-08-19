@@ -1,7 +1,7 @@
 const windmill = require('../config')
 
 module.exports = windmill({
-  purge: [],
+  content: [],
   theme: {
     extend: {},
   },
