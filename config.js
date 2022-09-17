@@ -160,12 +160,10 @@ const maxHeight = (theme) => ({
 
 const windmillConfig = {
   darkMode: 'class',
-  purge: {
-    content: [
-      'node_modules/@windmill/react-ui/lib/defaultTheme.js',
-      'node_modules/@windmill/react-ui/dist/index.js',
-    ],
-  },
+  content: [
+    'node_modules/@windmill/react-ui/lib/defaultTheme.js',
+    'node_modules/@windmill/react-ui/dist/index.js',
+  ],
   theme: {
     colors,
     backgroundOpacity,

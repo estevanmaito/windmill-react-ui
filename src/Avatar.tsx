@@ -33,7 +33,7 @@ const Avatar = React.forwardRef<HTMLDivElement, AvatarProps>(function Avatar(pro
   const cls = classNames(baseStyle, sizeStyles[size], className)
 
   return (
-    <div className={cls} ref={ref} {...other}>
+    <div className={cls} ref={ref} {...other} data-testid="avatar">
       <img className="object-cover w-full h-full rounded-full" src={src} alt={alt} loading="lazy" />
       <div className="absolute inset-0 rounded-full shadow-inner" aria-hidden="true"></div>
     </div>

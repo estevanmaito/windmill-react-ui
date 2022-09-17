@@ -26,6 +26,7 @@ type IconProps = SVGAttributes<SVGElement>
 export const InfoIcon: React.FC<IconProps> = (props) => (
   <svg
     {...props}
+    data-testid="info-icon"
     fill="none"
     strokeLinecap="round"
     strokeLinejoin="round"
@@ -40,6 +41,7 @@ export const InfoIcon: React.FC<IconProps> = (props) => (
 export const WarningIcon: React.FC<IconProps> = (props) => (
   <svg
     {...props}
+    data-testid="warning-icon"
     fill="none"
     strokeLinecap="round"
     strokeLinejoin="round"
@@ -54,6 +56,7 @@ export const WarningIcon: React.FC<IconProps> = (props) => (
 export const DangerIcon: React.FC<IconProps> = (props) => (
   <svg
     {...props}
+    data-testid="danger-icon"
     fill="none"
     strokeLinecap="round"
     strokeLinejoin="round"
@@ -68,6 +71,7 @@ export const DangerIcon: React.FC<IconProps> = (props) => (
 export const SuccessIcon: React.FC<IconProps> = (props) => (
   <svg
     {...props}
+    data-testid="success-icon"
     fill="none"
     strokeLinecap="round"
     strokeLinejoin="round"
@@ -82,6 +86,7 @@ export const SuccessIcon: React.FC<IconProps> = (props) => (
 export const NeutralIcon: React.FC<IconProps> = (props) => (
   <svg
     {...props}
+    data-testid="neutral-icon"
     fill="none"
     strokeLinecap="round"
     strokeLinejoin="round"
