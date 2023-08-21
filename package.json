@@ -12,7 +12,7 @@
   "scripts": {
     "prebuild": "rimraf dist lib && npm run build:lib && npm run build:ts",
     "build:ts": "tsc --declaration --declarationMap --emitDeclarationOnly",
-    "build:tailwind": "tailwindcss build style/tailwind.css -o style/output.css -c style/tailwind.config.js",
+    "build:tailwind": "tailwindcss -i style/tailwind.css -o style/output.css -c style/tailwind.config.js",
     "build:lib": "babel src/themes/default.ts --out-file lib/defaultTheme.js",
     "build": "webpack",
     "predev": "npm run build:tailwind",
@@ -30,13 +30,13 @@
     "build-storybook": "build-storybook"
   },
   "peerDependencies": {
-    "tailwindcss": ">=2.0.0"
+    "tailwindcss": "^3.3.3"
   },
   "dependencies": {
-    "@tailwindcss/forms": "^0.3.2",
+    "@tailwindcss/forms": "^0.5.4",
     "classnames": "2.2.6",
-    "deepmerge": "4.2.2",
-    "postcss": "^8.2.15",
+    "deepmerge": "4.3.1",
+    "postcss": "^8.4.28",
     "react-focus-lock": "2.4.1",
     "react-transition-group": "4.4.1"
   },
@@ -87,7 +87,7 @@
     "release-it": "^14.6.1",
     "rimraf": "^3.0.2",
     "style-loader": "^3.3.3",
-    "tailwindcss": "^2.0.0",
+    "tailwindcss": "^3.3.3",
     "ts-jest": "^29.1.1",
     "ts-loader": "^9.4.4",
     "typescript": "^5.1.6",

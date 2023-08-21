@@ -1,10 +1,10 @@
 const windmill = require('../config')
 
+/** @type {import('tailwindcss').Config} */
 module.exports = windmill({
-  purge: [],
+  content: [],
   theme: {
     extend: {},
   },
-  variants: {},
   plugins: [],
 })
