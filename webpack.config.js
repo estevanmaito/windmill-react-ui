@@ -1,7 +1,9 @@
 const path = require('path')
 // const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 
-module.exports = {
+const isProduction = process.env.NODE_ENV === 'production'
+
+const config = {
   entry: './src/index.ts',
   output: {
     globalObject: 'this',
@@ -20,11 +22,20 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.tsx?$/,
+        test: /\.(ts|tsx)$/i,
         loader: 'ts-loader',
-        exclude: /node_modules/,
+        exclude: ['/node_modules/'],
       },
     ],
   },
   // plugins: [new BundleAnalyzerPlugin()],
+}
+
+module.exports = () => {
+  if (isProduction) {
+    config.mode = 'production'
+  } else {
+    config.mode = 'development'
+  }
+  return config
 }
