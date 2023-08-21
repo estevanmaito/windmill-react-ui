@@ -7,7 +7,7 @@ module.exports = {
   setupFilesAfterEnv: ['<rootDir>setupTests.ts'],
   transform: {
     ...tsjPreset.transform,
-    // "^.+\\.svg$": "jest-svg-transformer",
+    '^.+\\.svg$': 'jest-transformer-svg',
   },
   testPathIgnorePatterns: ['.*\\.d\\.ts', '/node_modules/'],
   collectCoverageFrom: [
